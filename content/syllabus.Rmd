@@ -104,11 +104,11 @@ grading <- tribble(
   "C+", "77–79%", "F",  "< 60%"
 )
 ```
-\begin{center}
+
 ```{r, echo = F, results="asis"}
-knitr::kable(assignments, format="latex", booktabs=TRUE)
+knitr::kable(assignments)
 ```
-\end{center}
+
 ```{r show-assignments-table, eval=F, echo=FALSE, results="asis"}
 assignments_total <- tibble(Assignment = "Total",
                             Points = sum(assignments$Points),
@@ -121,12 +121,11 @@ bind_rows(assignments, assignments_total) %>%
 
 Each assignment is graded on a 100 point scale. Letter-grade equivalents are based on the following scale:
 
-\begin{center}
 ```{r show-grades-table, echo=FALSE, results="asis"}
 grading %>%
-  knitr::kable(., format="latex", booktabs=TRUE)
+  pandoc.table(justify = "lclc", 
+               col.names = c("Grade", "Range", "Grade", "Range"))
 ```
-\end{center}
 
 See also my [<i class="fas fa-calculator"></i> `Grade Calculator`](https://ryansafner.shinyapps.io/306_grade_calculator/) app where you can calculate your overall grade using existing assignment grades and forecast "what if" scenarios.
 
@@ -269,18 +268,12 @@ schedule <- tribble(
 )
 ```
 
-\begin{center}
-\small
 ```{r, echo = F, results="asis"}
 #linebreak("a;b")
 schedule %>%
 #  mutate_all(linebreak) %>%
-  knitr::kable(.,format="html",
-        booktabs=TRUE
-        #escape = FALSE)
-  )
+  pandoc.table()
 ```
-\end{center}
 
 <!--
 | Week | Topics | Readings | Assignments |
