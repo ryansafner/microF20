@@ -51,7 +51,7 @@ params:
     days: "MW"
     time: "2:00 PM–3:15 PM"
     location: >-
-      <i class="fas fa-video"></i> on Zoom
+      Meets on <i class="fas fa-video"></i> Zoom
     twitter: ryansafner
     dates: >-
       January 15–May 8, 2020
@@ -59,7 +59,7 @@ params:
     slack: "http://hoodcollegeeconomics.slack.com"
     copyrightYear: "2020-2021"
     contactDetails: >-
-      Office hours: TuTh 3:30–5:00PM <i class="fas fa-video"></i> on Zoom
+      Office hours: TuTh 3:30–5:00PM on <i class="fas fa-video"></i> Zoom
   university: 
     name: Hood College
     url: "https://www.hood.edu"
