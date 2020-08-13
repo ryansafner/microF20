@@ -21,10 +21,10 @@ library(pander)
 <span class="newthought">Microeconomic Analysis</span> [^courseinfo] is a collection of analytical tools for modeling and understanding how decisions made by agents (individuals and firms) in a context of market institutions lead to social coordination and the creation of value. This toolkit is the analytical foundation for exploring *all* fields and applications of economics as a social science, has many practical applications in business, finance, politics, and insights into any realm of human endeavors. Economics, after all, is the study of human action. At the intermediate level, these concepts are made more rigorous through the use of mathematical models, but we will first and foremost lay the theoretical foundations with economic intuition. As such, this class assumes you have met the **required prerequisite courses** by taking introductory economics^[ECON 205, 206] and basic mathematics^[MATH 112].
 
 
-[^courseinfo]: {-}
+[^courseinfo]: 
   `r blogdown::shortcode("courseinfo")`
 
-# Hybrid Course Format {-}
+# Hybrid Course Format 
 
 This course is taught in a **hybrid** format, providing a mixture of regular synchronous activity where we all can interact in real time, with asynchronous material, which can be done remotely at your own pace. 
 
@@ -38,7 +38,7 @@ Assignments will always be submitted *online* and due at regular times (typicall
 
 Students are strongly encouraged to join the course [Slack channel](https://hoodcollegeeconomics.slack.com) to maintain an active channel of communication, ask questions, and to build our course community together. Official course-related announcements will always come via Blackboard announcement and automatically sent to your Hood email accounts.
 
-## Learning in a Time of Coronavirus {-}
+## Learning in a Time of Coronavirus 
 
 Everything is awful right now. None of us signed up for this. None of us are really okay, **we're all just pretending for everyone else.**
 
@@ -68,7 +68,7 @@ Given these objectives, this course fulfills all three of the learning outcomes 
 
 See my [tips for success in this course](/reference#tips). 
 
-# Required Course materials {-}
+# Required Course materials 
 
 This course requires regular online internet access. If you know you will be unable to access the internet regularly, please let me know and we can make arrangements.
 
@@ -76,13 +76,13 @@ You can find all course materials at my **dedicated website** for this course: [
 
 My lecture slides will be shared with you, and serve as your primary resource, but our main "textbook" below is **recommended** as the next best resource and will be available from the campus bookstore. I will discuss more about textbooks and materials in the first module.
 
-## Books {-}
+## Books 
 
 1. Goolsbee, Austan, Steven Levitt, and Chad Syverson, 2012, *Microeconomics* 2nd ed, USA: Worth Publishers, ISBN: 978-1464187025
 
 You are welcome to purchase the book by other means (e.g. Amazon, half.com, etc). I have no financial stake in requiring you to purchase this book. You are welcome to use previous version of the book, but carefully verify the reading assignments, as the material may be different across versions.
 
-# Assignments and Grades {-}
+# Assignments and Grades 
 
 Your final course grade is the weighted average of the following assignments. You can find general descriptions for all the assignments on the [assignments page](http://microF20.classes.ryansafner.com/assignments/) and more specific information and examples on each assignment's page on the [schedule page](http://microF20.classes.ryansafner.com/schedule/). 
 
@@ -132,25 +132,25 @@ See also my [<i class="fas fa-calculator"></i> `Grade Calculator`](https://ryans
 
 These grades are firm cutoffs, but I do of course round upwards $(\geq$ 0.5) for final grades. A necessary reminder, as an academic, I am not in the business of *giving* out grades, I merely report the grade that you *earn*. I will not alter your grade unless you provide a reasonable argument that I am in error (which does happen from time to time). 
 
-## Homeworks {-}
+## Homeworks 
 
 There will be roughly a homework assignment for every lesson. These questions will help check your understanding and mastery of the material, and will be a combination of quantitative, graph, and short answer questions of examples. These will also be good indicators of what to expect on the exams. You may collaborate with other students to work on homeworks, but each person must turn in an individual assignment. Homeworks are due one week from the class period where we finish a lesson, and must be turned in at the beginning of class. Homeworks will be graded by the T.A. as follows: 70% of the grade for completion, and 30% for one randomly selected question. This is to reward students for putting in a full faith effort to try to reach an answer, even if not every answer ends up being correct.
 
 Homeworks are generally due by 11:59 PM Sunday by email. Please type your answers to the following questions in a document and email a PDF attachment to me.^[In MS Word, or Pages, or most word processing software, File -> Save As -> PDF, or File -> Export -> PDF.] You may still handwrite answers if you will be able to scan and email them, as a PDF, if they are easily readable, but this is not preferred. It will be much easier for me to grade, annotate, and return to you as a PDF, so please save me some trouble. For the few questions that ask you to draw a graph, try to do so on your computer (use MS Paint, the drawing tools in MS Word or MS Powerpoint, plot points in MS Excel, drawing/notetaking apps, etc.), and save it as an image to include on your homework document. Again, they need not be perfect or to scale, just show that you understand the broad idea. Being able to understand and sketch the graphs is still a very important and useful skill! If all else fails, I will be lenient in grading graph questions if you are unable to technologically include a graph.
 
-## Exams {-}
+## Exams 
 
 There will be three exams (one at the end of each unit) including the final exam. Each exam only covers the material in its associated unit (i.e. no exam is cumulative). These exams provide feedback both to you and to me that ensures everyone is progressing on schedule and apprehending the material. This is critical, as the rest of the course, and indeed, any future economics course you take, will build off of this foundation.
 
 Exams will be released **on Blackboard** as a timed assignment. You will have 2 hours once you open the exam on Blackboard. You will not need the whole time, I have given you some extra to accomodate the difficulties of taking an exam at home. Please pick a time to take it where you know you will have 2 hours. You may close the exam page and come back to it, but the timer will continue to run once the exam is first opened.
 
-## Opinion-Editorial {-}
+## Opinion-Editorial 
 
 Economic fallacies have always been popular, and journalists, politicians, and talking heads consistently engage in faulty economic reasoning in print and on television. Your task, as a student of economics, is to find some issue discussed in the past year, and write a critique of media discussion of that issue. Alternatively, instead of critiquing the reasoning or statements of others, you may write an advocacy piece, where you propose some economic policy and argue to persuade readers to endorse it. You will be graded both on the soundness of your economic reasoning and the quality of your writing. I would be happy to co-author an Op-Ed with anyone who writes an exemplary Op-Ed. Students who successfully publish their work in a media outlet will earn *extra credit* on their Op-Ed grade. I will provide ample resources and examples to help you accomplish this, you can find more on the [assignment page]().
 
-## No extra credit is available {-}
+## No extra credit is available 
 
-# Policies and Expectations {-}
+# Policies and Expectations 
 
 This syllabus is a contract between you, the student, and me, your instructor. It has been carefully and deliberately thought out^[A syllabus can and will be used as a legal document for disputes tried at a court of law. Ask me how I know.], and I will uphold my end of the agreement and expect you to uphold yours. 
 
@@ -164,7 +164,7 @@ If you are unable to make a particular class, you generally do not need to let m
 
 All assignmnents are able to be completed **asynchronously** during the week, and are **generally due by 11:59PM Sunday each week** to allow you flexibility in your hectic schedules.
 
-## Late Assignments {-}
+## Late Assignments 
 
 I will accept late assignments, but will subtract a specified amount of points as a penalty. Even if it is the last week of the semester, I encourage you to turn in late work: some points are better than no points!
 
@@ -174,11 +174,11 @@ I will accept late assignments, but will subtract a specified amount of points a
 
 **Op-eds**: Starting at the deadline, I will take off 1 point for every hour that your Op-ed is late.
 
-## Grading {-}
+## Grading 
 
 I will try my best to post grades on Blackboard's Grading Center and return graded assignments to you within about one week of you turning them in. There will be exceptions. Where applicable, I will post answer keys once I know most homeworks are turned in (see Late Assignments above for penalties). Blackboard's Grading Center is the place to look for your most up-to-date grades. See also my [<i class="fas fa-calculator"></i> `Grade Calculator`](https://ryansafner.shinyapps.io/306_grade_calculator/) app where you can calculate your overall grade using existing assignment grades and forecast "what if" scenarios.
 
-## Communication: Email, Slack, and Virtual Office Hours {-}
+## Communication: Email, Slack, and Virtual Office Hours 
 
 Students must regularly monitor their **Hood email accounts** to receive important college information, including messages related to this class. Email through the Blackboard system is my main method of communicating announcements and deadlines regarding your assignments. **Please do not reply to any automated Blackboard emails - I may not recieve it!**. My Hood email (`safner@hood.edu`) is the best means of contacting me. I will do my best to respond within 24 hours. If I do not reply within 48 hours, do not take it personally, and *feel free to send a follow up email* in the very likely event that I genuinely did not see your original message.
 
@@ -190,7 +190,7 @@ Watch this excellent and accurate video explaining office hours:
 
 <iframe src="https://player.vimeo.com/video/270014784" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-## Netiquette {-}
+## Netiquette 
 
 When using Zoom and Slack, please follow appropriate internet etiquette ("Netiquette"). Written communications, like blog posts or use of the Zoom chat, lacks important nonverbal cues (such as body language, tone of voice, sarcasm, etc). 
 
@@ -200,7 +200,7 @@ Posting content that is wilfully incindiary, illegal, or that constitutes academ
 
 When using the chat function on Zoom or public Slack channels, please treat it as official course communications, even though I may not be grading it. It may be a quick and informal tool - don't feel you need to worry about spelling or perfect grammar - but please try to avoid *too* informal "text-speak" (i.e. say "That's good for you" instead of "thas good 4 u").
 
-## Privacy {-}
+## Privacy 
 
 [Maryland law](https://www.execvision.io/blog/maryland-call-recording-laws/) [requires](https://law.justia.com/codes/maryland/2005/gcj/10-402.html) all parties consent for a conversation or meeting to be recorded. If you join in, and certainly if you participate, **you are consenting to be recorded.** However, as described below, videos are *not accessible* beyond our class.
 
@@ -214,19 +214,19 @@ The [Family Educational Rights and Privacy Act](https://www2.ed.gov/policy/gen/g
 
 Many of you may be tuning in remotely, living with parents, and may have occasional interruptions due to sharing a space. This is normal and fine, but know that I will protect your privacy and not discuss your performance when parents (or anyone other than you, for that metter) are present, without your explicit consent.
 
-## Enrollment {-}
+## Enrollment 
 
 Students are responsible for verifying their enrollment in this class. The last day to add or drop this class with no penalty is **Tuesday, September 3**. Be aware of [important dates](https://www.hood.edu/offices-services/registrars-office/academic-calendar).
 
-## Honor Code {-}
+## Honor Code 
 
 Hood College has an Academic Honor Code which requires all members of this community to maintain the highest standards of academic honesty and integrity. Cheating, plagiarism, lying, and stealing are all prohibited.  All violations of the Honor Code are taken seriously, will be reported to appropriate authority, and may result in severe penalties, including expulsion from the college. See [here](http://hood.smartcatalogiq.com/en/2016-2017/Catalog/The-Spirit-of-Hood/The-Academic-Honor-Code-and-Code-of-Conduct) for more detailed information.
 
-## Van Halen and M&Ms {-}
+## Van Halen and M&Ms 
 
 When you have completed reading the syllabus, email me a picture of the band Van Halen and a picture of a bowl of M&Ms. If you do this *before* the date of the first exam, you will get bonus points on the exam.^[If 75-100% of the class does this, you each get 2 points. If 50-75% of the class does this, you each get 4 points. If 25-50% of the class does this, you each get 6 points. If 0-25% of the class does this, you each get 8 points.] Yes, this is real.
 
-## Accessibility, Equity, and Accommodations {-}
+## Accessibility, Equity, and Accommodations 
 
 College courses can, and should, be challenging and bring you out of your comfort zone in a safe and equitable environment. If, however, you feel at any point in the semester that certain assignments or aspects of the course will be disproportionately uncomfortable or burdensome for you due to any factor beyond your control, please come see me or email me. I am a very understanding person and am happy to work out a solution together. I reserve the right to modify and reweight assignments at my sole discretion for students that I belive would legitimately be at a disadvantage, through no fault of their own, to complete them as described.
 
@@ -234,7 +234,7 @@ If you are unable to afford required textbooks or other resources for any reason
 
 This course is intended to be accessible for all students, including those with mental, physical, or cognitive disabilities, illness, injuries, impairments, or any other condition that tends to negatively affect one's equal access to education. If at any point in the term, you find yourself not able to fully access the space, content, and experience of this course, you are welcome to contact me to discuss your specific needs. I also encourage you to contact the [Office of Accessibility Services](https://www.hood.edu/academics/josephine-steiner-center-academic-achievement-retention/accessibility-services) (301-696-3421). If you have a diagnosis or history of accommodations in high school or previous postsecondary institutions, Accessibility Services can help you document your needs and create an accommodation plan. By making a plan through Accessibility Services, you can ensure appropriate accommodations without disclosing your condition or diagnosis to course instructors.
 
-## ACBSP Information {-}
+## ACBSP Information 
 
 ![](https://microf20.classes.ryansafner.com/images/acbsp.png)
 
@@ -242,7 +242,7 @@ Hood College is an accredited member of the Accreditation Council for Business S
 
 Pragmatically, our accreditation means that we will engage in the ongoing use of measures, both quantitative and qualitative in nature, to assess the performance of our students and the program. We ask that you take very seriously the surveys and other measurement devices we will use – your best work and honest response will help us best assess and improve our program.
 
-# Tentative Schedule {-}
+# Tentative Schedule 
 
 Below is a rough sketch of the weekly schedule we will aim to follow this semester. Each module should take approximately one class meeting. 
 
@@ -275,7 +275,7 @@ schedule <- tribble(
 #linebreak("a;b")
 schedule %>%
 #  mutate_all(linebreak) %>%
-  knitr::kable(.,format="latex",
+  knitr::kable(.,format="html",
         booktabs=TRUE
         #escape = FALSE)
   )
