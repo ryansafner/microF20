@@ -1,0 +1,24 @@
+---
+title: "1.1. The Tools of Microeconomics"
+citeproc: false
+bibliography: ../../static/bib/references.bib
+csl: ../../static/bib/chicago-syllabus-no-bib.csl
+output:
+  blogdown::html_page:
+    template: ../../pandoc/toc-title_html.template
+    toc: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Overview
+
+An introduction to the course and the tools we use in microeconomics.
+
+# Slides
+
+- [<i class="fas fa-external-link-square-alt"></i> Lecture Slides](/slides/1.1-slides.html)
+
+# Preliminary Survey
+
+Please take the [preliminary survey](/assignment/preliminary-survey) on your math background. This will help us all have a productive course together.
