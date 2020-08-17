@@ -629,7 +629,7 @@ class: inverse, center, middle
 
 .pull-left[
 .center[
-![](../images/math_survey.png)
+![](../images/mathsurvey.png)
 ]
 ]
 
@@ -782,6 +782,39 @@ class: inverse, middle, center
 
 ---
 
+# Logistics: Hybrid Course
+
+.smaller[
+- .hi[hybrid]: more .hi-purple[synchronous] material than .hi-turquoise[asynchronous] material
+
+- I will always be teaching .hi[remotely]
+  - A classroom is available to you
+  - I may make occasional visits to campus if you *need* something in person (TBD)
+
+- Office hours: Tu/Th 3:30-5:00 PM on Zoom
+  - <i class="fas fa-video"></i> Zoom link in Blackboard's `LIVE CLASS SESSIONS` link
+  - <i class="fab fa-slack"></i> Slack channels
+
+- Teaching Assistant(s): TBD
+  - grade HWs & hold (likely virtual) office hours
+]
+
+---
+
+# Logistics: Hybrid Course
+
+- We will have .hi-purple[synchronous] sessions Mon/Wed 2:00-3:15 PM on **<i class="fas fa-video"></i> Zoom**
+
+- Lecture videos will be posted on **Blackboard** via Panopto for students unable to join synchronously
+  - If you were present, you do not need to watch the video (again)!
+  - You are not *required* to attend synchronously, but it will help you
+
+- All graded assignments are .hi-turquoise[asynchronous]
+  - (Probably) submitted on Blackboard by 11:59 PM Sundays
+  - (Probably) timed exams on Blackboard
+
+---
+
 # Learning Goals
 
 By the end of this course, you will: 
@@ -820,18 +853,16 @@ knitr::kable(assignments, "html")
 
 # Course Website
 
-
 .pull-left[
 .center[
 ![:scale 60%](https://microF20.classes.ryansafner.com/images/micro_hex.png)
-
 
 ]
 ]
 
 .pull-right[
 .center[
-![](https://www.dropbox.com/s/8s6mhkoivt18cub/micro_website.png?raw=1)
+![](../images/microwebsite.png)
 ]
 ]
 
@@ -868,7 +899,3 @@ knitr::kable(assignments, "html")
 .center[
 ![:scale 75%](../images/micro_flowchart_blankbg.png)
 ]
-
-```{r make-pdfs}
-pagedown::chrome_print("https://microf20.classes.ryansafner.com/slides/1.1-slides.html")
-```
