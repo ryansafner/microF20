@@ -3,7 +3,6 @@ lessons:
     header: True
 
   - title: "Preliminary Survey"
-    assignment: "00-preliminary-survey"
 
   - title: "1.1 The Tools of Microeconomics"
     class: "1.1-class"
@@ -75,6 +74,6 @@ lessons:
 
   - title: '<i class="fas fa-laptop-code"></i> **Problem Set 6** (UNGRADED, for Practice Only)'
 
-  - title: '<i class="fas fa-laptop-code"></i> **Op-Ed due by Fri May 1 by Email**'
+  - title: '<i class="fas fa-laptop-code"></i> **Op-Ed Due**'
 
   - title: '<i class="fas fa-star"></i> **Final Exam**'
