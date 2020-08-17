@@ -869,6 +869,6 @@ knitr::kable(assignments, "html")
 ![:scale 75%](../images/micro_flowchart_blankbg.png)
 ]
 
-```{r}
-
-` make-pdfs``pagedown::chrome_print("1.1-slides.html", output = "1.1-slides.pdf")
+```{r make-pdfs}
+pagedown::chrome_print("https://microf20.classes.ryansafner.com/slides/1.1-slides.html")
+```

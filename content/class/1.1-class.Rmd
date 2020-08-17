@@ -11,15 +11,23 @@ editor_options:
   chunk_output_type: console
 ---
 
+*Monday, August 17, 2020*
+
 # Overview
 
-An introduction to the course and the tools we use in microeconomics.
+Welcome to ECON 306 - Microeconomic Analysis! Today's lesson will be an introduction to the course and the tools we use in microeconomics.
+
+If you have not done so, please watch my welcome video, read the announcements in Blackboard, take my survey, and join our class slack channel.
 
 # Slides
 
 - [<i class="fas fa-external-link-square-alt"></i> View Lecture Slides](/slides/1.1-slides.html)
 - [<i class="fas fa-file-pdf"></i> Download as PDF](/slides/1.1-slides.pdf)
 
-# Preliminary Survey
+# Livestream
 
-Please take the [preliminary survey](/assignment/preliminary-survey) on your math background. This will help us all have a productive course together.
+The live class <i class="fas fa-video"></i> Zoom meeting link can be found on Blackboard (see `LIVE ZOOM MEETINGS` on the left navigation menu), starting at 2:00 PM.
+
+<!--# Preliminary Survey
+
+Please take the [preliminary survey](/assignment/preliminary-survey) on your math background. This will help us all have a productive course together. -->
