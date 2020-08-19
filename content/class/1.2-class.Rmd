@@ -1,0 +1,39 @@
+---
+title: "1.2 — Scarcity, Choice, and Cost — Class Notes"
+citeproc: false
+bibliography: ../../static/bib/references.bib
+csl: ../../static/bib/chicago-syllabus-no-bib.csl
+output:
+  blogdown::html_page:
+    template: ../../pandoc/toc-title_html.template
+    toc: true
+editor_options: 
+  chunk_output_type: console
+---
+
+*Wednesday, August 19, 2020*
+
+# Overview
+
+Before we jump into our optimization models to descibe and predict (changes in) individual choices and behavior, we cover the basic principles of choice and action in a world of scarcity. This is what motivates economics.
+
+# Readings
+
+This week is all introductory, but you may look at Chapter 1 if you wish. If you have not read Bastiat's *What is Seen and What is Unseen*, I highly suggest you read it this weekend (it is quite short). Find it at today's [readings page](/reading/1.2-reading)
+
+# Slides
+
+- [<i class="fas fa-chalkboard-teacher"></i> View Lecture Slides](/slides/1.2-slides.html)
+- [<i class="fas fa-file-pdf"></i> Download as PDF](/slides/1.2-slides.pdf)
+
+# Live Class Session on Zoom
+
+The live class <i class="fas fa-video"></i> Zoom meeting link can be found on Blackboard (see `LIVE ZOOM MEETINGS` on the left navigation menu), starting at 2:00 PM.
+
+If you are unable to join today's live session, or if you want to review, you can find the recording stored on Blackboard via Panopto (see `Class Recordings` on the left navigation menu).
+
+# Assignments
+
+## Preliminary Survey
+
+Please take the [preliminary survey](/assignment/00-preliminary-survey) on your math background by 11:59 PM Sunday. This will help us all have a productive course together.
