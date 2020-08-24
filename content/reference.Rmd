@@ -22,5 +22,5 @@ Look here over the course of the semester for resources, links, and tips on how 
 
 # Math Resources
 
-- [Math Review Guide](https://microf19.classes.ryansafner.com/files/math_review_guide.pdf)
-- [Preliminary Math Survey Answers](https://microf19.classes.ryansafner.com/assignment/preliminary-survey-answers.html)
+- [Math Review Guide](https://microf20.classes.ryansafner.com/files/math_review_guide.pdf)
+- [Preliminary Math Survey Answers](https://microf20.classes.ryansafner.com/assignment/preliminary-survey-answers.html)
