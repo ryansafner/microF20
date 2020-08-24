@@ -8,7 +8,7 @@ output:
     mathjax: "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML" # rescales math with css changes https://github.com/yihui/xaringan/issues/143
     lib_dir: libs
     #seal: false
-    css: [custom.css, custom-fonts.css, "hygge"] #, metropolis, metropolis-fonts
+    css: [custom.css, "hygge"] #, metropolis, metropolis-fonts
     nature:
       beforeInit: ["macros.js", "https://platform.twitter.com/widgets.js"] # first is for rescaling images , second is for embedding tweets, https://github.com/yihui/xaringan/issues/100
       highlightStyle: ocean #rainbow #monokai rainbow solarized-light #tomorrow-night -blue -eighties zenburn
