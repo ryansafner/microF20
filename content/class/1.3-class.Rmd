@@ -1,0 +1,35 @@
+---
+title: "1.3 — Budget Constraint — Class Notes"
+citeproc: false
+bibliography: ../../static/bib/references.bib
+csl: ../../static/bib/chicago-syllabus-no-bib.csl
+output:
+  blogdown::html_page:
+    template: ../../pandoc/toc-title_html.template
+    toc: true
+editor_options: 
+  chunk_output_type: console
+---
+
+*Monday, August 24, 2020*
+
+# Overview
+
+We begin with an overview of constrained optimization models and our first application, how individuals choose. Our primary focus will be people as consumers - how do they choose to spend their money and how do those choices change? While we will focus extensively on consumers making purchasing choices, do not think this is the only use of this type of model! Today we will cover the *constraints* in the model.
+
+# Slides
+
+- [<i class="fas fa-chalkboard-teacher"></i> View Lecture Slides](/slides/1.3-slides.html)
+- [<i class="fas fa-file-pdf"></i> Download as PDF](/slides/1.3-slides.pdf)
+
+# Practice Problems
+
+Today you will be working on [practice problems](/practice/1.3-practice.html). Answers will be posted later.
+
+# Math Survey Results
+
+["Answers"](/assignment/preliminary-survey-answers.html) for the math survey have been posted, including some summaries of how your classmates feel.
+
+# Math Review
+
+As we are beginning to work with math tools (graphing, algebra, linear equations, etc), I have posted a [math review guide](/files/math_review_guide.pdf)^[Also now linked to on the [Reference](/reference) page] for all of the mathematical tools that are necessary for the class. It is fairly comprehensive, and in a more conceptual order than chronological order. You will not need to recall/understand everything right now, but it may be handy to consult over the semester as we introduce new economic concepts using different mathematical tools.

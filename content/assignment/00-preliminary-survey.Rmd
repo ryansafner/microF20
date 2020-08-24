@@ -17,7 +17,7 @@ This is an *ungraded* and *anonymous* survey for me to evaluate the distribution
 **Please submit your answers in [this Google Form](https://forms.gle/XNrWY8HH95Y7GgrT7)**. Feel free to download the PDF and work out the problems on paper first.^[Ordinarily I would have you submit paper copies in class to maintain anonymity, but this is the best method right now instead of email or Blackboard.]
 
 - [<i class="fas fa-file-pdf"></i> `Download as PDF`](/assignment/preliminary-survey.pdf)
-<!-- - [<i class="far fa-life-ring"></i> `Answer Key`](/homeworks/preliminary-survey-answers.html) -->
+<- [<i class="far fa-life-ring"></i> `Answer Key`](/homeworks/preliminary-survey-answers.html)
 
 # 1
 
@@ -47,7 +47,7 @@ $$Z=\frac{0.5X^{-0.5} Y^{0.5}}{0.5X^{0.5}Y^{-0.5}}$$
 For the function $f(x) = 3x^2+2x-7$: 
 
 a. Take the derivative of $f(x)$, i.e. $f'(x)$. 
-b. In English, describe what the derivative of $f(x)$ means
+b. In English, describe what the derivative of $f(x)$ means.
 c. Evaluate $f'(4)$. In English, describe what this means. 
 
 # 6
