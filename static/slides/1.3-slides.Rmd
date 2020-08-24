@@ -41,6 +41,18 @@ theme_slides <- theme_classic() +
 
 ```
 
+class: inverse
+
+# Outline
+
+### [Rational Choice Theory](#5)
+### [Constrained Optimization](#8)
+### [Consumer Behavior: Basic Framework](#23)
+### [The Budget Constraint](#27)
+### [Changes in Parameters](#42)
+
+---
+
 # The Two Major Models of Economics as a "Science"
 
 .pull-left[
@@ -99,7 +111,7 @@ class: inverse, center, middle
 .pull-right[
 
 .center[
-![:scale 100%](../groceryaisle.jpg)
+![:scale 100%](../images/groceryaisle.jpg)
 ]
 ]
 
@@ -162,8 +174,6 @@ class: inverse, center, middle
 > consumer, business firm, politician, judge, bureaucrat, voter, dictator, pirate, drug cartel, drug addict, parent, child, etc
 
 - .hi-purple[Key economic skill: recognizing how to apply the model to a situation]
-
-- Luckily, all models have a common setup...
 
 ]
 
@@ -574,6 +584,24 @@ $$p_x x+p_y y \leq m$$
 
 $$p_x x+p_y y \leq m$$
 
+]
+
+.pull-right[
+.center[
+![:scale 100%](../images/groceryaisle.jpg)
+]
+]
+
+---
+
+# The Budget Set & the Budget Constraint
+
+.pull-left[
+
+- The set of *all* affordable bundles that a consumer can choose is called the .hi[budget set] or .hi[choice set]
+
+$$p_x x+p_y y \leq m$$
+
 - The .hi[budget *constraint*] is the set of all bundles that spend *all income* $m$:<sup>.hi[†]</sup>
 
 $$p_x x+p_y y = m$$
@@ -586,7 +614,7 @@ $$p_x x+p_y y = m$$
 ]
 ]
 
-.footnote[<sup>.hi[†]</sup> Note the difference (the in/equality), budget *constraint* is the subset of the *budget set* that *spends all income*.]
+.footnote[<sup>.hi[†]</sup> Note the difference (the in/equality), budget *constraint* is the **subset** of the *budget set* that *spends all income*.]
 
 ---
 
@@ -752,6 +780,8 @@ ggplot(data.frame(x=c(0,m/px)), aes(x=x))+
   geom_polygon(data=fill, aes(x=x, y=y),fill="green", alpha=0.4)+
   stat_function(fun=BC, geom="line", size=2, aes(color="BC"))+
   annotate("text", x = (0.5*(m/px)+1.75), y = BC(0.5*(m/px)), label = expression(paste("slope =", - p[x]/p[y])), color="blue", size =7)+
+  geom_label(x = 2, y = BC(2), color = "blue", label = "Budget \n Constraint")+
+  geom_label(x = 2, y = 1, color = "green", label = "Budget Set")+
   scale_x_continuous(breaks = c(0,(m/px)),
                      labels = c(0,expression(m/p[x])),
                      expand=expand_scale(mult=c(0,0.1)))+
