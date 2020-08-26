@@ -206,6 +206,8 @@ $$a=\begin{pmatrix}
 ]
 
 - .hi[*Preferences*] **are a list of all such comparisons between all bundles**
+
+See appendix in [today's class page](http://microf20.classes.ryansafner.com/class/1.4-class) for more details.
 ]
 
 .pull-right[
@@ -891,7 +893,7 @@ class: inverse, center, middle
 
 ---
 
-# Marginal Rate of Substitution vs. Budget Constraint Slope
+# MRS vs. Budget Constraint Slope
 
 .pull-left[
 
@@ -1548,7 +1550,7 @@ ggplot(data.frame(x=c(0,5)), aes(x=x))+
 
 - .hi[Perfect complements]: goods that can be consumed together in same fixed proportion and yield same utility
 
-- $MRS_{H,B}=$ ?
+- `\\(MRS_{H,B}=\\)` ?
 
 ]
 
