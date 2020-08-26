@@ -11,7 +11,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r setup}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=F,
                       message=F,
                       warning=F)
@@ -46,16 +46,16 @@ Answers from [last class’ practice problems](/practice/1.4-practice) (on budge
 
 We have defined preferences as being **strictly** one of the following possibilities:
 
-1. $a \succ b$
-2. $a \prec b$
-3. $a \sim b$
+1. $a \succ b$ ($a$ is *strictly* preferred over *b*)
+2. $a \prec b$ ($b$ is *strictly* preferred over *a*)
+3. $a \sim b$ (indifferent between *a*)
 
 You can also have **weak** preferences, such as 
 
-1. $a \succeq b$
-2. $a \preceq b$
+1. $a \succeq b$ ($a$ is *at least as preferred* as (or “weakly preferred over” $b$)
+2. $a \preceq b$ ($b$ is *at least as preferred* as (or “weakly preferred over” $a$)
 
-These would be read as “*a* is at least as good as *b*” and “*b* is at least as good as *a*.” These are more technically complete, but it is much more simple for us to focus on strong preferences, and we don't lose much by doing so.
+These are more technically complete, but it is much more simple for us to focus on strong preferences, and we don't lose much by doing so.
 
 ### Assumptions of “Well-behaved Preferences”
 
@@ -113,7 +113,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   theme_classic(base_family = "Fira Sans Condensed", base_size=20)
 ```
 
-Of course, this means that this entire graph is *full* of indifference curves - every single possible point is on *some* indifference curve (and this whole graph would just be a solid block of blue). Naturally, it's pointless to draw all the indifference curves, we just want to show a few to make our analysis meaningful. But the general idea comes from assumption 2 of preferences: *any two bundles can be compared*, as we can compare two points on this graph and make a judgment.
+Of course, this means that this entire graph is *full* of indifference curves - every single possible point is on *some* indifference curve (and this whole graph would just be a solid block of black). Naturally, it's pointless to draw all the indifference curves, we just want to show a few to make our analysis meaningful. But the general idea comes from assumption 2 of preferences: *any two bundles can be compared*, as we can compare two points on this graph and make a judgment.
 
 2. **Indifference curves are monotonic**, which means practically that “more is preferred to less”
 
@@ -253,9 +253,138 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   theme_classic(base_family = "Fira Sans Condensed", base_size=20)
 ```
 
+## Steepness & Indifference Curves for Neutrals
 
+The Steepness of indifference curves tells us how consumers trade off between goods.
+
+```{r, echo=F, fig.retina=3, fig.height=5, fig.align="center"}
+points_1<-tribble(
+  ~letter, ~x, ~y,
+  "A", 2, 2,
+  "B", 2, 4
+)
+
+vert<-ggplot(data.frame(x=c(0,5)), aes(x=x))+
+  geom_segment(aes(x=2, xend=2, y=0, yend=5), color="blue", size=2)+
+  geom_segment(aes(x=4, xend=4, y=0, yend=5), color="green", size=2)+
+  geom_point(data = points_1,
+             mapping=aes(x=x, y=y),
+             size = 3)+
+  geom_text_repel(data = points_1,
+             mapping=aes(x=x, y=y,
+             label = letter),
+             size = 6)+
+  scale_x_continuous(breaks=seq(0,5,1),
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,5,1),
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  labs(x = "Movie Tickets",
+       y = "Movie Downloads")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+
+points_2<-tribble(
+  ~letter, ~x, ~y,
+  "A", 2, 2,
+  "B", 4, 2
+)
+
+hor<-ggplot(data.frame(x=c(0,5)), aes(x=x))+
+  geom_segment(aes(x=0, xend=5, y=2, yend=2), color="blue", size=2)+
+  geom_segment(aes(x=0, xend=5, y=4, yend=4), color="green", size=2)+
+  geom_point(data = points_2,
+             mapping=aes(x=x, y=y),
+             size = 3)+
+  geom_text_repel(data = points_2,
+             mapping=aes(x=x, y=y,
+             label = letter),
+             size = 6)+
+  scale_x_continuous(breaks=seq(0,5,1),
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,5,1),
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  labs(x = "Movie Tickets",
+       y = "Movie Downloads")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+
+library(patchwork)
+vert+hor
+```
+
+Perfectly vertical curves (left) $\implies$ indifference between having more (point B) or fewer (point A) downloads. There is no tradeoff a person would make to acquire more Downloads, they truly *do not care* about them at all. Thus, on the left graph, Downloads would be a neutral.
+
+Perfectly horizontal curves (right) $\implies$ indifference between having more (point B) or fewer (point A) Tickets. There is no tradeoff a person would make to acquire more Tickets, they truly do not care about them at all. Thus, on the right graph, Tickets would be a neutral.
+
+We can look at less extreme cases:
+
+```{r, echo=F, fig.retina=3, fig.height=5, fig.align="center"}
+IC_flat_1<-function(x){2/x+1}
+IC_flat_2<-function(x){2/x+2}
+IC_flat_3<-function(x){2/x+3}
+
+flat<-ggplot(data.frame(x=c(0,5)), aes(x=x))+
+  stat_function(fun=IC_flat_1, geom="line", size=2, color = "#453781FF")+
+  stat_function(fun=IC_flat_2, geom="line", size=2, color = "#2D708EFF")+
+  stat_function(fun=IC_flat_3, geom="line", size=2, color = "#20A387FF")+
+  geom_segment(aes(x=1, xend=1, y=3, yend=2), size=1, linetype="dashed", color="red")+
+  geom_segment(aes(x=1, xend=2, y=2, yend=2), size=1, linetype="dashed", color="red")+
+  geom_text(aes(x=1.5, y=1.75), color="red", size=6, label=expression(paste(Delta, "T")))+
+  geom_text(aes(x=0.75, y=2.5), color="red", size=6, label=expression(paste(Delta, "D")))+
+  scale_x_continuous(breaks=seq(0,5,1),
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,5,1),
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  labs(x = "Movie Tickets",
+       y = "Movie Downloads")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+
+IC_steep_1<-function(x){4/x}
+IC_steep_2<-function(x){4/x+1}
+IC_steep_3<-function(x){4/x+2}
+steep<-ggplot(data.frame(x=c(0,5)), aes(x=x))+
+  stat_function(fun=IC_steep_1, geom="line", size=2, color = "#453781FF")+
+  stat_function(fun=IC_steep_2, geom="line", size=2, color = "#2D708EFF")+
+  stat_function(fun=IC_steep_3, geom="line", size=2, color = "#20A387FF")+
+  geom_segment(aes(x=1, xend=1, y=4, yend=2), size=1, linetype="dashed", color="red")+
+  geom_segment(aes(x=1, xend=2, y=2, yend=2), size=1, linetype="dashed", color="red")+
+  geom_text(aes(x=1.5, y=1.75), color="red", size=6, label=expression(paste(Delta, "T")))+
+  geom_text(aes(x=0.75, y=3), color="red", size=6, label=expression(paste(Delta, "D")))+
+  scale_x_continuous(breaks=seq(0,5,1),
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,5,1),
+                     limits=c(0,5),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  labs(x = "Movie Tickets",
+       y = "Movie Downloads")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+
+flat+steep
+```
+
+
+On the left graph, the flatter curve implies the person is willing to give up *only a few* Downloads to obtain more Tickets (and vice versa). $MRS_{T,D}$ (slope) is small, indicating downloads are more highly valued relative to tickets.
+
+On the right graph, the steeper curve implies the person is willing to give up *a lot* Downloads to obtain more Tickets (and vice versa). $MRS_{T,D}$ (slope) is large, indicating downloads are less valued relative to tickets. 
 
 # Math Appendix
+
+## Derivation of MRS Equation (as ratio of marginal utilities)
+
+Consider a movement along an indifference curve, how would this change affect utility? There will be a change in $x$ and a change in $y$, and multiplying the marginal utility of each, and adding these together will give us our total change in utility. But we know that if we are on the same indifference curve, moving along the curve will *not change utility* (all points on the curve are defined as having the same utility!). So rearrange the equation as follows:
+
+$$\begin{align*}
+MU_x \Delta x+MU_y\Delta y&= \Delta u && \text{Measuring change in utility} \\
+MU_x \Delta x+MU_y \Delta y &=0 && \text{But change in utility is 0}\\
+MU_y \Delta y&= -MU_{x} \Delta x && \text{Subtracting x terms}\\
+\underbrace{\frac{\Delta y}{\Delta x}}_{MRS} &= -\frac{MU_{x}}{MU_{y}} && \text{Dividing to get like terms on each side}\\ \end{align*}$$
+
+Notice rise over run, $\frac{\Delta y}{\Delta x}$, is the slope, which we have defined as the marginal rate of substitution (MRS). $\blacksquare$
 
 ## Utility Functions and PMTs
 

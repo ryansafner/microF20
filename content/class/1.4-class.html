@@ -21,74 +21,6 @@ editor_options:
 <script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
 <link href="/rmarkdown-libs/plotly-htmlwidgets-css/plotly-htmlwidgets.css" rel="stylesheet" />
 <script src="/rmarkdown-libs/plotly-main/plotly-latest.min.js"></script>
-<style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    background-color: #ffffff;
-    color: #a0a0a0;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
-div.sourceCode
-  { color: #1f1c1b; background-color: #ffffff; }
-@media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span. { color: #1f1c1b; } /* Normal */
-code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
-code span.an { color: #ca60ca; } /* Annotation */
-code span.at { color: #0057ae; } /* Attribute */
-code span.bn { color: #b08000; } /* BaseN */
-code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
-code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #924c9d; } /* Char */
-code span.cn { color: #aa5500; } /* Constant */
-code span.co { color: #898887; } /* Comment */
-code span.cv { color: #0095ff; } /* CommentVar */
-code span.do { color: #607880; } /* Documentation */
-code span.dt { color: #0057ae; } /* DataType */
-code span.dv { color: #b08000; } /* DecVal */
-code span.er { color: #bf0303; text-decoration: underline; } /* Error */
-code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
-code span.fl { color: #b08000; } /* Float */
-code span.fu { color: #644a9b; } /* Function */
-code span.im { color: #ff5500; } /* Import */
-code span.in { color: #b08000; } /* Information */
-code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
-code span.op { color: #1f1c1b; } /* Operator */
-code span.ot { color: #006e28; } /* Other */
-code span.pp { color: #006e28; } /* Preprocessor */
-code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
-code span.sc { color: #3daee9; } /* SpecialChar */
-code span.ss { color: #ff5500; } /* SpecialString */
-code span.st { color: #bf0303; } /* String */
-code span.va { color: #0057ae; } /* Variable */
-code span.vs { color: #bf0303; } /* VerbatimString */
-code span.wa { color: #bf0303; } /* Warning */
-</style>
 <!-- /BLOGDOWN-HEAD -->
 
 <h2>Contents</h2>
@@ -99,8 +31,10 @@ code span.wa { color: #bf0303; } /* Warning */
 <li><a href="#practice-problems">Practice Problems</a></li>
 <li><a href="#appendices">Appendices</a><ul>
 <li><a href="#material-on-preferences">Material on Preferences</a></li>
+<li><a href="#steepness-indifference-curves-for-neutrals">Steepness &amp; Indifference Curves for Neutrals</a></li>
 </ul></li>
 <li><a href="#math-appendix">Math Appendix</a><ul>
+<li><a href="#derivation-of-mrs-equation-as-ratio-of-marginal-utilities">Derivation of MRS Equation (as ratio of marginal utilities)</a></li>
 <li><a href="#utility-functions-and-pmts">Utility Functions and PMTs</a></li>
 <li><a href="#graphing-indifference-curves">Graphing Indifference Curves</a></li>
 <li><a href="#utility-functions-for-perfect-substitutes">Utility Functions for Perfect Substitutes</a></li>
@@ -110,71 +44,6 @@ code span.wa { color: #bf0303; } /* Warning */
 </ul>
 </div>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">echo=</span>F,</span>
-<span id="cb1-2"><a href="#cb1-2"></a>                      <span class="dt">message=</span>F,</span>
-<span id="cb1-3"><a href="#cb1-3"></a>                      <span class="dt">warning=</span>F)</span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="kw">library</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
-<pre><code>## ── Attaching packages ────── tidyverse 1.3.0 ──</code></pre>
-<pre><code>## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
-## ✓ tibble  3.0.3     ✓ dplyr   1.0.2
-## ✓ tidyr   1.1.1     ✓ stringr 1.4.0
-## ✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
-<pre><code>## ── Conflicts ───────── tidyverse_conflicts() ──
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">library</span>(<span class="st">&quot;mosaic&quot;</span>)</span></code></pre></div>
-<pre><code>## Loading required package: lattice</code></pre>
-<pre><code>## Loading required package: ggformula</code></pre>
-<pre><code>## Loading required package: ggstance</code></pre>
-<pre><code>## 
-## Attaching package: &#39;ggstance&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:ggplot2&#39;:
-## 
-##     geom_errorbarh, GeomErrorbarh</code></pre>
-<pre><code>## 
-## New to ggformula?  Try the tutorials: 
-##  learnr::run_tutorial(&quot;introduction&quot;, package = &quot;ggformula&quot;)
-##  learnr::run_tutorial(&quot;refining&quot;, package = &quot;ggformula&quot;)</code></pre>
-<pre><code>## Loading required package: mosaicData</code></pre>
-<pre><code>## Loading required package: Matrix</code></pre>
-<pre><code>## 
-## Attaching package: &#39;Matrix&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:tidyr&#39;:
-## 
-##     expand, pack, unpack</code></pre>
-<pre><code>## Registered S3 method overwritten by &#39;mosaic&#39;:
-##   method                           from   
-##   fortify.SpatialPolygonsDataFrame ggplot2</code></pre>
-<pre><code>## 
-## The &#39;mosaic&#39; package masks several functions from core packages in order to add 
-## additional features.  The original behavior of these functions should not be affected by this.
-## 
-## Note: If you use the Matrix package, be sure to load it BEFORE loading mosaic.
-## 
-## Have you tried the ggformula package for your plots?</code></pre>
-<pre><code>## 
-## Attaching package: &#39;mosaic&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:Matrix&#39;:
-## 
-##     mean</code></pre>
-<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
-## 
-##     count, do, tally</code></pre>
-<pre><code>## The following object is masked from &#39;package:purrr&#39;:
-## 
-##     cross</code></pre>
-<pre><code>## The following object is masked from &#39;package:ggplot2&#39;:
-## 
-##     stat</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     binom.test, cor, cor.test, cov, fivenum, IQR, median, prop.test,
-##     quantile, sd, t.test, var</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     max, mean, min, prod, range, sample, sum</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="kw">library</span>(<span class="st">&quot;ggrepel&quot;</span>)</span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="kw">update_geom_defaults</span>(<span class="st">&quot;label&quot;</span>, <span class="kw">list</span>(<span class="dt">family =</span> <span class="st">&quot;Fira Sans Condensed&quot;</span>))</span></code></pre></div>
 <p><em>Monday, August 24, 2020</em></p>
 <h2 id="overview">Overview</h2>
 <p>We begin with an overview of constrained optimization models and our first application, how individuals choose. Our primary focus will be people as consumers - how do they choose to spend their money and how do those choices change? While we will focus extensively on consumers making purchasing choices, do not think this is the only use of this type of model! Today we will cover the <em>constraints</em> in the model.</p>
@@ -193,16 +62,16 @@ code span.wa { color: #bf0303; } /* Warning */
 <h4 id="strict-vs.-weak-preferences">Strict vs. Weak Preferences</h4>
 <p>We have defined preferences as being <strong>strictly</strong> one of the following possibilities:</p>
 <ol style="list-style-type: decimal">
-<li><span class="math inline">\(a \succ b\)</span></li>
-<li><span class="math inline">\(a \prec b\)</span></li>
-<li><span class="math inline">\(a \sim b\)</span></li>
+<li><span class="math inline">\(a \succ b\)</span> (<span class="math inline">\(a\)</span> is <em>strictly</em> preferred over <em>b</em>)</li>
+<li><span class="math inline">\(a \prec b\)</span> (<span class="math inline">\(b\)</span> is <em>strictly</em> preferred over <em>a</em>)</li>
+<li><span class="math inline">\(a \sim b\)</span> (indifferent between <em>a</em>)</li>
 </ol>
 <p>You can also have <strong>weak</strong> preferences, such as</p>
 <ol style="list-style-type: decimal">
-<li><span class="math inline">\(a \succeq b\)</span></li>
-<li><span class="math inline">\(a \preceq b\)</span></li>
+<li><span class="math inline">\(a \succeq b\)</span> (<span class="math inline">\(a\)</span> is <em>at least as preferred</em> as (or “weakly preferred over” <span class="math inline">\(b\)</span>)</li>
+<li><span class="math inline">\(a \preceq b\)</span> (<span class="math inline">\(b\)</span> is <em>at least as preferred</em> as (or “weakly preferred over” <span class="math inline">\(a\)</span>)</li>
 </ol>
-<p>These would be read as “<em>a</em> is at least as good as <em>b</em>” and “<em>b</em> is at least as good as <em>a</em>.” These are more technically complete, but it is much more simple for us to focus on strong preferences, and we don’t lose much by doing so.</p>
+<p>These are more technically complete, but it is much more simple for us to focus on strong preferences, and we don’t lose much by doing so.</p>
 <h4 id="assumptions-of-well-behaved-preferences">Assumptions of “Well-behaved Preferences”</h4>
 <ol style="list-style-type: decimal">
 <li><p><strong>Reflexivity</strong> : any bundle is at least as preferred as itself</p></li>
@@ -220,7 +89,7 @@ code span.wa { color: #bf0303; } /* Warning */
 </ol>
 <p>Every possible bundle (point on graph) is on an indifference curve.</p>
 <p><img src="/class/1.4-class_files/figure-html/IC-ass-1-1.png" width="576" style="display: block; margin: auto;" /></p>
-<p>Of course, this means that this entire graph is <em>full</em> of indifference curves - every single possible point is on <em>some</em> indifference curve (and this whole graph would just be a solid block of blue). Naturally, it’s pointless to draw all the indifference curves, we just want to show a few to make our analysis meaningful. But the general idea comes from assumption 2 of preferences: <em>any two bundles can be compared</em>, as we can compare two points on this graph and make a judgment.</p>
+<p>Of course, this means that this entire graph is <em>full</em> of indifference curves - every single possible point is on <em>some</em> indifference curve (and this whole graph would just be a solid block of black). Naturally, it’s pointless to draw all the indifference curves, we just want to show a few to make our analysis meaningful. But the general idea comes from assumption 2 of preferences: <em>any two bundles can be compared</em>, as we can compare two points on this graph and make a judgment.</p>
 <ol start="2" style="list-style-type: decimal">
 <li><strong>Indifference curves are monotonic</strong>, which means practically that “more is preferred to less”</li>
 </ol>
@@ -244,7 +113,24 @@ code span.wa { color: #bf0303; } /* Warning */
 - But clearly <code>\\(C\\)</code> <span class="math inline">\(\succ\)</span> .<code>\\(B\\)</code>
 - Preferences are not transitive!</p>
 <p><img src="/class/1.4-class_files/figure-html/IC-as-4-1.png" width="576" style="display: block; margin: auto;" /></p>
+<h3 id="steepness-indifference-curves-for-neutrals">Steepness &amp; Indifference Curves for Neutrals</h3>
+<p>The Steepness of indifference curves tells us how consumers trade off between goods.</p>
+<p><img src="/class/1.4-class_files/figure-html/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Perfectly vertical curves (left) <span class="math inline">\(\implies\)</span> indifference between having more (point B) or fewer (point A) downloads. There is no tradeoff a person would make to acquire more Downloads, they truly <em>do not care</em> about them at all. Thus, on the left graph, Downloads would be a neutral.</p>
+<p>Perfectly horizontal curves (right) <span class="math inline">\(\implies\)</span> indifference between having more (point B) or fewer (point A) Tickets. There is no tradeoff a person would make to acquire more Tickets, they truly do not care about them at all. Thus, on the right graph, Tickets would be a neutral.</p>
+<p>We can look at less extreme cases:</p>
+<p><img src="/class/1.4-class_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>On the left graph, the flatter curve implies the person is willing to give up <em>only a few</em> Downloads to obtain more Tickets (and vice versa). <span class="math inline">\(MRS_{T,D}\)</span> (slope) is small, indicating downloads are more highly valued relative to tickets.</p>
+<p>On the right graph, the steeper curve implies the person is willing to give up <em>a lot</em> Downloads to obtain more Tickets (and vice versa). <span class="math inline">\(MRS_{T,D}\)</span> (slope) is large, indicating downloads are less valued relative to tickets.</p>
 <h2 id="math-appendix">Math Appendix</h2>
+<h3 id="derivation-of-mrs-equation-as-ratio-of-marginal-utilities">Derivation of MRS Equation (as ratio of marginal utilities)</h3>
+<p>Consider a movement along an indifference curve, how would this change affect utility? There will be a change in <span class="math inline">\(x\)</span> and a change in <span class="math inline">\(y\)</span>, and multiplying the marginal utility of each, and adding these together will give us our total change in utility. But we know that if we are on the same indifference curve, moving along the curve will <em>not change utility</em> (all points on the curve are defined as having the same utility!). So rearrange the equation as follows:</p>
+<p><span class="math display">\[\begin{align*}
+MU_x \Delta x+MU_y\Delta y&amp;= \Delta u &amp;&amp; \text{Measuring change in utility} \\
+MU_x \Delta x+MU_y \Delta y &amp;=0 &amp;&amp; \text{But change in utility is 0}\\
+MU_y \Delta y&amp;= -MU_{x} \Delta x &amp;&amp; \text{Subtracting x terms}\\
+\underbrace{\frac{\Delta y}{\Delta x}}_{MRS} &amp;= -\frac{MU_{x}}{MU_{y}} &amp;&amp; \text{Dividing to get like terms on each side}\\ \end{align*}\]</span></p>
+<p>Notice rise over run, <span class="math inline">\(\frac{\Delta y}{\Delta x}\)</span>, is the slope, which we have defined as the marginal rate of substitution (MRS). <span class="math inline">\(\blacksquare\)</span></p>
 <h3 id="utility-functions-and-pmts">Utility Functions and PMTs</h3>
 <p>Two utility functions <span class="math inline">\(u(\cdot)\)</span> and <span class="math inline">\(v(\cdot)\)</span> represent the same preferences iff there is a <em>strictly</em> increasing function} <span class="math inline">\(f\)</span> such that <span class="math inline">\(v(\cdot)=f\left[u(\cdot)\right]\)</span></p>
 <p><span class="math display">\[\begin{aligned}
@@ -288,7 +174,7 @@ c&amp;=(4,3)\\
 </span></span> indifference curve for apples <span class="math inline">\((a)\)</span> and bananas <span class="math inline">\((b)\)</span>:
 <span class="math display">\[u(a,b)=ab\]</span></p>
 <div id="htmlwidget-1" style="width:672px;height:528px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1">{"x":{"visdat":{"168606ccc7f7e":["function () ","plotlyVisDat"]},"cur_data":"168606ccc7f7e","attrs":{"168606ccc7f7e":{"x":[0,1,2,3,4,5,6,7,8,9,10],"y":[0,1,2,3,4,5,6,7,8,9,10],"z":[[0,0,0,0,0,0,0,0,0,0],[0,1,2,3,4,5,6,7,8,9],[0,2,4,6,8,10,12,14,16,18],[0,3,6,9,12,15,18,21,24,27],[0,4,8,12,16,20,24,28,32,36],[0,5,10,15,20,25,30,35,40,45],[0,6,12,18,24,30,36,42,48,54],[0,7,14,21,28,35,42,49,56,63],[0,8,16,24,32,40,48,56,64,72],[0,9,18,27,36,45,54,63,72,81]],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"surface","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"a"},"yaxis":{"title":"b"},"zaxis":{"title":"Utility"}},"hovermode":"closest","showlegend":false,"legend":{"yanchor":"top","y":0.5}},"source":"A","config":{"showSendToCloud":false},"data":[{"colorbar":{"title":"","ticklen":2,"len":0.5,"lenmode":"fraction","y":1,"yanchor":"top"},"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666667","rgba(70,19,97,1)"],["0.0833333333333333","rgba(72,32,111,1)"],["0.125","rgba(71,45,122,1)"],["0.166666666666667","rgba(68,58,128,1)"],["0.208333333333333","rgba(64,70,135,1)"],["0.25","rgba(60,82,138,1)"],["0.291666666666667","rgba(56,93,140,1)"],["0.333333333333333","rgba(49,104,142,1)"],["0.375","rgba(46,114,142,1)"],["0.416666666666667","rgba(42,123,142,1)"],["0.458333333333333","rgba(38,133,141,1)"],["0.5","rgba(37,144,140,1)"],["0.541666666666667","rgba(33,154,138,1)"],["0.583333333333333","rgba(39,164,133,1)"],["0.625","rgba(47,174,127,1)"],["0.666666666666667","rgba(53,183,121,1)"],["0.708333333333333","rgba(79,191,110,1)"],["0.75","rgba(98,199,98,1)"],["0.791666666666667","rgba(119,207,85,1)"],["0.833333333333333","rgba(147,214,70,1)"],["0.875","rgba(172,220,52,1)"],["0.916666666666667","rgba(199,225,42,1)"],["0.958333333333333","rgba(226,228,40,1)"],["1","rgba(253,231,37,1)"]],"showscale":true,"x":[0,1,2,3,4,5,6,7,8,9,10],"y":[0,1,2,3,4,5,6,7,8,9,10],"z":[[0,0,0,0,0,0,0,0,0,0],[0,1,2,3,4,5,6,7,8,9],[0,2,4,6,8,10,12,14,16,18],[0,3,6,9,12,15,18,21,24,27],[0,4,8,12,16,20,24,28,32,36],[0,5,10,15,20,25,30,35,40,45],[0,6,12,18,24,30,36,42,48,54],[0,7,14,21,28,35,42,49,56,63],[0,8,16,24,32,40,48,56,64,72],[0,9,18,27,36,45,54,63,72,81]],"type":"surface","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"visdat":{"16d6123f86371":["function () ","plotlyVisDat"]},"cur_data":"16d6123f86371","attrs":{"16d6123f86371":{"x":[0,1,2,3,4,5,6,7,8,9,10],"y":[0,1,2,3,4,5,6,7,8,9,10],"z":[[0,0,0,0,0,0,0,0,0,0],[0,1,2,3,4,5,6,7,8,9],[0,2,4,6,8,10,12,14,16,18],[0,3,6,9,12,15,18,21,24,27],[0,4,8,12,16,20,24,28,32,36],[0,5,10,15,20,25,30,35,40,45],[0,6,12,18,24,30,36,42,48,54],[0,7,14,21,28,35,42,49,56,63],[0,8,16,24,32,40,48,56,64,72],[0,9,18,27,36,45,54,63,72,81]],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"surface","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"a"},"yaxis":{"title":"b"},"zaxis":{"title":"Utility"}},"hovermode":"closest","showlegend":false,"legend":{"yanchor":"top","y":0.5}},"source":"A","config":{"showSendToCloud":false},"data":[{"colorbar":{"title":"","ticklen":2,"len":0.5,"lenmode":"fraction","y":1,"yanchor":"top"},"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666667","rgba(70,19,97,1)"],["0.0833333333333333","rgba(72,32,111,1)"],["0.125","rgba(71,45,122,1)"],["0.166666666666667","rgba(68,58,128,1)"],["0.208333333333333","rgba(64,70,135,1)"],["0.25","rgba(60,82,138,1)"],["0.291666666666667","rgba(56,93,140,1)"],["0.333333333333333","rgba(49,104,142,1)"],["0.375","rgba(46,114,142,1)"],["0.416666666666667","rgba(42,123,142,1)"],["0.458333333333333","rgba(38,133,141,1)"],["0.5","rgba(37,144,140,1)"],["0.541666666666667","rgba(33,154,138,1)"],["0.583333333333333","rgba(39,164,133,1)"],["0.625","rgba(47,174,127,1)"],["0.666666666666667","rgba(53,183,121,1)"],["0.708333333333333","rgba(79,191,110,1)"],["0.75","rgba(98,199,98,1)"],["0.791666666666667","rgba(119,207,85,1)"],["0.833333333333333","rgba(147,214,70,1)"],["0.875","rgba(172,220,52,1)"],["0.916666666666667","rgba(199,225,42,1)"],["0.958333333333333","rgba(226,228,40,1)"],["1","rgba(253,231,37,1)"]],"showscale":true,"x":[0,1,2,3,4,5,6,7,8,9,10],"y":[0,1,2,3,4,5,6,7,8,9,10],"z":[[0,0,0,0,0,0,0,0,0,0],[0,1,2,3,4,5,6,7,8,9],[0,2,4,6,8,10,12,14,16,18],[0,3,6,9,12,15,18,21,24,27],[0,4,8,12,16,20,24,28,32,36],[0,5,10,15,20,25,30,35,40,45],[0,6,12,18,24,30,36,42,48,54],[0,7,14,21,28,35,42,49,56,63],[0,8,16,24,32,40,48,56,64,72],[0,9,18,27,36,45,54,63,72,81]],"type":"surface","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 <p>Each indifference curve (or contour) is one level of utility (all points on the curve give a specific level of utility). So, set that level of utility equal to some constant, <span class="math inline">\(k\)</span>.</p>
 <p><span class="math display">\[ab=k\]</span></p>
 <p>Then, if we are putting <span class="math inline">\(b\)</span> on the vertical axis, we simply solve this for <span class="math inline">\(b\)</span>:</p>
@@ -298,7 +184,7 @@ b&amp;=\frac{k}{a}\\
 \end{align*}\]</span></p>
 <p>This is the general equation for all indifference curves of this utility function: each utility level (value of <span class="math inline">\(k)\)</span> can be graphed as an indifference curve with that equation. Thus, for example, for a utility level of <span class="math inline">\(10\)</span>, the equation for that indifference curve is
 <span class="math display">\[b=\frac{10}{a}\]</span>.</p>
-<p><img src="/class/1.4-class_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="/class/1.4-class_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <h3 id="utility-functions-for-perfect-substitutes">Utility Functions for Perfect Substitutes</h3>
 <p>Perfect substitutes produce straight lines for indifference curves. A straight line has a constant slope, which is interpretted as the MRS being constant - you should always be willing to substitute between the two goods at the same rate. The utility function looks like:</p>
 <p><span class="math display">\[u(x,y)=w_xx+w_yy\]</span></p>
@@ -309,7 +195,7 @@ b&amp;=\frac{k}{a}\\
 <p><span class="math display">\[u_{L_{1},L_{2}}=1L_{1}+2L_{2}\]</span></p>
 <p>The relative weights here are 1 for 1-Liter bottles and 2 for 2-Liter bottles, because 2-Liter bottles are “worth” twice as much for you (it takes two 1-Liter bottles to match a 2-Liter bottle!).</p>
 <p><span class="math inline">\(MRS_{L_{1},L_{2}}=-\frac{w_x}{w_y} = -\frac{1}{2}\)</span></p>
-<p><img src="/class/1.4-class_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="/class/1.4-class_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
 <h3 id="utility-functions-for-perfect-complements">Utility Functions for Perfect Complements</h3>
 <p>Perfect complements produce right angles for indifference curves. This is technically not a mathematical function, since each <span class="math inline">\(X\)</span> value must be mapped to a single <span class="math inline">\(Y\)</span> value (i.e. no vertical lines). Thus, the utility function for perfect complements <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is quite unique:</p>
 <p><span class="math display">\[u(x,y)=min\{w_xx,w_yy\}\]</span></p>
@@ -319,7 +205,7 @@ b&amp;=\frac{k}{a}\\
 <p>Consider consuming hot dogs <span class="math inline">\((H)\)</span> and buns <span class="math inline">\((B)\)</span>, that must be consumed together as a package 1:1. The utility function would be:
 <span class="math display">\[u(H,B)=min\{H,B\}\]</span></p>
 <p>Having 2 hot dogs and 3 buns only yields a utility of 2. Having 3 hot dogs and 2 buns also only yields a utility of 2.</p>
-<p><img src="/class/1.4-class_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="/class/1.4-class_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
 <h3 id="cobb-douglas-functions">Cobb-Douglas Functions</h3>
 <p>Cobb-Douglas functions (both for utility and production) are one of the most common functional forms in economics. Despite their somewhat frightening presence on the surface, they have very neat mathematical properties, and have been empirically useful as well. A Cobb-Douglas function (for utility) looks like:</p>
 <p><span class="math display">\[u(x, y)=x^a y^b\]</span></p>

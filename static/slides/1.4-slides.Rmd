@@ -1388,123 +1388,15 @@ $$u(x,y) = x^2+y^3$$
 
 ---
 
-# MRS and Marginal Utility III
+# MRS Equation and Marginal Utility
 
 .pull-left[
 
-- How to relate $MU$ and $MRS$?
+- Relationship between $MU$ and $MRS$:
 
-- Moving along an indifference curve
-    - $X$ and $Y$ will change
-    - $MU_x$ and $MU_y$ will change
-    - *Utility is constant* $(\Delta u=0)$
+$$\underbrace{\frac{\Delta y}{\Delta x}}_{MRS} = -\frac{MU_{x}}{MU_{y}}$$
 
-]
-.pull-right[
-
-```{r, echo=F, fig.retina=3, fig.align="center", fig.width=6}
-p
-```
-
-]
-
----
-
-# MRS and Marginal Utility IV
-
-.pull-left[
-
-- How to relate $MU$ and $MRS$?
-
-- Moving along an indifference curve
-    - $X$ and $Y$ will change
-    - $MU_x$ and $MU_y$ will change
-    - *Utility is constant* $(\Delta u=0)$
-
-$$\begin{align*}
-MU_x \Delta x+MU_y\Delta y&= \Delta u\\
-\end{align*}$$
-
-]
-.pull-right[
-
-```{r, echo=F, fig.retina=3, fig.align="center", fig.width=6}
-p
-```
-
-]
-
----
-
-# MRS and Marginal Utility IV
-
-.pull-left[
-
-- How to relate $MU$ and $MRS$?
-
-- Moving along an indifference curve
-    - $X$ and $Y$ will change
-    - $MU_x$ and $MU_y$ will change
-    - *Utility is constant* $(\Delta u=0)$
-
-$$\begin{align*}
-MU_x \Delta x+MU_y\Delta y&= \Delta u\\
-MU_x \Delta x+MU_y \Delta y &=0\\ \end{align*}$$
-
-]
-.pull-right[
-
-```{r, echo=F, fig.retina=3, fig.align="center", fig.width=6}
-p
-```
-
-]
-
----
-
-# MRS and Marginal Utility IV
-
-.pull-left[
-
-- How to relate $MU$ and $MRS$?
-
-- Moving along an indifference curve
-    - $X$ and $Y$ will change
-    - $MU_x$ and $MU_y$ will change
-    - *Utility is constant* $(\Delta u=0)$
-
-$$\begin{align*}
-MU_x \Delta x+MU_y\Delta y&= \Delta u\\
-MU_x \Delta x+MU_y \Delta y &=0\\
-MU_y \Delta y&= -MU_{x} \Delta x \\ \end{align*}$$
-
-]
-.pull-right[
-
-```{r, echo=F, fig.retina=3, fig.align="center", fig.width=6}
-p
-```
-
-]
-
----
-
-# MRS and Marginal Utility IV
-
-.pull-left[
-
-- How to relate $MU$ and $MRS$?
-
-- Moving along an indifference curve
-    - $X$ and $Y$ will change
-    - $MU_x$ and $MU_y$ will change
-    - *Utility is constant* $(\Delta u=0)$
-
-$$\begin{align*}
-MU_x \Delta x+MU_y\Delta y&= \Delta u\\
-MU_x \Delta x+MU_y \Delta y &=0\\
-MU_y \Delta y&= -MU_{x} \Delta x \\
-\underbrace{\frac{\Delta y}{\Delta x}}_{MRS} &= -\frac{MU_{x}}{MU_{y}}\\ \end{align*}$$
+- See proof in [today's class notes](/class/1.4-class)
 
 ]
 .pull-right[
@@ -1795,6 +1687,5 @@ MU_b&=2a\\
 
 2. Would bundles of $(1, 4)$ and $(2, 2)$ be on the same indifference curve?
 
-3. Is this curve convex? Hint: Does $MRS_{a,b} \downarrow$ as $a \uparrow$?
 ]
 ]
