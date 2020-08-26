@@ -207,7 +207,7 @@ $$a=\begin{pmatrix}
 
 - .hi[*Preferences*] **are a list of all such comparisons between all bundles**
 
-See appendix in [today's class page](http://microf20.classes.ryansafner.com/class/1.4-class) for more details.
+See appendix in [today's class page](http://microf20.classes.ryansafner.com/class/1.4-class) for more.
 ]
 
 .pull-right[
@@ -777,35 +777,60 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
 
 ---
 
-# Assumptions About Indifference Curves
-
-.pull-left[
-
-- Like preferences, indifference curves are "**well-behaved**" when:
-
-1. .hi-purple[We can always draw indifference curves]: two bundles can always be ranked
-
-2. .hi-purple[Monotonic]: "more is preferred to less"
-
-3. .hi-purple[Convex]: "averages are preferred to extremes"
-
-4. .hi-purple[Indifference curves can never cross]: preferences are transitive
-
-]
-
-.pull-right[
-.center[
-![](https://www.dropbox.com/s/nw0v6bsho0ab4zq/choices.jpg?raw=1)
-]
-]
-
----
-
-# Assumption 4: Curves Never Cross
+# Curves Never Cross!
 
 .pull-left[
 
 - .hi-purple[Indifference curves can never cross]: preferences are transitive
+  - If I prefer $A \succ B$, and $B \succ C$, I must prefer $A \succ C$
+
+]
+.pull-right[
+
+```{r IC-as-4, fig.retina=3, fig.align="center", fig.width=6}
+
+points_as4<-tribble(
+  ~letter, ~x, ~y,
+  "A", 2.125, 570,
+  "B", 6, 200,
+  "C", 8, 425
+)
+
+IC_as4=function(x){(400/x)+375}
+
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=IC, geom="line", size=2, color="blue")+
+  stat_function(fun=IC_as4, geom="line", size=2, color="orange")+
+  geom_point(data = points_as4,
+             mapping=aes(x=x, y=y),
+             size = 3)+
+  geom_text_repel(data = points_as4,
+             mapping=aes(x=x, y=y,
+             label = letter),
+             size = 6)+
+  scale_x_continuous(breaks=seq(0,10,1),
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,2000,200),
+                     limits=c(0,2000),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_colour_manual(guide=F)+
+  labs(x = "Friends Nearby",
+       y = expression(ft^2))+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+
+]
+
+---
+
+# Curves Never Cross!
+
+.pull-left[
+
+- .hi-purple[Indifference curves can never cross]: preferences are transitive
+  - If I prefer $A \succ B$, and $B \succ C$, I must prefer $A \succ C$
 
 - Suppose two curves crossed:
   - .blue[`\\(A \sim B\\)`]
@@ -816,7 +841,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
 ]
 .pull-right[
 
-```{r IC-as-4, fig.retina=3, fig.align="center", fig.width=6}
+```{r IC-as-41, fig.retina=3, fig.align="center", fig.width=6}
 
 points_as4<-tribble(
   ~letter, ~x, ~y,
@@ -1476,32 +1501,7 @@ class: inverse, center, middle
 
 ---
 
-# MRS and Preferences: Curvature
-
-.pull-left[
-
-$$MRS=\underbrace{\frac{ \Delta y}{\Delta x}}_{slope} = -\frac{MU_{x}}{MU_{y}}$$
-
-- .hi-purple[Curvature] of indifference curves tells us how goods are related
-
-- Relatively **straight** curves: goods are more .hi[substitutable] for one another
-
-- Relatively **bent** curves: goods are more .hi[complementary] with one another
-
-- Look at extreme cases first to see
-
-]
-.pull-right[
-
-```{r, echo=F, fig.retina=3, fig.align="center", fig.width=6}
-p
-```
-
-]
-
----
-
-# MRS and Preferences: Curvature II
+# MRS and Preferences: Substitutes
 
 .pull-left[
 
@@ -1538,7 +1538,7 @@ ggplot(data.frame(x=c(0,5)), aes(x=x))+
 
 ---
 
-# MRS and Preferences: Curvature III
+# MRS and Preferences: Complements
 
 .pull-left[
 
@@ -1573,57 +1573,6 @@ ggplot(data.frame(x=c(0,5)), aes(x=x))+
        y = "Buns")+
   theme_classic(base_family = "Fira Sans Condensed", base_size=20)
 ```
-]
-
----
-
-# MRS and Preferences: Curvature IV
-
-.pull-left[
-```{r, echo=F, fig.retina=3, fig.height=5, fig.align="center"}
-IC_straighter_1<-function(x){3-log(x)-0.25}
-ggplot(data.frame(x=c(0,5)), aes(x=x))+
-  stat_function(fun=IC_straighter_1, geom="line", size=2, color = "#453781FF")+
-  geom_segment(aes(x=0, xend=4, y=4, yend=0), size=1, linetype="dashed", color="red")+
-  geom_segment(aes(x=2, xend=2, y=5, yend=2), size=1, linetype="dashed", color="green")+
-  geom_segment(aes(x=2, xend=5, y=2, yend=2), size=1, linetype="dashed", color="green")+
-  scale_x_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  labs(x = "Pens",
-       y = "Pencils")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
-```
-
-- Straighter $\rightarrow$ more substitutable
-
-]
---
-
-.pull-right[
-```{r, echo=F, fig.retina=3, fig.height=5, fig.align="center"}
-IC_steep_1<-function(x){4/x}
-ggplot(data.frame(x=c(0,5)), aes(x=x))+
-  stat_function(fun=IC_steep_1, geom="line", size=2, color = "#453781FF")+
-  geom_segment(aes(x=0, xend=4, y=4, yend=0), size=1, linetype="dashed", color="red")+
-  geom_segment(aes(x=2, xend=2, y=5, yend=2), size=1, linetype="dashed", color="green")+
-  geom_segment(aes(x=2, xend=5, y=2, yend=2), size=1, linetype="dashed", color="green")+
-  scale_x_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  labs(x = "Chips",
-       y = "Guac")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
-```
-
-- Curved $\rightarrow$ more complementary
-
 ]
 
 ---
