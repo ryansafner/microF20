@@ -24,7 +24,7 @@ We begin with an overview of constrained optimization models and our first appli
 
 # Practice Problems
 
-Today you will be working on [practice problems](/practice/1.3-practice.html). Answers will be posted later.
+Today you will be working on [practice problems](/practice/1.3-practice.html). Answers are posted on that page.
 
 # Math Survey Results
 
