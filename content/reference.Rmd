@@ -41,11 +41,11 @@ Open the folder where your photos are currently, in the File Explorer. Select al
 
 As I use a Mac, I will show you how Mac OS has a neat feature built into Finder, which allows converting multiple files into a single PDF file as a Quick Action. I have written two pages in a notebook and taken two separate pictures of them, and airdropped them onto my computer.
 
-[](../static/images/photos_to_pdf1.png)
+![](../static/images/photos_to_pdf1.png)
 
-[](../static/images/photos_to_pdf2.png)
+![](../static/images/photos_to_pdf2.png)
 
-[](../static/images/photos_to_pdf3.png)
+![](../static/images/photos_to_pdf3.png)
 
 3. On Linux
 
