@@ -33,20 +33,22 @@ So first take photos on your smartphone of your written work (one photo per page
 
 Next, get the photos onto your computer (whether by Airdrop, email to yourself, Dropbox, etc.). Finally, depending on your OS, convert the files to a PDF:
 
-1. On a Windows
+**1. On a Windows PC**
 
 Open the folder where your photos are currently, in the File Explorer. Select all of the photos, and right click, and select `Print`. In the dialog box that pops up, select `Microsoft Print to PDF` in the `Printer` box, and then click `Print.` This will save it as a `.pdf` file in that folder. [See more information](https://www.howtogeek.com/361612/how-to-create-a-pdf-file-in-windows/)
 
-2. On a Mac
+**2. On a Mac**
 
 As I use a Mac, I will show you how Mac OS has a neat feature built into Finder, which allows converting multiple files into a single PDF file as a Quick Action. I have written two pages in a notebook and taken two separate pictures of them, and airdropped them onto my computer.
 
-![](../static/images/photos_to_pdf1.png)
+![](/images/photos_to_pdf1.png)
 
-![](../static/images/photos_to_pdf2.png)
+![](/images/photos_to_pdf2.png)
 
-![](../static/images/photos_to_pdf3.png)
+![](/images/photos_to_pdf3.png)
 
-3. On Linux
+Here is the [<i class="fas fa-file-pdf"></i> example PDF](files/photos_to_pdf.pdf).
+
+**3. On Linux**
 
 If you use Linux, I assume you know your way around a computer well enough to make a PDF! 🤖
