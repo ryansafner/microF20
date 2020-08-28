@@ -36,7 +36,11 @@ Note: I used to split this topic over 2 class periods, but this semester I am tr
 
 # Practice Problems
 
-Answers from [last class’ practice problems](/practice/1.4-practice) (on budget constraints) are posted on that page. Today you will be working on [practice problems](/practice/1.4-practice). Answers will be posted later.
+Answers from [last class’ practice problems](/practice/1.4-practice) (on budget constraints) are posted on that page.
+
+# Assignments
+
+[Problem set 1](/assignment/01-problem-set) (on 1.1-1.5) is available and will be due by 11:59 PM Sunday by PDF upload to Blackboard Assignments. We will learn and practice the final few concepts this problem set covers on Monday.
 
 # Appendices
 

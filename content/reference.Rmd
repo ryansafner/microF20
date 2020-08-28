@@ -7,7 +7,7 @@ output:
     toc: true
 ---
 
-Look here over the course of the semester for resources, links, and tips on how to succeed in the course, how to write well, and other things of interest related to microeconomics. 
+Look here over the course of the semester for resources, links, and tips on how to succeed in the course, how to write well, and other things of interest related to microeconomics.
 
 **Last Updated:** Monday, August 24, 2020
 
@@ -35,7 +35,7 @@ Next, get the photos onto your computer (whether by Airdrop, email to yourself, 
 
 **1. On a Windows PC**
 
-Open the folder where your photos are currently, in the File Explorer. Select all of the photos, and right click, and select `Print`. In the dialog box that pops up, select `Microsoft Print to PDF` in the `Printer` box, and then click `Print.` This will save it as a `.pdf` file in that folder. [See more information](https://www.howtogeek.com/361612/how-to-create-a-pdf-file-in-windows/)
+Open the folder where your photos are currently, in the File Explorer. Select all of the photos, and right click, and select `Print`. In the dialog box that pops up, select `Microsoft Print to PDF` in the `Printer` box, and then click `Print.` This will save it as a `.pdf` file in that folder. [See more information](https://www.howtogeek.com/361612/how-to-create-a-pdf-file-in-windows/).
 
 **2. On a Mac**
 
@@ -47,7 +47,7 @@ As I use a Mac, I will show you how Mac OS has a neat feature built into Finder,
 
 ![](/images/photos_to_pdf3.png)
 
-Here is the [<i class="fas fa-file-pdf"></i> example PDF](files/photos_to_pdf.pdf).
+Here is the [<i class="fas fa-file-pdf"></i> example PDF](../files/photos_to_pdf.pdf).
 
 **3. On Linux**
 
