@@ -50,7 +50,27 @@ g. Now suppose that during the holiday, with his holiday bonus, the price of fir
 
 \clearpage 
 
-5. Kelly's utility function for drinking Coke ($c$) and Pepsi ($p$) is given by:
+5. Ashkar has the following utility function for consuming peanut butter $(p)$ and jelly $(j)$: 
+$$u(p,j) = 3pj$$
+
+His marginal utilities are:
+
+$$\begin{aligned}
+MU_p &= 3j\\
+MU_j &= 3p\\
+\end{aligned}$$
+
+Put $p$ on the horizontal axis and $j$ on the vertical axis.
+
+a. Write an equation for $MRS_{p,j}$.
+b. Suppose he can choose between bundles^[Sandwiches, I suppose!] $a = (4,1)$, $b=(2,2)$, and $c=(4,1)$. Are these on the same indifference curve?
+c. Would he prefer bundle $d = (2,1)$ over a bundle from part B? Why or why not?
+d. Sketch a graph, plotting bundles $a, b, c$, and $d$. Indicate any indifference curve(s) they are on, and how much utility each provides.
+
+
+\clearpage
+
+6. Kelly's utility function for drinking Coke ($c$) and Pepsi ($p$) is given by:
 
 $$\begin{aligned}
 	u(c,p) &= 5c + 2p\\
@@ -68,7 +88,7 @@ f. Sketch a few indifference curves.
 
 \clearpage
 
-6. A consumer has the following utility function:
+7. A consumer has the following utility function:
 
 $$u(x,y)=\sqrt{xy}$$
 
