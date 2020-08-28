@@ -91,13 +91,25 @@ Write an equation for $MRS_{p,j}$.
 
 ### Part B
 
-Suppose he can choose between bundles^[Sandwiches, I suppose!] $a = (4,1)$, $b=(2,2)$, and $c=(4,1)$. Are these on the same indifference curve?
+Suppose he is currently consuming bundle^[Sandwich, I suppose!] $a = (4,1)$. How much utility is he getting?
 
 ### Part C
 
-Would he prefer bundle $c = (2,1)$ over a bundle from part B? Why or why not?
+From his current consumption, how much *more* utility would he get by consuming 1 more $p$? What about 1 more $j$?
 
 ### Part D
+
+From his current consumption, how many units of $j$ is he willing to give up to get 1 more unit of $p$ and remain indifferent? How many units of $p$ is he willing to give up to get 1 more $j$ and remain indifferent?
+
+### Part E
+
+Suppose he can choose between bundles $a = (4,1)$, $b=(2,2)$, and $c=(4,1)$. What are his preferences between them?
+
+### Part F
+
+Would he prefer bundle $d = (2,1)$ over a bundle from part E? Why or why not?
+
+### Part G
 
 Sketch a graph, plotting bundles $a, b, c$, and $d$. Indicate any indifference curve(s) they are on, and how much utility each provides.
 

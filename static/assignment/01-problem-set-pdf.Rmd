@@ -63,9 +63,12 @@ MU_j &= 3p\\
 Put $p$ on the horizontal axis and $j$ on the vertical axis.
 
 a. Write an equation for $MRS_{p,j}$.
-b. Suppose he can choose between bundles^[Sandwiches, I suppose!] $a = (4,1)$, $b=(2,2)$, and $c=(4,1)$. Are these on the same indifference curve?
-c. Would he prefer bundle $d = (2,1)$ over a bundle from part B? Why or why not?
-d. Sketch a graph, plotting bundles $a, b, c$, and $d$. Indicate any indifference curve(s) they are on, and how much utility each provides.
+b. Suppose he is currently consuming bundle^[Sandwich, I suppose!] $a = (4,1)$. How much utility is he getting?
+c. From his current consumption, how much *more* utility would he get by consuming 1 more $p$? What about 1 more $j$?
+d. From his current consumption, how many units of $j$ is he willing to give up to get 1 more unit of $p$ and remain indifferent? How many units of $p$ is he willing to give up to get 1 more $j$ and remain indifferent?
+e. Suppose he can choose between bundles $a = (4,1)$, $b=(2,2)$, and $c=(4,1)$. What are his preferences between them?
+f. Would he prefer bundle $d = (2,1)$ over a bundle from part e? Why or why not?
+g. Sketch a graph, plotting bundles $a, b, c$, and $d$. Indicate any indifference curve(s) they are on, and how much utility each provides.
 
 
 \clearpage
