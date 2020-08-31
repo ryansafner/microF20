@@ -611,7 +611,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
 
 $$\frac{MU_x}{MU_y}  =  \frac{p_x}{p_y}$$
 
-- Easier for solving math problems (slope of each curve)
+- Easier for calculation (slopes)
 
 ]
 
