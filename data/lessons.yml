@@ -26,6 +26,10 @@ lessons:
     slides: "1.4-slides"
 
   - title: "1.5 Solving the Consumer's Problem"
+    reading: "1.5-reading"
+    class: "1.5-class"
+    slides: "1.5-slides"
+    practice: "1.5-practice"
 
   - title: '<i class="fas fa-laptop-code"></i> **Problem Set 1** due Sunday Sept 6'
     assignment: "01-problem-set"

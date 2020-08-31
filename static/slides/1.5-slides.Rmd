@@ -1,14 +1,14 @@
 ---
-title: "1.5: Preferences II: MRS and Utility Functions"
-subtitle: "ECON 306 · Microeconomic Analysis · Spring 2020"
-author: 'Ryan Safner<br> Assistant Professor of Economics <br> <a href="mailto:safner@hood.edu"><i class="fa fa-paper-plane fa-fw"></i> safner@hood.edu</a> <br> <a href="https://github.com/ryansafner/microS20"><i class="fa fa-github fa-fw"></i> ryansafner/microS20</a><br> <a href="https://microS20.classes.ryansafner.com"> <i class="fa fa-globe fa-fw"></i> microS20.classes.ryansafner.com</a><br>'
+title: "1.5 — Solving the Consumer’s Problem"
+subtitle: "ECON 306 • Microeconomic Analysis • Fall 2020"
+author: 'Ryan Safner<br> Assistant Professor of Economics <br> <a href="mailto:safner@hood.edu"><i class="fa fa-paper-plane fa-fw"></i>safner@hood.edu</a> <br> <a href="https://github.com/ryansafner/microF20"><i class="fa fa-github fa-fw"></i>ryansafner/microF20</a><br> <a href="https://microF20.classes.ryansafner.com"> <i class="fa fa-globe fa-fw"></i>microF20.classes.ryansafner.com</a><br>'
 #date:
 output:
   xaringan::moon_reader:
     mathjax: "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML" # rescales math with css changes https://github.com/yihui/xaringan/issues/143
     lib_dir: libs
     #seal: false
-    css: [custom.css, custom-fonts.css, "hygge"] #, metropolis, metropolis-fonts
+    css: [custom.css, "hygge"] #, metropolis, metropolis-fonts
     nature:
       beforeInit: ["macros.js", "https://platform.twitter.com/widgets.js"] # first is for rescaling images , second is for embedding tweets, https://github.com/yihui/xaringan/issues/100
       highlightStyle: ocean #rainbow #monokai rainbow solarized-light #tomorrow-night -blue -eighties zenburn
@@ -37,824 +37,1075 @@ set.seed(256)
 ```
 
 
-# Utility Functions and Indifference Curves I
+# The Consumer's Problem: Review
 
 .pull-left[
-- Two tools to represent preferences: .hi[indifference curves] and .hi[utility functions]
 
-- Indifference curve: all **equally preferred** bundles $\iff$ **same utility level**
+- The .hi[consumer's constrained optimization problem] is: 
 
-- Each indifference curve represents one level (or contour) of utility surface (function)
+1. **Choose:** .hi-purple[ < a consumption bundle >]
+
+2. **In order to maximize:** .hi-green[< utility >]
+
+3. **Subject to:** .hi-red[< income and market prices >]
 
 ]
 
 .pull-right[
-
 .center[
-![](https://www.dropbox.com/s/nw0v6bsho0ab4zq/choices.jpg?raw=1)
+![](../images/choices.jpg)
 ]
 ]
 
 ---
 
-# Utility Functions and Indifference Curves II
+# The Consumer's Problem: Tools
+
+.pull-left[
+- We now have the tools to understand consumer choices:
+
+- .hi-red[Budget constraint]: consumer's **constraints** of income and market prices
+  - How the .red[market] trades off between two goods
+- .hi-green[Utility function]: consumer's **preferences** to maximize
+  - How the .green[consumer] trades off between two goods
+    
+]
+
+.pull-right[
+.center[
+![:scale 80%](../images/beerdecision.PNG)
+]
+]
+
+---
+
+# The Consumer's Problem: Verbally
 
 .pull-left[
 
-.center[
+- The .hi[consumer's constrained optimization problem]: 
 
-3-D Utility Function: $u(x,y)=\sqrt{xy}$
-```{r, fig.retina=3, fig.height=5.5}
-library("plotly")
-x_vec = seq(0,10,1)
-y_vec = seq(0,10,1)
-x_matrix = matrix(c(x_vec), nrow = 10, ncol = 1)
-y_matrix = matrix(c(y_vec), nrow = 1, ncol = 10)
-z_matrix = matrix(c(sqrt(x_matrix %*% y_matrix)),nrow=10,ncol=10)
+> choose a bundle of goods to maximize utility, subject to income and market prices
+]
 
-plot_ly(x = x_vec,
-           y = y_vec,
-           z = z_matrix) %>%
-  add_surface() %>%
-  layout(scene = list(xaxis = list(title="X"),
-                      yaxis = list(title="Y"),
-                      zaxis = list(title="Utility")))
-```
-]
-]
 .pull-right[
 .center[
-2-D Indifference Curve Contours: $y=\frac{u^2}{x}$
+![:scale 80%](../images/beerdecision.PNG)
+]
+]
 
-```{r, fig.retina=3, fig.height=5.5}
+---
+
+# The Consumer's Problem: Mathematically
+
+.pull-left[
+
+$$\max_{x,y} u(x,y)$$
+$$s.t. p_xx+p_yy=m$$
+
+- This requires calculus to solve<sup>.red[1]</sup>. We will look at **graphs** instead!
+]
+
+.pull-right[
+.center[
+![](../images/choices.jpg)
+]
+]
+
+.footnote[<sup>.red[1]</sup> See the mathematical appendix in today's class notes on how to solve it with calculus, and an example.]
+
+---
+
+# The Consumer's Optimum: Graphically
+
+.pull-left[
+
+- .hi[Graphical solution]: **Highest indifference curve _tangent_ to budget constraint**
+  - Bundle A!
+]
+
+.pull-right[
+
+```{r, fig.retina=3}
 library("mosaic")
-library("viridis")
 
-IC_10=function(x){100/x}
-IC_9=function(x){81/x}
+points<-tribble(
+  ~letter, ~x, ~y,
+  "A", 10, 5,
+  "B", 4, 8,
+  "C", 16, 2,
+  "D", 8, 8
+)
+
 IC_8=function(x){64/x}
-IC_7=function(x){49/x}
-IC_6=function(x){36/x}
-IC_5=function(x){25/x}
-IC_4=function(x){16/x}
-IC_3=function(x){9/x}
-IC_2=function(x){4/x}
-IC_1=function(x){1/x}
+IC_7=function(x){50/x}
+IC_6=function(x){32/x}
+BC=function(x){10-0.5*x}
 
-
-ggplot(data.frame(x=c(0,10)), aes(x=x))+
-  stat_function(fun=IC_10, geom="line", size=2, color = "#FDE725FF")+
-  stat_function(fun=IC_9, geom="line", size=2, color = "#B8DE29FF")+
+opt<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
   stat_function(fun=IC_8, geom="line", size=2, color = "#73D055FF")+
   stat_function(fun=IC_7, geom="line", size=2, color = "#3CBB75FF")+
   stat_function(fun=IC_6, geom="line", size=2, color = "#20A387FF")+
-  stat_function(fun=IC_5, geom="line", size=2, color = "#238A8DFF")+
-  stat_function(fun=IC_4, geom="line", size=2, color = "#2D708EFF")+
-  stat_function(fun=IC_3, geom="line", size=2, color = "#39568CFF")+
-  stat_function(fun=IC_2, geom="line", size=2, color = "#453781FF")+
-  stat_function(fun=IC_1, geom="line", size=2, color = "#481567FF")+
-    geom_label(aes(x=9,y=IC_10(9)), color = "#FDE725FF", label="u=10", size = 6)+
-    geom_label(aes(x=9,y=IC_9(9)), color = "#B8DE29FF", label="u=9", size = 6)+
-    geom_label(aes(x=9,y=IC_8(9)), color = "#73D055FF", label="u=8", size = 6)+
-    geom_label(aes(x=9,y=IC_7(9)), color = "#3CBB75FF", label="u=7", size = 6)+
-    geom_label(aes(x=9,y=IC_6(9)), color = "#20A387FF", label="u=6", size = 6)+
-    geom_label(aes(x=9,y=IC_5(9)), color = "#238A8DFF", label="u=5", size = 6)+
-    geom_label(aes(x=9,y=IC_4(9)), color = "#2D708EFF", label="u=4", size = 6)+
-    geom_label(aes(x=9,y=IC_3(9)), color = "#39568CFF", label="u=3", size = 6)+
-    geom_label(aes(x=9,y=IC_2(9)), color = "#453781FF", label="u=2", size = 6)+
-    geom_label(aes(x=9,y=IC_1(9)), color = "#481567FF", label="u=1", size = 6)+
-    scale_x_continuous(breaks=seq(0,10,1),
-                     limits=c(0,10),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,10,1),
-                     limits=c(0,10),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  #scale_colour_manual("Curves", values = line_colors, guide=F)+
-  labs(x = "x",
-       y = "y")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
-```
-
-]
-]
-
----
-
-class: inverse, center, middle
-# Marginal Utility
-
----
-
-# MRS and Marginal Utility I
-
-.pull-left[
-
-- Recall: .hi[marginal rate of substitution `\\(MRS_{x,y}\\)`] is slope of the indifference curve
-  - Amount of $y$ given up for 1 more $x$
-
-- How to calculate MRS?
-  - Recall it changes (not a straight line)!
-  - We can calculate it using something from the **utility function**
-
-]
-.pull-right[
-
-```{r, echo=F}
-IC_mrs=function(x){10/x}
-
-p<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
-  stat_function(fun=IC_mrs, geom="line", size=2, color="blue")+
-  geom_segment(aes(x=1, xend=1, y=5, yend=9), linetype="dashed", color="red", size=2)+
-  geom_segment(aes(x=1, xend=2, y=5, yend=5), linetype="dashed", color="red", size=2)+
-  geom_segment(aes(x=5, xend=5, y=2, yend=1), linetype="dashed", color="red", size=2)+
-  geom_segment(aes(x=5, xend=9, y=1, yend=1), linetype="dashed", color="red", size=2)+
-  scale_x_continuous(breaks=seq(0,10,1),
-                     limits=c(0,10),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,10,1),
-                     limits=c(0,10),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  labs(x = "x",
-       y = "y")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
-```
-
-```{r, echo=F, fig.retina=3, fig.align="center", fig.width=6}
-p
-```
-
-]
-
----
-
-# MRS and Marginal Utility II
-
-.pull-left[
-
-- .hi[Marginal utility]: change in utility from a marginal increase in consumption
-
-]
-.pull-right[
-
-```{r, echo=F, fig.retina=3, fig.align="center", fig.width=6}
-p
-```
-
-]
-
----
-
-# MRS and Marginal Utility II
-
-.pull-left[
-
-- .hi[Marginal utility]: change in utility from a marginal increase in consumption
-
-.content-box-green[
-.green[**Marginal utility of `\\(x\\)`**]: $MU_x = \frac{\Delta u(x,y)}{\Delta x}$
-]
-
-]
-.pull-right[
-
-```{r, echo=F, fig.retina=3, fig.align="center", fig.width=6}
-p
-```
-
-]
-
----
-
-# MRS and Marginal Utility II
-
-.pull-left[
-
-- .hi[Marginal utility]: change in utility from a marginal increase in consumption
-
-.content-box-green[
-.green[**Marginal utility of `\\(x\\)`**]: $MU_x = \frac{\Delta u(x,y)}{\Delta x}$
-]
-
-.content-box-green[
-.green[**Marginal utility of `\\(y\\)`**]: $MU_y = \frac{\Delta u(x,y)}{\Delta y}$
-]
-
-]
-.pull-right[
-
-```{r, echo=F, fig.retina=3, fig.align="center", fig.width=6}
-p
-```
-
-]
-
----
-
-# MRS and Marginal Utility II
-
-.pull-left[
-
-- .hi[Marginal utility]: change in utility from a marginal increase in consumption
-
-- Math (calculus): "*marginal*" means "*derivative with respect to*"
-  - I will always derive marginal utility functions for you
-
-]
-.pull-right[
-
-```{r, echo=F, fig.retina=3, fig.align="center", fig.width=6}
-p
-```
-
-]
-
----
-
-# MRS and Marginal Utility: Example
-
-.content-box-green[
-.green[**Example**:] For an example utility function
-
-$$u(x,y) = x^2+y^3$$
-
-- Marginal utility of x: $\quad MU_x = 2x$
-- Marginal utlity of y: $\quad MU_y = 3y^2$
-
-]
-
----
-
-# MRS and Marginal Utility III
-
-.pull-left[
-
-- How to relate $MU$ and $MRS$?
-
-- Moving along an indifference curve
-    - $X$ and $Y$ will change
-    - $MU_x$ and $MU_y$ will change
-    - *Utility is constant* $(\Delta u=0)$
-
-]
-.pull-right[
-
-```{r, echo=F, fig.retina=3, fig.align="center", fig.width=6}
-p
-```
-
-]
-
----
-
-# MRS and Marginal Utility IV
-
-.pull-left[
-
-- How to relate $MU$ and $MRS$?
-
-- Moving along an indifference curve
-    - $X$ and $Y$ will change
-    - $MU_x$ and $MU_y$ will change
-    - *Utility is constant* $(\Delta u=0)$
-
-$$\begin{align*}
-MU_x \Delta x+MU_y\Delta y&= \Delta u\\
-\end{align*}$$
-
-]
-.pull-right[
-
-```{r, echo=F, fig.retina=3, fig.align="center", fig.width=6}
-p
-```
-
-]
-
----
-
-# MRS and Marginal Utility IV
-
-.pull-left[
-
-- How to relate $MU$ and $MRS$?
-
-- Moving along an indifference curve
-    - $X$ and $Y$ will change
-    - $MU_x$ and $MU_y$ will change
-    - *Utility is constant* $(\Delta u=0)$
-
-$$\begin{align*}
-MU_x \Delta x+MU_y\Delta y&= \Delta u\\
-MU_x \Delta x+MU_y \Delta y &=0\\ \end{align*}$$
-
-]
-.pull-right[
-
-```{r, echo=F, fig.retina=3, fig.align="center", fig.width=6}
-p
-```
-
-]
-
----
-
-# MRS and Marginal Utility IV
-
-.pull-left[
-
-- How to relate $MU$ and $MRS$?
-
-- Moving along an indifference curve
-    - $X$ and $Y$ will change
-    - $MU_x$ and $MU_y$ will change
-    - *Utility is constant* $(\Delta u=0)$
-
-$$\begin{align*}
-MU_x \Delta x+MU_y\Delta y&= \Delta u\\
-MU_x \Delta x+MU_y \Delta y &=0\\
-MU_y \Delta y&= -MU_{x} \Delta x \\ \end{align*}$$
-
-]
-.pull-right[
-
-```{r, echo=F, fig.retina=3, fig.align="center", fig.width=6}
-p
-```
-
-]
-
----
-
-# MRS and Marginal Utility IV
-
-.pull-left[
-
-- How to relate $MU$ and $MRS$?
-
-- Moving along an indifference curve
-    - $X$ and $Y$ will change
-    - $MU_x$ and $MU_y$ will change
-    - *Utility is constant* $(\Delta u=0)$
-
-$$\begin{align*}
-MU_x \Delta x+MU_y\Delta y&= \Delta u\\
-MU_x \Delta x+MU_y \Delta y &=0\\
-MU_y \Delta y&= -MU_{x} \Delta x \\
-\underbrace{\frac{\Delta y}{\Delta x}}_{MRS} &= -\frac{MU_{x}}{MU_{y}}\\ \end{align*}$$
-
-]
-.pull-right[
-
-```{r, echo=F, fig.retina=3, fig.align="center", fig.width=6}
-p
-```
-
-]
-
----
-
-class: inverse, center, middle
-# MRS and Preferences
-
----
-
-# MRS and Preferences
-
-.pull-left[
-
-$$MRS=\underbrace{\frac{ \Delta y}{\Delta x}}_{slope} = -\frac{MU_{x}}{MU_{y}}$$
-
-- Observing the choices that consumers make, given their options, give us insight into their preferences
-
-- Represented in indifference curves and MRS
-
-- .hi-purple[Steepness] of indifference curves tells us how consumers trade off between goods
-
-- Let's look at extremes first
-
-]
-.pull-right[
-
-```{r, echo=F, fig.retina=3, fig.align="center", fig.width=6}
-p
-```
-
-]
-
----
-
-# MRS and Preferences: Steepness I
-
-.pull-left[
-```{r, echo=F, fig.retina=3, fig.height=5, fig.align="center"}
-points_1<-tribble(
-  ~letter, ~x, ~y,
-  "A", 2, 2,
-  "B", 2, 4
-)
-
-ggplot(data.frame(x=c(0,5)), aes(x=x))+
-  geom_segment(aes(x=2, xend=2, y=0, yend=5), color="blue", size=2)+
-  geom_segment(aes(x=4, xend=4, y=0, yend=5), color="green", size=2)+
-  geom_point(data = points_1,
+  stat_function(fun=BC, geom="line", size=2, color = "red")+
+    geom_label(aes(x=5,y=IC_8(5)), color = "#73D055FF", label=expression(u==sqrt(64)), size = 4)+
+    geom_label(aes(x=3.5,y=IC_7(3.5)), color = "#3CBB75FF", label=expression(u==sqrt(50)), size = 4)+
+    geom_label(aes(x=2,y=IC_6(2)), color = "#20A387FF", label=expression(u==sqrt(32)), size = 4)+
+    geom_label(aes(x=2,y=BC(2)), color = "red", label="BC", size = 6)+
+  geom_point(data = points,
              mapping=aes(x=x, y=y),
              size = 3)+
-  geom_text_repel(data = points_1,
+  geom_text_repel(data = points,
              mapping=aes(x=x, y=y,
              label = letter),
-             size = 6)+
-  scale_x_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
+             size = 6,
+             seed = 2)+
+  geom_segment(aes(x = 0, xend = 10, y = 5, yend=5), linetype="dotted", size=1)+
+  geom_segment(aes(x = 10, xend = 10, y = 5, yend=0), linetype="dotted", size=1)+
+    scale_x_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
                      expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  labs(x = "Movie Tickets",
-       y = "Movie Downloads")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
-```
-
-.smallest[
-- Vertical curves $\implies$ indifference between having more or less Downloads
-- Downloads are a .hi[neutral]
-]
-]
---
-
-.pull-right[
-```{r, echo=F, fig.retina=3, fig.height=5, fig.align="center"}
-points_2<-tribble(
-  ~letter, ~x, ~y,
-  "A", 2, 2,
-  "B", 4, 2
-)
-
-ggplot(data.frame(x=c(0,5)), aes(x=x))+
-  geom_segment(aes(x=0, xend=5, y=2, yend=2), color="blue", size=2)+
-  geom_segment(aes(x=0, xend=5, y=4, yend=4), color="green", size=2)+
-  geom_point(data = points_2,
-             mapping=aes(x=x, y=y),
-             size = 3)+
-  geom_text_repel(data = points_2,
-             mapping=aes(x=x, y=y,
-             label = letter),
-             size = 6)+
-  scale_x_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  labs(x = "Movie Tickets",
-       y = "Movie Downloads")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
-```
-
-.smallest[
-- Horizontal curves $\implies$ indifference between having more or less Tickets
-- Tickets are a .hi[neutral]
-]
-]
----
-
-# MRS and Preferences: Steepness II
-
-.pull-left[
-```{r, echo=F, fig.retina=3, fig.height=5, fig.align="center"}
-IC_flat_1<-function(x){2/x+1}
-IC_flat_2<-function(x){2/x+2}
-IC_flat_3<-function(x){2/x+3}
-ggplot(data.frame(x=c(0,5)), aes(x=x))+
-  stat_function(fun=IC_flat_1, geom="line", size=2, color = "#453781FF")+
-  stat_function(fun=IC_flat_2, geom="line", size=2, color = "#2D708EFF")+
-  stat_function(fun=IC_flat_3, geom="line", size=2, color = "#20A387FF")+
-  geom_segment(aes(x=1, xend=1, y=3, yend=2), size=1, linetype="dashed", color="red")+
-  geom_segment(aes(x=1, xend=2, y=2, yend=2), size=1, linetype="dashed", color="red")+
-  geom_text(aes(x=1.5, y=1.75), color="red", size=6, label=expression(paste(Delta, "T")))+
-  geom_text(aes(x=0.75, y=2.5), color="red", size=6, label=expression(paste(Delta, "D")))+
-  scale_x_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  labs(x = "Movie Tickets",
-       y = "Movie Downloads")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
-```
-
-
-- Flatter $\rightarrow$ willing to give up *few* Downloads per Ticket (and vice versa)
-- $MRS_{T,D}$ is small
-
-]
-
---
-
-.pull-right[
-```{r, echo=F, fig.retina=3, fig.height=5, fig.align="center"}
-IC_steep_1<-function(x){4/x}
-IC_steep_2<-function(x){4/x+1}
-IC_steep_3<-function(x){4/x+2}
-ggplot(data.frame(x=c(0,5)), aes(x=x))+
-  stat_function(fun=IC_steep_1, geom="line", size=2, color = "#453781FF")+
-  stat_function(fun=IC_steep_2, geom="line", size=2, color = "#2D708EFF")+
-  stat_function(fun=IC_steep_3, geom="line", size=2, color = "#20A387FF")+
-  geom_segment(aes(x=1, xend=1, y=4, yend=2), size=1, linetype="dashed", color="red")+
-  geom_segment(aes(x=1, xend=2, y=2, yend=2), size=1, linetype="dashed", color="red")+
-  geom_text(aes(x=1.5, y=1.75), color="red", size=6, label=expression(paste(Delta, "T")))+
-  geom_text(aes(x=0.75, y=3), color="red", size=6, label=expression(paste(Delta, "D")))+
-  scale_x_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  labs(x = "Movie Tickets",
-       y = "Movie Downloads")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
-```
-
-- Steeper $\rightarrow$ willing to give up *more* Downloads per Ticket (and vice versa)
-- $MRS_{T,D}$ is large
-
-]
-
----
-
-# MRS and Preferences: Goods, Bads, Neutrals
-
-.pull-left[
-
-- More precise ways to classify objects:
-
-- A .hi[good] enters utility function positively
-    - $\uparrow$ good $\implies$ $\uparrow$ utility
-    - Willing to pay (give up other goods) to *acquire more* (monotonic)
-]
-
-.pull-right[
-.center[
-![](https://www.dropbox.com/s/2lz1f7uurlotvpg/goodandbad.jpeg?raw=1)
-]
-]
-
----
-
-# MRS and Preferences: Goods, Bads, Neutrals
-
-.pull-left[
-
-- More precise ways to classify objects:
-
-- A .hi[good] enters utility function positively
-    - $\uparrow$ good $\implies$ $\uparrow$ utility
-    - Willing to pay (give up other goods) to *acquire more* (monotonic)
-    
-- A .hi[bad] enters utility function negatively
-    - $\uparrow$ good $\implies$ $\downarrow$ utility
-    - Willing to pay (give up other goods) to *get rid of*
-]
-
-.pull-right[
-.center[
-![](https://www.dropbox.com/s/2lz1f7uurlotvpg/goodandbad.jpeg?raw=1)
-]
-]
-
----
-
-# MRS and Preferences: Goods, Bads, Neutrals
-
-.pull-left[
-
-- More precise ways to classify objects:
-
-- A .hi[neutral] does not enter utility function at all
-    - $\uparrow, \downarrow$ has no effect on utility
-]
-
-.pull-right[
-.center[
-![](https://www.dropbox.com/s/2lz1f7uurlotvpg/goodandbad.jpeg?raw=1)
-]
-]
-
----
-
-# MRS and Preferences: Curvature
-
-.pull-left[
-
-$$MRS=\underbrace{\frac{ \Delta y}{\Delta x}}_{slope} = -\frac{MU_{x}}{MU_{y}}$$
-
-- .hi-purple[Curvature] of indifference curves tells us how goods are related
-
-- Relatively **straight** curves: goods are more .hi[substitutable] for one another
-
-- Relatively **bent** curves: goods are more .hi[complementary] with one another
-
-- Look at extreme cases first to see
-
-]
-.pull-right[
-
-```{r, echo=F, fig.retina=3, fig.align="center", fig.width=6}
-p
-```
-
-]
-
----
-
-# MRS and Preferences: Curvature II
-
-.pull-left[
-
-.content-box-green[
-.green[**Example**]: Consider 1-Liter bottles of coke and 2-Liter bottles of coke 
-]
-
-- Always willing to substitute between Two 1-L bottles for One 2-L bottle
-
-- .hi[Perfect substitutes]: goods that can be substituted at same fixed rate and yield same utility
-
-- `\\(MRS_{1L,2L}=-0.5\\)` (a constant!)
-
-]
-
-.pull-right[
-```{r, echo=F, fig.retina=3, fig.align="center"}
-ggplot(data.frame(x=c(0,5)), aes(x=x))+
-  geom_segment(aes(x=0, xend=2, y=1, yend=0), size=1, color="#453781FF")+
-  geom_segment(aes(x=0, xend=4, y=2, yend=0), size=1, color="#20A387FF")+
-  geom_label(aes(x=1, y=0.5), size=6, color="#453781FF", label="u=1")+
-  geom_label(aes(x=1, y=1.5), size=6, color="#20A387FF", label="u=2")+
-  scale_x_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  labs(x = "1-Liter Bottles",
-       y = "2-Liter Bottles")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
-```
-]
-
----
-
-# MRS and Preferences: Curvature III
-
-.pull-left[
-
-.content-box-green[
-.green[**Example**]: Consider hot dogs and hot dog buns 
-]
-
-- Always consume together in fixed proportions (in this case, 1 for 1)
-
-- .hi[Perfect complements]: goods that can be consumed together in same fixed proportion and yield same utility
-
-- $MRS_{H,B}=$ ?
-
-]
-
-.pull-right[
-```{r, echo=F, fig.retina=3, fig.align="center"}
-ggplot(data.frame(x=c(0,5)), aes(x=x))+
-  geom_segment(aes(x=1, xend=1, y=5, yend=1), size=1, color="#453781FF")+
-  geom_segment(aes(x=1, xend=5, y=1, yend=1), size=1, color="#453781FF")+
-  geom_segment(aes(x=2, xend=2, y=5, yend=2), size=1, color="#20A387FF")+
-  geom_segment(aes(x=2, xend=5, y=2, yend=2), size=1, color="#20A387FF")+
-  geom_label(aes(x=4, y=1), size=6, color="#453781FF", label="u=1")+
-  geom_label(aes(x=4, y=2), size=6, color="#20A387FF", label="u=2")+
-  scale_x_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  labs(x = "Hot Dogs",
-       y = "Buns")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
-```
-]
-
----
-
-# MRS and Preferences: Curvature IV
-
-.pull-left[
-```{r, echo=F, fig.retina=3, fig.height=5, fig.align="center"}
-IC_straighter_1<-function(x){3-log(x)-0.25}
-ggplot(data.frame(x=c(0,5)), aes(x=x))+
-  stat_function(fun=IC_straighter_1, geom="line", size=2, color = "#453781FF")+
-  geom_segment(aes(x=0, xend=4, y=4, yend=0), size=1, linetype="dashed", color="red")+
-  geom_segment(aes(x=2, xend=2, y=5, yend=2), size=1, linetype="dashed", color="green")+
-  geom_segment(aes(x=2, xend=5, y=2, yend=2), size=1, linetype="dashed", color="green")+
-  scale_x_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  labs(x = "Pens",
-       y = "Pencils")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
-```
-
-- Straighter $\rightarrow$ more substitutable
-
-]
---
-
-.pull-right[
-```{r, echo=F, fig.retina=3, fig.height=5, fig.align="center"}
-IC_steep_1<-function(x){4/x}
-ggplot(data.frame(x=c(0,5)), aes(x=x))+
-  stat_function(fun=IC_steep_1, geom="line", size=2, color = "#453781FF")+
-  geom_segment(aes(x=0, xend=4, y=4, yend=0), size=1, linetype="dashed", color="red")+
-  geom_segment(aes(x=2, xend=2, y=5, yend=2), size=1, linetype="dashed", color="green")+
-  geom_segment(aes(x=2, xend=5, y=2, yend=2), size=1, linetype="dashed", color="green")+
-  scale_x_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,5,1),
-                     limits=c(0,5),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  labs(x = "Chips",
-       y = "Guac")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
-```
-
-- Curved $\rightarrow$ more complementary
-
-]
-
----
-
-# Cobb-Douglas Utility Functions
-
-.pull-left[
-
-- A very common functional form in economics is .hi[Cobb-Douglas]
-
-$$u(x,y)=x^ay^b$$
-
-- Where $a, b >0$ (and very often $a+b=1$)
-- Extremely useful, you will see it often!
-    - Strictly convex and monotonic indifference curves
-    - Other nice properties (we'll see later)
-    - See the appendix in [today's class page](http://microf19.classes.ryansafner.com/class/05-class)
-]
-
-.pull-right[
-```{r, fig.retina=3, fig.height=5.5}
-ggplot(data.frame(x=c(0,10)), aes(x=x))+
-  stat_function(fun=IC_8, geom="line", size=2, color = "#73D055FF")+
-  stat_function(fun=IC_6, geom="line", size=2, color = "#20A387FF")+
-  stat_function(fun=IC_4, geom="line", size=2, color = "#2D708EFF")+
-  stat_function(fun=IC_2, geom="line", size=2, color = "#453781FF")+
-    geom_label(aes(x=9,y=IC_8(9)), color = "#73D055FF", label="u=64/x", size = 6)+
-    geom_label(aes(x=9,y=IC_6(9)), color = "#20A387FF", label="u=36/x", size = 6)+
-    geom_label(aes(x=9,y=IC_4(9)), color = "#2D708EFF", label="u=16/x", size = 6)+
-    geom_label(aes(x=9,y=IC_2(9)), color = "#453781FF", label="y=4/x", size = 6)+
-    scale_x_continuous(breaks=seq(0,10,1),
-                     limits=c(0,10),
-                     expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,10,1),
-                     limits=c(0,10),
+  scale_y_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
                      expand=expand_scale(mult=c(0,0.1)))+
   #scale_colour_manual("Curves", values = line_colors, guide=F)+
   labs(x = "x",
        y = "y",
-       title = "Indifference curves for u(x,y)=xy")+
+       caption = expression(paste(u(x,y)== sqrt(xy), ", ", m, " = $20, ", p[x]," = $1, ", p[y]," = $2", sep=" ")))+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+opt
+```
+]
+
+---
+
+# The Consumer's Optimum: Graphically
+
+.pull-left[
+
+- .hi[Graphical solution]: **Highest indifference curve _tangent_ to budget constraint**
+  - Bundle A!
+
+- B or C spend all income, but a better combination exists
+    - Averages $\succ$ extremes!
+
+]
+
+.pull-right[
+
+```{r, fig.retina=3}
+opt
+```
+]
+
+---
+
+# The Consumer's Optimum: Graphically
+
+.pull-left[
+
+- .hi[Graphical solution]: **Highest indifference curve _tangent_ to budget constraint**
+  - Bundle A!
+
+- B or C spend all income, but a better combination exists
+    - Averages $\succ$ extremes!
+
+- D is higher utility, but *not affordable* at current income & prices
+]
+
+.pull-right[
+
+```{r, fig.retina=3}
+opt
+```
+]
+
+---
+
+# The Consumer's Optimum: Why Not B? 
+
+.pull-left[
+
+$$\begin{align*}
+\text{indiff. curve slope} &> \text{budget constr. slope} \\\end{align*}$$
+
+]
+
+.pull-right[
+
+```{r, fig.retina=3}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=IC_6, geom="line", size=2, color = "#20A387FF")+
+  stat_function(fun=BC, geom="line", size=2, color = "red")+
+    geom_label(aes(x=2,y=IC_6(2)), color = "#20A387FF", label=expression(u==sqrt(32)), size = 4)+
+    geom_label(aes(x=2,y=BC(2)), color = "red", label="BC", size = 6)+
+  geom_point(data = subset(points, letter=="B"),
+             mapping=aes(x=x, y=y),
+             size = 3)+
+  geom_text_repel(data = subset(points, letter=="B"),
+             mapping=aes(x=x, y=y,
+             label = letter),
+             size = 6,
+             seed = 2)+
+  geom_segment(aes(x = 0, xend = 8, y = 16, yend=0), linetype="dashed", size=1.5)+
+    scale_x_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  #scale_colour_manual("Curves", values = line_colors, guide=F)+
+  labs(x = "x",
+       y = "y",
+       caption = expression(paste(u(x,y)== sqrt(xy), ", ", m, " = $20, ", p[x]," = $1, ", p[y]," = $2", sep=" ")))+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+---
+
+# The Consumer's Optimum: Why Not B? 
+
+.pull-left[
+
+$$\begin{align*}
+\text{indiff. curve slope} &> \text{budget constr. slope} \\
+| MRS_{x,y} | &> | \frac{p_x}{p_y} | \\
+| \frac{MU_x}{MU_y} | &> | \frac{p_x}{p_y} | \\
+| -2 | &> | -0.5 | \\\end{align*}$$
+
+- .hi-green[Consumer] would exchange at .hi-green[2Y:1X]
+
+- .hi-red[Market] exchange rate is .hi-red[0.5Y:1X]
+]
+
+.pull-right[
+
+```{r, fig.retina=3}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=IC_6, geom="line", size=2, color = "#20A387FF")+
+  stat_function(fun=BC, geom="line", size=2, color = "red")+
+    geom_label(aes(x=2,y=IC_6(2)), color = "#20A387FF", label=expression(u==sqrt(32)), size = 4)+
+    geom_label(aes(x=2,y=BC(2)), color = "red", label="BC", size = 6)+
+  geom_point(data = subset(points, letter=="B"),
+             mapping=aes(x=x, y=y),
+             size = 3)+
+  geom_text_repel(data = subset(points, letter=="B"),
+             mapping=aes(x=x, y=y,
+             label = letter),
+             size = 6,
+             seed = 2)+
+  geom_segment(aes(x = 0, xend = 8, y = 16, yend=0), linetype="dashed", size=1.5)+
+    scale_x_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  #scale_colour_manual("Curves", values = line_colors, guide=F)+
+  labs(x = "x",
+       y = "y",
+       caption = expression(paste(u(x,y)== sqrt(xy), ", ", m, " = $20, ", p[x]," = $1, ", p[y]," = $2", sep=" ")))+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+---
+
+# The Consumer's Optimum: Why Not B? 
+
+.pull-left[
+
+$$\begin{align*}
+\text{indiff. curve slope} &> \text{budget constr. slope} \\
+| MRS_{x,y} | &> | \frac{p_x}{p_y} | \\
+| \frac{MU_x}{MU_y} | &> | \frac{p_x}{p_y} | \\
+| -2 | &> | -0.5 | \\\end{align*}$$
+
+- .hi-green[Consumer] would exchange at .hi-green[2Y:1X]
+
+- .hi-red[Market] exchange rate is .hi-red[0.5Y:1X]
+
+- Can .hi-purple[spend less on y more on x] and get .hi-purple[more utility!]
+
+]
+
+.pull-right[
+
+```{r, fig.retina=3}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=IC_6, geom="line", size=2, color = "#20A387FF")+
+  stat_function(fun=IC_7, geom="line", size=2, color = "#3CBB75FF")+
+  stat_function(fun=BC, geom="line", size=2, color = "red")+
+    geom_label(aes(x=2,y=IC_6(2)), color = "#20A387FF", label=expression(u==sqrt(32)), size = 4)+
+    geom_label(aes(x=2,y=BC(2)), color = "red", label="BC", size = 6)+
+    geom_label(aes(x=3.5,y=IC_7(3.5)), color = "#3CBB75FF", label=expression(u==sqrt(50)), size = 4)+
+  annotate("segment", x = 4, xend = 10, y = 8, yend = 5, colour = "purple", size=2, alpha=1, arrow=arrow(length=unit(0.5,"cm"), ends="last", type="closed"))+
+  geom_point(data = subset(points, letter %in% c("A","B")),
+             mapping=aes(x=x, y=y),
+             size = 3)+
+  geom_text_repel(data = subset(points, letter %in% c("A","B")),
+             mapping=aes(x=x, y=y,
+             label = letter),
+             size = 6,
+             seed = 2)+
+  geom_segment(aes(x = 0, xend = 8, y = 16, yend=0), linetype="dashed", size=1.5)+
+    scale_x_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  #scale_colour_manual("Curves", values = line_colors, guide=F)+
+  labs(x = "x",
+       y = "y",
+       caption = expression(paste(u(x,y)== sqrt(xy), ", ", m, " = $20, ", p[x]," = $1, ", p[y]," = $2", sep=" ")))+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+---
+
+# The Consumer's Optimum: Why Not C? 
+
+.pull-left[
+
+$$\begin{align*}
+\text{indiff. curve slope} &< \text{budget constr. slope} \\\end{align*}$$
+
+]
+
+.pull-right[
+
+```{r, fig.retina=3}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=IC_6, geom="line", size=2, color = "#20A387FF")+
+  stat_function(fun=BC, geom="line", size=2, color = "red")+
+    geom_label(aes(x=2,y=IC_6(2)), color = "#20A387FF", label=expression(u==sqrt(32)), size = 4)+
+    geom_label(aes(x=2,y=BC(2)), color = "red", label="BC", size = 6)+
+  geom_point(data = subset(points, letter=="C"),
+             mapping=aes(x=x, y=y),
+             size = 3)+
+  geom_text_repel(data = subset(points, letter=="C"),
+             mapping=aes(x=x, y=y,
+             label = letter),
+             size = 6,
+             seed = 2)+
+  geom_segment(aes(x = 0, xend = 20, y = 4, yend=1.5), linetype="dashed", size=1.5)+
+    scale_x_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  #scale_colour_manual("Curves", values = line_colors, guide=F)+
+  labs(x = "x",
+       y = "y",
+       caption = expression(paste(u(x,y)== sqrt(xy), ", ", m, " = $20, ", p[x]," = $1, ", p[y]," = $2", sep=" ")))+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+---
+
+# The Consumer's Optimum: Why Not C? 
+
+.pull-left[
+
+$$\begin{align*}
+\text{indiff. curve slope} &< \text{budget constr. slope} \\
+| MRS_{x,y} | &< | \frac{p_x}{p_y} | \\
+| \frac{MU_x}{MU_y} | &< | \frac{p_x}{p_y} | \\
+| -0.125 | &< | -0.5 | \\\end{align*}$$
+
+- .hi-green[Consumer] would exchange at .hi-green[0.125Y:1X]
+
+- .hi-red[Market] exchange rate is .hi-red[0.5Y:1X]
+
+]
+
+.pull-right[
+
+```{r, fig.retina=3}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=IC_6, geom="line", size=2, color = "#20A387FF")+
+  stat_function(fun=BC, geom="line", size=2, color = "red")+
+    geom_label(aes(x=2,y=IC_6(2)), color = "#20A387FF", label=expression(u==sqrt(32)), size = 4)+
+    geom_label(aes(x=2,y=BC(2)), color = "red", label="BC", size = 6)+
+  geom_point(data = subset(points, letter=="C"),
+             mapping=aes(x=x, y=y),
+             size = 3)+
+  geom_text_repel(data = subset(points, letter=="C"),
+             mapping=aes(x=x, y=y,
+             label = letter),
+             size = 6,
+             seed = 2)+
+  geom_segment(aes(x = 0, xend = 20, y = 4, yend=1.5), linetype="dashed", size=1.5)+
+    scale_x_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  #scale_colour_manual("Curves", values = line_colors, guide=F)+
+  labs(x = "x",
+       y = "y",
+       caption = expression(paste(u(x,y)== sqrt(xy), ", ", m, " = $20, ", p[x]," = $1, ", p[y]," = $2", sep=" ")))+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+---
+
+# The Consumer's Optimum: Why Not C? 
+
+.pull-left[
+
+$$\begin{align*}
+\text{indiff. curve slope} &< \text{budget constr. slope} \\
+| MRS_{x,y} | &< | \frac{p_x}{p_y} | \\
+| \frac{MU_x}{MU_y} | &< | \frac{p_x}{p_y} | \\
+| -0.125 | &< | -0.5 | \\\end{align*}$$
+
+- .hi-green[Consumer] would exchange at .hi-green[0.125Y:1X]
+
+- .hi-red[Market] exchange rate is .hi-red[0.5Y:1X]
+
+- Can .hi-purple[spend less on x, more on y] and get .hi-purple[more utility!]
+
+]
+
+.pull-right[
+
+```{r, fig.retina=3}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=IC_6, geom="line", size=2, color = "#20A387FF")+
+  stat_function(fun=IC_7, geom="line", size=2, color = "#3CBB75FF")+
+  stat_function(fun=BC, geom="line", size=2, color = "red")+
+    geom_label(aes(x=2,y=IC_6(2)), color = "#20A387FF", label=expression(u==sqrt(32)), size = 4)+
+    geom_label(aes(x=2,y=BC(2)), color = "red", label="BC", size = 6)+
+    geom_label(aes(x=3.5,y=IC_7(3.5)), color = "#3CBB75FF", label=expression(u==sqrt(50)), size = 4)+
+  annotate("segment", x = 16, xend = 10, y = 2, yend = 5, colour = "purple", size=2, alpha=1, arrow=arrow(length=unit(0.5,"cm"), ends="last", type="closed"))+
+  geom_point(data = subset(points, letter %in% c("A","C")),
+             mapping=aes(x=x, y=y),
+             size = 3)+
+  geom_text_repel(data = subset(points, letter %in% c("A","C")),
+             mapping=aes(x=x, y=y,
+             label = letter),
+             size = 6,
+             seed = 2)+
+  geom_segment(aes(x = 0, xend = 20, y = 4, yend=1.5), linetype="dashed", size=1.5)+
+    scale_x_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  #scale_colour_manual("Curves", values = line_colors, guide=F)+
+  labs(x = "x",
+       y = "y",
+       caption = expression(paste(u(x,y)== sqrt(xy), ", ", m, " = $20, ", p[x]," = $1, ", p[y]," = $2", sep=" ")))+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+---
+
+# The Consumer's Optimum: Why A?
+
+.pull-left[
+
+$$\begin{align*}
+\text{indiff. curve slope} &= \text{budget constr. slope} \\\end{align*}$$
+
+]
+
+.pull-right[
+
+```{r, fig.retina=3}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=IC_7, geom="line", size=2, color = "#3CBB75FF")+
+  stat_function(fun=BC, geom="line", size=2, color = "red")+
+    geom_label(aes(x=2,y=BC(2)), color = "red", label="BC", size = 6)+
+    geom_label(aes(x=3.5,y=IC_7(3.5)), color = "#3CBB75FF", label=expression(u==sqrt(50)), size = 4)+
+  geom_point(data = subset(points, letter=="A"),
+             mapping=aes(x=x, y=y),
+             size = 3)+
+  geom_text_repel(data = subset(points, letter=="A"),
+             mapping=aes(x=x, y=y,
+             label = letter),
+             size = 6,
+             seed = 2)+
+  geom_segment(aes(x = 0, xend = 10, y = 5, yend=5), linetype="dotted", size=1)+
+  geom_segment(aes(x = 10, xend = 10, y = 5, yend=0), linetype="dotted", size=1)+
+    scale_x_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  #scale_colour_manual("Curves", values = line_colors, guide=F)+
+  labs(x = "x",
+       y = "y",
+       caption = expression(paste(u(x,y)== sqrt(xy), ", ", m, " = $20, ", p[x]," = $1, ", p[y]," = $2", sep=" ")))+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+---
+
+# The Consumer's Optimum: Why A?
+
+.pull-left[
+
+$$\begin{align*}
+\text{indiff. curve slope} &= \text{budget constr. slope} \\
+| MRS_{x,y} | &= | \frac{p_x}{p_y} | \\
+| \frac{MU_x}{MU_y} | &= | \frac{p_x}{p_y} | \\
+| -0.5 | &= | -0.5 | \\\end{align*}$$
+
+- .hi-green[Consumer] would exchange at same rate as .hi-red[market]
+
+- .hi-purple[*No other combination* of (x,y) *exists* at current prices & income that could increase utility!]
+
+]
+
+.pull-right[
+
+```{r, fig.retina=3}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=IC_7, geom="line", size=2, color = "#3CBB75FF")+
+  stat_function(fun=BC, geom="line", size=2, color = "red")+
+    geom_label(aes(x=2,y=BC(2)), color = "red", label="BC", size = 6)+
+    geom_label(aes(x=3.5,y=IC_7(3.5)), color = "#3CBB75FF", label=expression(u==sqrt(50)), size = 4)+
+  geom_point(data = subset(points, letter=="A"),
+             mapping=aes(x=x, y=y),
+             size = 3)+
+  geom_text_repel(data = subset(points, letter=="A"),
+             mapping=aes(x=x, y=y,
+             label = letter),
+             size = 6,
+             seed = 2)+
+  geom_segment(aes(x = 0, xend = 10, y = 5, yend=5), linetype="dotted", size=1)+
+  geom_segment(aes(x = 10, xend = 10, y = 5, yend=0), linetype="dotted", size=1)+
+    scale_x_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  #scale_colour_manual("Curves", values = line_colors, guide=F)+
+  labs(x = "x",
+       y = "y",
+       caption = expression(paste(u(x,y)== sqrt(xy), ", ", m, " = $20, ", p[x]," = $1, ", p[y]," = $2", sep=" ")))+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+---
+
+# The Consumer's Optimum: Two Equivalent Rules
+
+.pull-left[
+
+## Rule 1
+
+$$\frac{MU_x}{MU_y}  =  \frac{p_x}{p_y}$$
+
+- Easier for solving math problems (slope of each curve)
+
+]
+
+.pull-right[
+
+```{r, fig.retina=3}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=IC_7, geom="line", size=2, color = "#3CBB75FF")+
+  stat_function(fun=BC, geom="line", size=2, color = "red")+
+    geom_label(aes(x=2,y=BC(2)), color = "red", label="BC", size = 6)+
+    geom_label(aes(x=3.5,y=IC_7(3.5)), color = "#3CBB75FF", label=expression(u==sqrt(50)), size = 4)+
+  geom_point(data = subset(points, letter=="A"),
+             mapping=aes(x=x, y=y),
+             size = 3)+
+  geom_text_repel(data = subset(points, letter=="A"),
+             mapping=aes(x=x, y=y,
+             label = letter),
+             size = 6,
+             seed = 2)+
+  geom_segment(aes(x = 0, xend = 10, y = 5, yend=5), linetype="dotted", size=1)+
+  geom_segment(aes(x = 10, xend = 10, y = 5, yend=0), linetype="dotted", size=1)+
+    scale_x_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  #scale_colour_manual("Curves", values = line_colors, guide=F)+
+  labs(x = "x",
+       y = "y",
+       caption = expression(paste(u(x,y)== sqrt(xy), ", ", m, " = $20, ", p[x]," = $1, ", p[y]," = $2", sep=" ")))+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+---
+
+# The Consumer's Optimum: Two Equivalent Rules
+
+.pull-left[
+
+## Rule 1
+
+$$\frac{MU_x}{MU_y}  =  \frac{p_x}{p_y}$$
+
+- Easier for calculation (slopes)
+
+## Rule 2
+
+$$\frac{MU_x}{p_x}  =  \frac{MU_y}{p_y}$$
+
+- Easier for intuition (next slide)
+
+]
+
+.pull-right[
+
+```{r, fig.retina=3}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=IC_7, geom="line", size=2, color = "#3CBB75FF")+
+  stat_function(fun=BC, geom="line", size=2, color = "red")+
+    geom_label(aes(x=2,y=BC(2)), color = "red", label="BC", size = 6)+
+    geom_label(aes(x=3.5,y=IC_7(3.5)), color = "#3CBB75FF", label=expression(u==sqrt(50)), size = 4)+
+  geom_point(data = subset(points, letter=="A"),
+             mapping=aes(x=x, y=y),
+             size = 3)+
+  geom_text_repel(data = subset(points, letter=="A"),
+             mapping=aes(x=x, y=y,
+             label = letter),
+             size = 6,
+             seed = 2)+
+  geom_segment(aes(x = 0, xend = 10, y = 5, yend=5), linetype="dotted", size=1)+
+  geom_segment(aes(x = 10, xend = 10, y = 5, yend=0), linetype="dotted", size=1)+
+    scale_x_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  #scale_colour_manual("Curves", values = line_colors, guide=F)+
+  labs(x = "x",
+       y = "y",
+       caption = expression(paste(u(x,y)== sqrt(xy), ", ", m, " = $20, ", p[x]," = $1, ", p[y]," = $2", sep=" ")))+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+]
+
+---
+
+# Visualizing the Equimarginal Rule
+
+.pull-left[
+
+- Compare $MU_x$ per $1 spent vs. $MU_y$ per $1 spent
+  - Graphs on right are *not* indifference curves!
+
+]
+
+.pull-right[
+```{r}
+MU_x=function(x){50/x}
+MU_y=function(x){50/x}
+p_x=1
+p_y=2
+
+MUxpx=function(x){MU_x(x)/p_x}
+
+points_muxb<-tribble(
+  ~x, ~MUxpx, ~letter,
+  4, MUxpx(4), "B"
+)
+
+
+mx<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=MUxpx, geom="line", size=2, color = "green")+
+    geom_label(aes(x=3,y=MUxpx(3)), color = "green", label=expression(frac(MU[x],p[x])), size = 3)+
+    scale_x_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  #scale_colour_manual("Curves", values = line_colors, guide=F)+
+  labs(x = "x",
+       y = expression(frac(MU[x],p[x])))+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)+
+  theme(axis.title.y = element_text(angle = 0, vjust = 0.5))
+
+MUypy=function(y){MU_y(y)/p_y}
+
+points_muyb<-tribble(
+  ~y, ~MUypy, ~letter,
+  12.5, MUypy(12.5), "B"
+)
+
+my<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=MUypy, geom="line", size=2, color = "green")+
+    geom_label(aes(x=3,y=MUypy(3)), color = "green", label=expression(frac(MU[y],p[y])), size = 3)+
+    scale_x_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  #scale_colour_manual("Curves", values = line_colors, guide=F)+
+  labs(x = "y",
+       y = expression(frac(MU[y],p[y])))+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)+
+  theme(axis.title.y = element_text(angle = 0, vjust = 0.5))
+
+library(patchwork)
+
+mx+my
+```
+]
+
+---
+# Visualizing the Equimarginal Rule
+
+.pull-left[
+
+- Suppose you consume 4 of $x$ and 12.5 of $y$ (points B)
+
+$$\frac{MU_x}{p_x} > \frac{MU_y}{p_y}$$
+
+]
+
+.pull-right[
+```{r}
+mx1<-mx+
+  geom_label(aes(x=3,y=MUxpx(3)), color = "green", label=expression(frac(MU[x],p[x])), size = 3)+
+  geom_point(data = points_muxb,
+             mapping = aes(x=x, y=MUxpx),
+             size = 3)+
+  geom_text_repel(data = points_muxb,
+             mapping = aes(x=x, y=MUxpx, label = letter),
+             size = 6,
+             seed = 2)+
+  geom_segment(aes(x = 0, xend = 4, y = 12.5, yend=12.5), linetype="dotted", size=1)+
+  geom_segment(aes(x = 4, xend = 4, y = 12.5, yend=0), linetype="dotted", size=1)
+
+my1<-my+
+  geom_label(aes(x=3,y=MUypy(3)), color = "green", label=expression(frac(MU[y],p[y])), size = 3)+
+  geom_point(data = points_muyb,
+             mapping = aes(x=y, y=MUypy),
+             size = 3)+
+  geom_text_repel(data = points_muyb,
+             mapping = aes(x=y, y=MUypy, label = letter),
+             size = 6,
+             seed = 2)+
+  geom_segment(aes(x = 0, xend = 12.5, y = 2, yend=2), linetype="dotted", size=1)+
+  geom_segment(aes(x = 12.5, xend = 12.5, y = 2, yend=0), linetype="dotted", size=1)
+
+mx1+my1
+```
+]
+
+---
+
+# Visualizing the Equimarginal Rule
+
+.pull-left[
+
+- Suppose you consume 4 of $x$ and 12.5 of $y$ (points B)
+
+$$\frac{MU_x}{p_x} > \frac{MU_y}{p_y}$$
+
+- More "bang for your buck" with $x$ than $y$
+
+- Consume more $x$, less $y$! 
+]
+
+.pull-right[
+```{r}
+mx2<-mx1+
+  annotate("segment", x = 4, xend = 10, y = 4, yend = 4, colour = "purple", size=2, alpha=1, arrow=arrow(length=unit(0.5,"cm"), ends="last", type="closed"))
+
+my2<-my1+
+  annotate("segment", x = 12.5, xend = 5, y = 2, yend = 2, colour = "purple", size=2, alpha=1, arrow=arrow(length=unit(0.5,"cm"), ends="last", type="closed"))
+
+
+mx2+my2
+```
+]
+
+---
+
+# Visualizing the Equimarginal Rule
+
+.pull-left[
+
+- At points A, consuming 10 of $x$ and 5 of $y$
+
+$$\frac{MU_x}{p_x} = \frac{MU_y}{p_y}$$
+
+- No change (more $x$, less $x$, more $y$, less $y$) that could increase your utility!
+
+- The optimum! Cost-adjusted marginal utilities are equalized
+
+
+]
+
+.pull-right[
+```{r}
+points_muxa<-tribble(
+  ~x, ~MUxpx, ~letter,
+  10, MUxpx(10), "A"
+)
+
+mx3<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=MUxpx, geom="line", size=2, color = "green")+
+    geom_label(aes(x=3,y=MUxpx(3)), color = "green", label=expression(frac(MU[x],p[x])), size = 3)+
+  geom_point(data = points_muxa,
+             mapping = aes(x=x, y=MUxpx),
+             size = 3)+
+  geom_text_repel(data = points_muxa,
+             mapping = aes(x=x, y=MUxpx, label = letter),
+             size = 6,
+             seed = 2)+
+  geom_segment(aes(x = 0, xend = 10, y = 5, yend=5), linetype="dotted", size=1)+
+  geom_segment(aes(x = 10, xend = 10, y = 5, yend=0), linetype="dotted", size=1)+
+    scale_x_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  #scale_colour_manual("Curves", values = line_colors, guide=F)+
+  labs(x = "x",
+       y = expression(frac(MU[x],p[x])))+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)+
+  theme(axis.title.y = element_text(angle = 0, vjust = 0.5))
+
+points_muya<-tribble(
+  ~y, ~MUypy, ~letter,
+  5, MUypy(5), "A"
+)
+
+my3<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=MUypy, geom="line", size=2, color = "green")+
+    geom_label(aes(x=3,y=MUypy(3)), color = "green", label=expression(frac(MU[y],p[y])), size = 3)+
+  geom_point(data = points_muya,
+             mapping = aes(x=y, y=MUypy),
+             size = 3)+
+  geom_text_repel(data = points_muya,
+             mapping = aes(x=y, y=MUypy, label = letter),
+             size = 6,
+             seed = 2)+
+  geom_segment(aes(x = 0, xend = 5, y = 5, yend=5), linetype="dotted", size=1)+
+  geom_segment(aes(x = 5, xend = 5, y = 5, yend=0), linetype="dotted", size=1)+
+    scale_x_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  #scale_colour_manual("Curves", values = line_colors, guide=F)+
+  labs(x = "y",
+       y = expression(frac(MU[y],p[y])))+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)+
+  theme(axis.title.y = element_text(angle = 0, vjust = 0.5))
+
+mx3+my3
+```
+]
+
+
+---
+
+# The Consumer's Optimum: The Equimarginal Rule I
+
+$$\frac{MU_x}{p_x}  =  \frac{MU_y}{p_y} = \cdots = \frac{MU_n}{p_n}$$
+
+- .hi[Equimarginal Rule]: consumption is optimized where the **marginal utility per dollar spent** is **equalized** across all $n$ possible goods/decisions
+
+- You will always choose an option that gives higher marginal utility (e.g. if $MU_x > MU_y)$
+  - But each option has a different cost, so we weight each option by its cost, hence $\frac{MU_x}{p_x}$
+    
+
+---
+
+# The Consumer's Optimum: The Equimarginal Rule II
+
+.pull-left[
+
+- Any .hi[optimum] in economics: no better alternatives exist under current constraints
+
+- No possible change in your consumption that would increase your utility
+
+]
+
+.pull-right[
+.center[
+![:scale 100%](../images/optimize.jpeg)
+]
+]
+
+---
+
+# Markets Equalize Everyone's MRS I
+
+.pull-left[
+
+- .hi-purple[Markets make it so everyone faces the _same_ relative prices]
+    - Budget constraint. slope, $-\frac{p_x}{p_y}$
+    - Note individuals' incomes, $m$, are certainly different!
+
+- A person's optimal choice $\implies$ they make same tradeoff as the market
+    - Their MRS $=$ relative price ratio
+
+- .hi-purple[markets equalize everyone's MRS]
+]
+
+.pull-right[
+
+.center[
+![:scale 70%](../images/equilibriumbalance.png)
+]
+]
+
+---
+
+# Markets Equalize Everyone's MRS II
+
+Two people will very different income and preferences face the same market prices, and choose optimal consumption (points A and A') at an exchange rate of $0.5Y:1X$
+
+.pull-left[
+
+```{r, fig.height=5, fig.retina=3}
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=IC_7, geom="line", size=2, color = "#3CBB75FF")+
+  stat_function(fun=BC, geom="line", size=2, color = "red")+
+    geom_label(aes(x=2,y=BC(2)), color = "red", label="BC", size = 6)+
+    geom_label(aes(x=3.5,y=IC_7(3.5)), color = "#3CBB75FF", label=expression(u==sqrt(50)), size = 4)+
+  geom_point(data = subset(points, letter=="A"),
+             mapping=aes(x=x, y=y),
+             size = 3)+
+  geom_text_repel(data = subset(points, letter=="A"),
+             mapping=aes(x=x, y=y,
+             label = letter),
+             size = 6,
+             seed = 2)+
+  geom_segment(aes(x = 0, xend = 10, y = 5, yend=5), linetype="dotted", size=1)+
+  geom_segment(aes(x = 10, xend = 10, y = 5, yend=0), linetype="dotted", size=1)+
+    scale_x_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  #scale_colour_manual("Curves", values = line_colors, guide=F)+
+  labs(x = "x",
+       y = "y",
+       caption = expression(paste(u(x,y)== sqrt(xy), ", ", m, " = $20, ", p[x]," = $1, ", p[y]," = $2", sep=" ")))+
   theme_classic(base_family = "Fira Sans Condensed", base_size=20)
 ```
 
 ]
 
+.pull-right[
+
+```{r, fig.height=5, fig.retina=3}
+
+points_ii<-tribble(
+  ~letter, ~x, ~y,
+  "A'", 2, 4
+)
+IC_ii=function(x)(5-log(x))
+BC_ii=function(x){5-0.5*x}
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  stat_function(fun=IC_ii, geom="line", size=2, color = "#39568CFF")+
+  stat_function(fun=BC_ii, geom="line", size=2, color = "red")+
+    geom_label(aes(x=6,y=BC_ii(6)), color = "red", label="BC'", size = 6)+
+    geom_label(aes(x=16,y=IC_ii(16)), color = "#39568CFF", label=expression(u==5), size = 4)+
+  geom_point(data = points_ii,
+             mapping=aes(x=x, y=y),
+             size = 3)+
+  geom_text_repel(data = points_ii,
+             mapping=aes(x=x, y=y,
+             label = letter),
+             size = 6,
+             seed = 2)+
+  geom_segment(aes(x = 0, xend = 2, y = 4, yend=4), linetype="dotted", size=1)+
+  geom_segment(aes(x = 2, xend = 2, y = 4, yend=0), linetype="dotted", size=1)+
+    scale_x_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=seq(0,20,2),
+                     limits=c(0,20),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  #scale_colour_manual("Curves", values = line_colors, guide=F)+
+  labs(x = "x",
+       y = "y",
+       caption = expression(paste(u(x,y)== ln(x)+y, ", ", m, " = $10, ", p[x]," = $1, ", p[y]," = $2", sep=" ")))+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+```
+
+]
 ---
 
-# Practice
+# Optimization and Equilibrium
 
-.content-box-green[
+.pull-left[
+- If people can *learn* and *change* their behavior, they will always switch to a higher-valued option
+
+- If a person has no *better* choices (under current constraints), they are at an .hi[optimum]
+
+- **If everyone is at an optimum**, the **system** is in .hi[equilibrium]
+]
+
+.pull-right[
+.center[
+![:scale 50%](../images/optimize.jpeg)
+
+![:scale 70%](../images/equilibriumbalance.png)
+]
+]
+
+---
+
+# Practice I
+
 .smaller[
-.green[**Example**]: Suppose you can consume apples $(a)$ and broccoli $(b)$, and earn utility according to:
-$$u(a,b)=2ab$$
-
-Where your marginal utilities are:
+.content-box-green[
+.green[**Example**]: 	You can get utility from consuming bags of Almonds $(a)$ and bunches of Bananas $(b)$, according to the utility function:
 
 $$\begin{align*}
-MU_a&=2b\\
-MU_b&=2a\\
-\end{align*}$$
+u(a,b)&=ab\\
+MU_a&=b	\\
+MU_b&=a \\ \end{align*}$$
 
-1. Put $a$ on the horizontal axis and $b$ on the vertical axis. Write an equation for $MRS_{a,b}$.
+You have an income of $50, the price of Almonds is $10, and the price of Bananas is $2. Put Almonds on the horizontal axis and Bananas on the vertical axis.
 
-2. Would bundles of $(1, 4)$ and $(2, 2)$ be on the same indifference curve?
+1. What is your utility-maximizing bundle of Almonds and Bananas?
+2. How much utility does this provide? [Does the answer to this matter?]
+]
+]
+---
 
-3. Is this curve convex? Hint: Does $MRS_{a,b} \downarrow$ as $a \uparrow$?
+# Practice II, Cobb-Douglas!
+
+.smaller[
+.content-box-green[
+.green[**Example**]: 	You can get utility from consuming Burgers $(b)$ and Fries $(f)$, according to the utility function:
+
+$$\begin{align*}
+u(b,f)&=\sqrt{bf} \\
+MU_b&=0.5b^{-0.5}f^{0.5}	\\
+MU_f&=0.5b^{0.5}f^{-0.5} \\ \end{align*}$$
+
+You have an income of $20, the price of Burgers is $5, and the price of Fries is $2. Put Burgers on the horizontal axis and Fries on the vertical axis.
+
+1. What is your utility-maximizing bundle of Burgers and Fries?
+2. How much utility does this provide?
 ]
 ]
