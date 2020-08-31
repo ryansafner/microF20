@@ -103,7 +103,7 @@ From his current consumption, how many units of $j$ is he willing to give up to 
 
 ### Part E
 
-Suppose he can choose between bundles $a = (4,1)$, $b=(2,2)$, and $c=(4,1)$. What are his preferences between them?
+Suppose he can choose between bundles $a = (4,1)$, $b=(2,2)$, and $c=(1,4)$. What are his preferences between them?
 
 ### Part F
 
