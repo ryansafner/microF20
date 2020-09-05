@@ -81,7 +81,7 @@ $$\frac{\Delta q_x^D}{\Delta p_x} < 0$$
 ]
 .pull-right[
 .center[
-![](../iamges/pricetag.jpg)
+![](../images/pricetag.jpg)
 ]
 ]
 
