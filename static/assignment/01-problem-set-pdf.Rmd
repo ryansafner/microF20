@@ -1,6 +1,6 @@
 ---
 title: "Problem Set 1"
-author: "ECON 306 Spring 2020"
+author: "ECON 306 Fall 2020"
 date: "Due by 11:59 PM Sunday, September 6, 2020 by PDF upload in Blackboard Assignments"
 output: pdf_document
 header-includes:

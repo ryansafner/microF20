@@ -41,11 +41,16 @@ lessons:
     practice: "1.6-practice"
     
   - title: "1.7 Income and Substitution Effects"
+    reading: "1.7-reading"
+    class: "1.7-class"
+    slides: "1.7-slides"
 
   - title: "1.8 Price Elasticity"
-
+    reading: "1.8-reading"
+    
   - title: '<i class="fas fa-laptop-code"></i> **Problem Set 2**'
-
+    assignment: "02-problem-set"
+    
   - title: '<i class="fas fa-star"></i> **Exam 1** '
 
   - title: '<span class="fake-header-table">2. Production Theory</span>'
