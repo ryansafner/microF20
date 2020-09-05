@@ -54,7 +54,7 @@ $$q_x^D = q_x^D(m, p_x, p_y)$$
 
 .pull-right[
 .center[
-![](https://www.dropbox.com/s/nw0v6bsho0ab4zq/choices.jpg?raw=1)
+![](../images/choices.jpg)
 ]
 ]
 
@@ -81,7 +81,7 @@ $$\frac{\Delta q_x^D}{\Delta p_x} < 0$$
 ]
 .pull-right[
 .center[
-![](https://www.dropbox.com/s/o6l11dlc5ntiveq/pricetag.jpg?raw=1)
+![](../iamges/pricetag.jpg)
 ]
 ]
 
@@ -126,7 +126,7 @@ class: inverse, center, middle
 .pull-right[
 
 .center[
-![](https://www.dropbox.com/s/f0pkglla38vsojx/flations.png?raw=1)
+![](../images/flations.png)
 ]
 
 ]
@@ -145,7 +145,7 @@ class: inverse, center, middle
 .pull-right[
 
 .center[
-![](https://www.dropbox.com/s/f0pkglla38vsojx/flations.png?raw=1)
+![](../images/flations.png)
 ]
 
 ]
@@ -169,7 +169,7 @@ class: inverse, center, middle
 .pull-right[
 
 .center[
-![](https://www.dropbox.com/s/s6ypeqyuyslpe6v/rentapartments.jpg?raw=1)
+![](../images/rentapartments.jpg)
 
 ]
 ]
@@ -193,7 +193,7 @@ class: inverse, center, middle
 
 .center[
 
-![:scale 100%](https://www.dropbox.com/s/v1b3dbeom3k2hz8/pencil.png?raw=1)
+![:scale 100%](../images/pencil.png)
 
 ]
 ]
@@ -221,7 +221,7 @@ class: inverse, center, middle
 .pull-right[
 
 .center[
-![](https://www.dropbox.com/s/dv8ce57s6azr8e8/groceryaisle.jpg?raw=1)
+![](../images/groceryaisle.jpg)
 
 ]
 ]
@@ -242,7 +242,7 @@ class: inverse, center, middle
 .pull-right[
 
 .center[
-![](https://www.dropbox.com/s/dv8ce57s6azr8e8/groceryaisle.jpg?raw=1)
+![](../images/groceryaisle.jpg)
 
 ]
 ]
@@ -313,6 +313,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = subset(points_pe, letter=="A"),
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 10, y = 15, yend=15), linetype="dotted", size=1)+
@@ -368,6 +369,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = subset(points_pe, letter %in% c("A","C")),
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 10, y = 15, yend=15), linetype="dotted", size=1)+
@@ -420,6 +422,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = subset(points_pe, letter %in% c("A","C")),
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 10, y = 15, yend=15), linetype="dotted", size=1)+
@@ -479,6 +482,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = points_pe,
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 10, y = 15, yend=15), linetype="dotted", size=1)+
@@ -542,6 +546,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = points_pe,
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 10, y = 15, yend=15), linetype="dotted", size=1)+
@@ -598,6 +603,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = points_pe,
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 10, y = 15, yend=15), linetype="dotted", size=1)+
@@ -655,6 +661,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = points_pe,
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 10, y = 15, yend=15), linetype="dotted", size=1)+
@@ -714,6 +721,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = points_pe,
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 10, y = 15, yend=15), linetype="dotted", size=1)+
@@ -764,6 +772,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = subset(points_pe, letter=="A"),
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 10, y = 15, yend=15), linetype="dotted", size=1)+
@@ -815,6 +824,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = subset(points_pe, letter %in% c("A","C")),
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 10, y = 15, yend=15), linetype="dotted", size=1)+
@@ -877,6 +887,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = points_pe,
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 10, y = 15, yend=15), linetype="dotted", size=1)+
@@ -944,6 +955,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = points_pe,
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 10, y = 15, yend=15), linetype="dotted", size=1)+
@@ -1015,6 +1027,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = points_pe,
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 10, y = 15, yend=15), linetype="dotted", size=1)+
@@ -1045,9 +1058,9 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
 # Real Income and Substitution Effects: Inferior Good
 
 .pull-left[
-
-- What about for an .hi[inferior] good (like Ramen)?
-
+.smaller[
+- What about an .hi[inferior] good (Ramen)?
+]
 ]
 
 .pull-right[
@@ -1081,6 +1094,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = subset(points_inf, letter %in% c("A", "C")),
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 10, y = 15, yend=15), linetype="dotted", size=1)+
@@ -1109,11 +1123,11 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
 # Real Income and Substitution Effects: Inferior Good
 
 .pull-left[
-
-- What about for an .hi[inferior] good (like Ramen)?
+.smaller[
+- What about an .hi[inferior] good (Ramen)?
 
 - .orange[**Substitution effect:** `\\(A \rightarrow B\\)`] on same I.C. $(\uparrow$ cheaper $x$ and $\downarrow$ $y)$
-
+]
 ]
 
 .pull-right[
@@ -1139,6 +1153,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = points_inf,
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 10, y = 15, yend=15), linetype="dotted", size=1)+
@@ -1169,13 +1184,13 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
 # Real Income and Substitution Effects: Inferior Good
 
 .pull-left[
-
-- What about for an .hi[inferior] good (like Ramen)?
+.smaller[
+- What about an .hi[inferior] good (Ramen)?
 
 - .orange[**Substitution effect:** `\\(A \rightarrow B\\)`] on same I.C. $(\uparrow$ cheaper $x$ and $\downarrow$ $y)$
 
 - .green[**(Real) income effect:** `\\(B \rightarrow C\\)`] to new budget constraint (can buy more of $x$ and/or $y$) **is negative**
-
+]
 ]
 
 .pull-right[
@@ -1203,6 +1218,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = points_inf,
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 10, y = 15, yend=15), linetype="dotted", size=1)+
@@ -1233,15 +1249,15 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
 # Real Income and Substitution Effects: Inferior Good
 
 .pull-left[
-
-- What about for an .hi[inferior] good (like Ramen)?
+.smaller[
+- What about an .hi[inferior] good (Ramen)?
 
 - .orange[**Substitution effect:** `\\(A \rightarrow B\\)`] on same I.C. $(\uparrow$ cheaper $x$ and $\downarrow$ $y)$
 
 - .green[**(Real) income effect:** `\\(B \rightarrow C\\)`] to new budget constraint (can buy more of $x$ and/or $y$) **is negative**
 
 - .purple[**(Total) price effect:** `\\(A \rightarrow C\\)`]
-
+]
 ]
 
 .pull-right[
@@ -1272,6 +1288,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = points_inf,
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 10, y = 15, yend=15), linetype="dotted", size=1)+
@@ -1302,8 +1319,8 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
 # Real Income and Substitution Effects: Inferior Good
 
 .pull-left[
-
-- What about for an .hi[inferior] good (like Ramen)?
+.smaller[
+- What about an .hi[inferior] good (Ramen)?
 
 - .orange[**Substitution effect:** `\\(A \rightarrow B\\)`] on same I.C. $(\uparrow$ cheaper $x$ and $\downarrow$ $y)$
 
@@ -1317,7 +1334,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
 - .hi-purple[The law of demand holds, even for inferior goods!]
     - Because subst. effect dominates real income effect
 ]
-
+]
 .pull-right[
 
 ```{r, fig.retina=3, fig.height=6}
@@ -1346,6 +1363,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = points_inf,
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 10, y = 15, yend=15), linetype="dotted", size=1)+
@@ -1543,7 +1561,7 @@ $$p=10-q$$
 $$p=10-q$$
 ]
 
-- Vertical intercept (.hi["Choke price"]): price where $q_D=0$ ($10), just high enough to discourage *any* purchases
+- Vertical intercept (.hi["Choke price"]): price where `\\(q_D=0\\)` ($10), just high enough to discourage *any* purchases
 
 ]
 
@@ -1621,6 +1639,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = subset(points_demand, letter=="A"),
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 2.5, y = 5, yend=5), linetype="dotted", size=1)+
@@ -1647,6 +1666,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = subset(points_demand_2, letter=="A"),
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
     scale_x_continuous(breaks=seq(0,10,1),
                      limits=c(0,10),
@@ -1690,6 +1710,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = subset(points_demand, letter %in% c("A","B")),
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 2.5, y = 5, yend=5), linetype="dotted", size=1)+
@@ -1720,6 +1741,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = subset(points_demand_2, letter %in% c("A","B")),
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
     scale_x_continuous(breaks=seq(0,10,1),
                      limits=c(0,10),
@@ -1766,6 +1788,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = points_demand,
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 2.5, y = 5, yend=5), linetype="dotted", size=1)+
@@ -1800,6 +1823,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = points_demand_2,
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
     scale_x_continuous(breaks=seq(0,10,1),
                      limits=c(0,10),
@@ -1848,6 +1872,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = points_demand,
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
   # A lines
   geom_segment(aes(x = 0, xend = 2.5, y = 5, yend=5), linetype="dotted", size=1)+
@@ -1884,6 +1909,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_text_repel(data = points_demand_2,
              mapping=aes(x=x, y=y,
              label = letter),
+             seed = 2,
              size = 6)+
     scale_x_continuous(breaks=seq(0,10,1),
                      limits=c(0,10),
