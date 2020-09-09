@@ -47,11 +47,15 @@ lessons:
 
   - title: "1.8 Price Elasticity"
     reading: "1.8-reading"
+    class: "1.8-class"
+    slides: "1.8-slides"
+    practice: "1.8-practice"
     
-  - title: '<i class="fas fa-laptop-code"></i> **Problem Set 2**'
+  - title: '<i class="fas fa-laptop-code"></i> **Problem Set 2** due Sunday Sept 13'
     assignment: "02-problem-set"
     
-  - title: '<i class="fas fa-star"></i> **Exam 1** '
+  - title: '<i class="fas fa-star"></i> **Exam 1** Tuesday Sept 15 - Sunday Sept 20 on Blackboard'
+    assignment: "01-exam"
 
   - title: '<span class="fake-header-table">2. Production Theory</span>'
     header: True
