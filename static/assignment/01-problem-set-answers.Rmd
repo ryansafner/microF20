@@ -252,7 +252,7 @@ MRS_{4,1}&= \frac{1}{4}\\
 
 At his current consumption bundle, he is willing to give up $\frac{1}{4}$ units of $j$ to obtain one more unit of $p$ (and remain indifferent). This is the slope of the indifference curve at this point: to go one unit to the right, we go $\frac{1}{4}$ units down.
 
-To obtain one more unit of $p$ and remain indifferent, he is willing to give up 4 units of $j$. Thi sis the inverse of the indifference curve slope at this point. Consider: to go up one unit, we go 4 units to the left.
+To obtain one more unit of $j$ and remain indifferent, he is willing to give up 4 units of $p$. This is the inverse of the indifference curve slope at this point. Consider: to go up one unit, we go 4 units to the left.
 
 ### Part E
 #### Suppose he can choose between bundles $a = (4,1)$, $b=(2,2)$, and $c=(1,4)$. What are his preferences between them?
