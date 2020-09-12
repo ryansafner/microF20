@@ -10,7 +10,7 @@ library(pander)
 ```
 
 - [<i class="fas fa-file-pdf"></i> `Download as PDF`](/practice/1.8-practice.pdf)
-<!--- [<i class="fas fa-file-pdf"></i> `Answer Key`](/practice/1.8-practice-answers.pdf) -->
+- [<i class="fas fa-file-pdf"></i> `Answer Key`](/practice/1.8-practice-answers.html)
 
 The demand for monthly cell phone plans is given by:
 

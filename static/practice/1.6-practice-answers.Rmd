@@ -1,5 +1,5 @@
 ---
-title: "1.6 — Deriving a Demand Function — Practice Problems"
+title: "1.6 — Deriving a Demand Function — Practice Problems (Solutions)"
 author: "ECON 306 - Spring 2020"
 date: "Wednesday, September 2, 2020"
 output:

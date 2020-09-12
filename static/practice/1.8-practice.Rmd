@@ -1,5 +1,5 @@
 ---
-title: "1.9 Price Elasticity - Practice Problems"
+title: "1.8 — Price Elasticity — Practice Problems"
 author: "ECON 306 - Fall 2020"
 date: "Wednesday, September 9, 2020"
 output: pdf_document
