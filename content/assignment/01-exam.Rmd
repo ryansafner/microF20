@@ -9,7 +9,7 @@ library(tidyverse)
 library(pander)
 ```
 
-**Exam 2 will be available 8:00 AM Tuesday, September 15 through 10:00 PM Sunday September 20 on Blackboard**^[Go to our class Blackboard page, on the blue navigation bar on the left, click Assignments, you will find Exam 1.]
+**Exam 1 will be available 8:00 AM Tuesday, September 15 through 10:00 PM Sunday September 20 on Blackboard**^[Go to our class Blackboard page, on the blue navigation bar on the left, click Assignments, you will find Exam 1.]
 
 If you have any approved testing accomodations, please let me know ASAP and we will make arrangements. Given the time you have to complete the exam, I will not look favorably on excuses given on Sunday.
 
@@ -35,7 +35,7 @@ Note that we skipped some excess content about preferences this semester, so som
 # "Practice" Exam
 
 - [<i class="fas fa-file-pdf"></i> `Download Old Exam 1`](/examprep/Exam1.pdf)
-<!-- [<i class="fas fa-file-pdf"></i> `Old Exam 1 Answer Key`](/examprep/Exam1_Answer_Key.pdf) -->
+- [<i class="fas fa-file-pdf"></i> `Old Exam 1 Answer Key`](/examprep/Exam1_Answer_Key.pdf)
 
 Above, you have a previous semester's actual exam. Use it to get a sense of what questions are asked, the format, and how many. 
 

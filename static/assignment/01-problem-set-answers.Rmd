@@ -1,6 +1,6 @@
 ---
 title: "Problem Set 1 (Solutions)"
-author: "ECON 306 Spring 2020"
+author: "ECON 306 Fall 2020"
 date: ""
 output:
   html_document:
