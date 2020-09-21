@@ -67,10 +67,13 @@ lessons:
     
   - title: "2.2 Short Run and Long Run"
     reading: "2.2-reading"
+    class: "2.2-class"
+    slides: "2.2-slides"
     
   - title: "2.3 Cost Minimization"
-
-  - title: '<i class="fas fa-laptop-code"></i> **Problem Set 3**'
+    reading: "2.3-reading"
+    
+  - title: '<i class="fas fa-laptop-code"></i> **Problem Set 3** due Sunday Sept 27'
 
   - title: "2.4 Costs of Production"
 
