@@ -1080,7 +1080,7 @@ Where its marginal products are:
 
 $$\begin{align*}
 MP_l&=2k\\
-MU_k&=2l\\
+MP_k&=2l\\
 \end{align*}$$
 
 1. Put $l$ on the horizontal axis and $k$ on the vertical axis. Write an equation for $MRTS_{l,k}$.
