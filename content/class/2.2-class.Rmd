@@ -40,6 +40,19 @@ For some students, it takes this second time around with the tools of consumer t
 
 # Appendix
 
+## Derivation of MRTS Equation (as ratio of marginal products)
+
+Consider a movement along an isoquant curve, how would this change affect output? There will be a change in $l$ and a change in $k$, and multiplying the marginal product of each, and adding these together will give us our total change in output. But we know that if we are on the same isoquant curve, moving along the curve will *not change output* (all points on the curve are defined as having the same output!). So rearrange the equation as follows:
+
+$$\begin{align*}
+MP_l \Delta l+MU=P_k\Delta k&= \Delta q && \text{Measuring change in output} \\
+MP_l \Delta l+MU=P_k\Delta k&=0 && \text{But change in output is 0}\\
+MP_k \Delta k&= -MP_{l} \Delta l && \text{Subtracting l terms}\\
+\underbrace{\frac{\Delta k}{\Delta l}}_{MRTS} &= -\frac{MP_{l}}{MP_{k}} && \text{Dividing to get like terms on each side}\\ \end{align*}$$
+
+Notice rise over run, $\frac{\Delta k}{\Delta l}$, is the slope, which we have defined as the marginal rate of technical substitution (MRTS). $\blacksquare$
+
+
 ## Solving the Firm's Problem in One Step
 
 Traditionally, it is easier if we break the firm's profit maximization problem into two stages: 
