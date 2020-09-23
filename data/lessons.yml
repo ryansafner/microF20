@@ -72,6 +72,9 @@ lessons:
     
   - title: "2.3 Cost Minimization"
     reading: "2.3-reading"
+    class: "2.3-class"
+    slides: "2.3-slides"
+    practice: "2.3-practice"
     
   - title: '<i class="fas fa-laptop-code"></i> **Problem Set 3** due Sunday Sept 27'
 
