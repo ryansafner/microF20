@@ -450,6 +450,7 @@ $$\frac{MP_l}{w}  =  \frac{MP_k}{r} = \cdots = \frac{MP_n}{p_n}$$
 # The Firm's Least-Cost Input Combination: Example
 
 .content-box-green[
+.smallest[
 .green[**Example**]: 
 
   Your firm can use labor l and capital k to produce output according to the production function:
@@ -463,12 +464,15 @@ MP_l&=2k\\
 MP_k&=2l\\\end{align*}$$
 
 ]
+]
 
+.smallest[
 You want to produce 100 units, the price of labor is $10, and the price of capital is $5. 
 
 
 1. What is the least-cost combination of labor and capital that produces 100 units of output?
 2. How much does this combination cost? 
+]
 
 ---
 
@@ -545,9 +549,11 @@ $$q=Ak^\alpha l^{1-\alpha}$$
 
 Goolsbee et. al (2011: 246)
 ]
-
+.smallest[
 - **Output Expansion Path**: curve illustrating the changes in the optimal mix of inputs and the total cost to produce an increasing amount of output
 
 - **Total Cost curve**: curve showing the total cost of producing different amounts of output (next class)
 
 - See next class' notes page to see how we go from our least-cost combinations over a range of outputs to derive a total cost function
+
+]
