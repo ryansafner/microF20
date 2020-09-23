@@ -77,7 +77,8 @@ lessons:
     practice: "2.3-practice"
     
   - title: '<i class="fas fa-laptop-code"></i> **Problem Set 3** due Sunday Sept 27'
-
+    assignment: "03-problem-set"
+    
   - title: "2.4 Costs of Production"
 
   - title: "2.5 Short Run Profit Maximization"
