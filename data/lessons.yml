@@ -80,9 +80,13 @@ lessons:
     assignment: "03-problem-set"
     
   - title: "2.4 Costs of Production"
+    reading: "2.4-reading"
+    class: "2.4-class"
+    slides: "2.4-slides"
 
   - title: "2.5 Short Run Profit Maximization"
-
+    reading: "2.5-reading"
+    
   - title: "2.6 Long Run Industry Equilibrium"
 
   - title: '<i class="fas fa-laptop-code"></i> **Problem Set 4** '
