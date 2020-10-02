@@ -94,7 +94,8 @@ lessons:
     reading: "2.6-reading"
     
   - title: '<i class="fas fa-laptop-code"></i> **Problem Set 4** due Sunday Oct 11'
-
+    assignment: "04-problem-set"
+    
   - title: '<i class="fas fa-star"></i> **Exam 2** week of Oct 12'
 
   - title: '<span class="fake-header-table">3. Market Equilibrium</span>'

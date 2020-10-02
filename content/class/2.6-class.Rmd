@@ -63,7 +63,7 @@ Producer surplus essentially measures the “gains from exchange” to each part
 
 There are three equivalent ways of visualizing and measuring producer surplus for a firm. I will begin with a generalized series of cost curves:
 
-```{r}
+```{r, fig.asp=0.45}
 marginal<-function(x){3*x^2-8*x+8}
 average<-function(x){x^2-4*x+8+10/x}
 averagev<-function(x){x^2-4*x+8}
@@ -159,7 +159,7 @@ s3<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
   #scale_colour_manual("Curves", values = line_colors, guide=F)+
   labs(x = "",
        y = "",
-       title = "Area to Left of Supply Curve")+
+       title = "Area Left of Supply")+
   theme_classic(base_family = "Fira Sans Condensed", base_size=12)
 
 library("patchwork")
@@ -248,10 +248,10 @@ $$\begin{align*}
 					\color{red}{PS} &= R(q) - VC\\ 	
 					& \\ 
 \color{green}{\pi} & = R(q) - C(q) \\
-\color{green}{\pi} &= R(q) - VC(q)-FC\\	
+\color{green}{\pi} &= R(q) - VC(q)-f\\	
 					& \\ 
-\color{green}{\pi}-\color{red}{PS}&=-FC\\
-\color{green}{\pi}&=\color{red}{PS}-FC\\
+\color{green}{\pi}-\color{red}{PS}&=-f\\
+\color{green}{\pi}&=\color{red}{PS}-f\\
 \end{align*}$$
 
 Producer surplus does *not* include fixed costs $(f)$, but profit $(\pi)$ *does*.
