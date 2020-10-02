@@ -86,15 +86,16 @@ lessons:
 
   - title: "2.5 Short Run Profit Maximization"
     reading: "2.5-reading"
-    reading: "2.5-reading"
+    practice: "2.5-reading"
     class: "2.5-class"
     slides: "2.5-slides"
 
   - title: "2.6 Long Run Industry Equilibrium"
+    reading: "2.6-reading"
+    
+  - title: '<i class="fas fa-laptop-code"></i> **Problem Set 4** due Sunday Oct 11'
 
-  - title: '<i class="fas fa-laptop-code"></i> **Problem Set 4** '
-
-  - title: '<i class="fas fa-star"></i> **Exam 2**'
+  - title: '<i class="fas fa-star"></i> **Exam 2** week of Oct 12'
 
   - title: '<span class="fake-header-table">3. Market Equilibrium</span>'
     header: True

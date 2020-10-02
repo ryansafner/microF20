@@ -1,0 +1,14 @@
+---
+title: "2.6 — Long Run Industry Equilibrium — Readings"
+citeproc: false
+bibliography: ../../static/bib/references.bib
+csl: ../../static/bib/chicago-fullnote-bibliography-no-bib.csl
+---
+
+# Recommended
+
+- <i class="fas fas fa-book"></i> Ch. 8.4-8.5, 2.5 in @textbook
+
+We will be skipping the different types of industries based on external economies & costs: constant cost industries (no external economies), increasing cost industries (external diseconomies), and decreasing cost industries (external economies of scale). You can find more about them in the class notes appendix.
+
+See Ch. 2.5 for elasticity of supply.
