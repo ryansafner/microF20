@@ -24,6 +24,22 @@ h1, h2, h3 {
 
 /* ----ADDING------------------------------------------------ */
 
+.tri-left {
+  width: 30%;
+  float: left;
+}
+
+.tri-middle {
+  width: 30%;
+  float: left;
+}
+
+.tri-right {
+  width: 30%;
+  float: left;
+}
+
+
 /* 
 Three column layout
 */

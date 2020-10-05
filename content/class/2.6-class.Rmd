@@ -22,7 +22,7 @@ library(tidyverse)
 
 # Overview
 
-We wrap up Unit 2 on Producers today, by bringing our *optimization* model of how firms maximize profits into the long run, when firms can enter or exit depending on profitability. We also now need to talk about the fact that our firm is not the *only* profit-maximizing firm in the market, so we derive an **equilibrium** model of the industry in the long run.
+We wrap up Unit 2 on Producers today (or finally finish it Wednesday), by bringing our *optimization* model of how firms maximize profits into the long run, when firms can enter or exit depending on profitability. We also now need to talk about the fact that our firm is not the *only* profit-maximizing firm in the market, so we derive an **equilibrium** model of the industry in the long run.
 
 Famously, we see that in *competitive* industries, economic profits get driven to zero in the long run, as firms enter or exit any time there are profits or losses.
 
@@ -32,8 +32,8 @@ Next class (Wednesday October 7) we will have a **review session** for **Exam 2*
 
 # Slides
 
-- [<i class="fas fa-chalkboard-teacher"></i> View Lecture Slides](/slides/2.5-slides.html)
-- [<i class="fas fa-file-pdf"></i> Download as PDF](/slides/2.5-slides.pdf)
+- [<i class="fas fa-chalkboard-teacher"></i> View Lecture Slides](/slides/2.6-slides.html)
+- [<i class="fas fa-file-pdf"></i> Download as PDF](/slides/2.6-slides.pdf)
 
 # Practice Problems
 
@@ -43,7 +43,7 @@ Today we will be working on last class’ [practice problems](/practice/2.5-prac
 
 [Homework 4](/assignment/04-problem-set) is due 11:59PM Sunday April 5 by email. **Please attach your document as a PDF!**
 
-Exam 2 will be made available next week. I will discuss it more on Wednesday.
+[Exam 2](/assignment/02-exam) information is available, and the exam will be released next Monday October 12 through Sunday October 18. I will discuss it more on our review class this Wednesday, October 7.
 
 # Midterm Course Grades, and Exam 1 Corrections
 
