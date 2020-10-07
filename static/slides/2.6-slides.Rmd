@@ -1427,7 +1427,7 @@ $$q_S=10p-200$$
 
 ---
 
-# Price Elasticity of Supply Changes Along the Supply Curve
+# Price Elasticity of Supply Changes Along the Curve
 
 .pull-left[
 
@@ -1442,11 +1442,51 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
                      limits=c(0,10),
                      expand=expand_scale(mult=c(0,0.1)),
                      labels = function(x){paste("$", x, sep="")})+
-
-  geom_label_repel(aes(x=0, y=2), color="purple", label=expression(epsilon == infinity))+
+  geom_label_repel(data = tibble(x = 0,
+                                 y = 2),
+                   aes(x=x, y=y),
+                   color="purple",
+                   hjust = 0,
+                   vjust = 1.5,
+                   label=expression(epsilon == infinity))+
+  geom_label_repel(data = tibble(x = 2,
+                                 y = 3),
+                   aes(x=x, y=y),
+                   color="purple",
+                   hjust = 0,
+                   vjust = 1.5,
+                   label=expression(epsilon == 3))+
+  geom_label_repel(data = tibble(x = 4,
+                                 y = 4),
+                   aes(x=x, y=y),
+                   color="purple",
+                   hjust = 0,
+                   vjust = 1.5,
+                   label=expression(epsilon == 2))+
+  geom_label_repel(data = tibble(x = 6,
+                                 y = 5),
+                   aes(x=x, y=y),
+                   color="purple",
+                   hjust = 0,
+                   vjust = 1.5,
+                   label=expression(epsilon == 1.67))+
+  geom_label_repel(data = tibble(x = 8,
+                                 y = 6),
+                   aes(x=x, y=y),
+                   color="purple",
+                   hjust = 0,
+                   vjust = 1.5,
+                   label=expression(epsilon == 1.5))+
+  geom_label_repel(data = tibble(x = 10,
+                                 y = 7),
+                   aes(x=x, y=y),
+                   color="purple",
+                   hjust = 0,
+                   vjust = 1.5,
+                   label=expression(epsilon == 1.4))+
   #coord_cartesian(clip="off")+
-  labs(x = "Quantity of x",
-       y = "Price of x")+
+  labs(x = "Quantity",
+       y = "Price")+
   theme_classic(base_family = "Fira Sans Condensed", base_size=20)
 ```
 ]
@@ -1508,4 +1548,47 @@ $$\epsilon_{q,p} = \mathbf{\frac{1}{slope} \times \frac{p}{q}}$$
 ![:scale 100%](https://www.dropbox.com/s/uuajn64cnex5uru/elastic.jpg?raw=1)
 ]
 
+]
+
+---
+
+# Price Elasticity of Supply: Examples
+
+.pull-left[
+.center[
+[![](https://www.dropbox.com/s/97hh5tah2vl9rsd/corona_mask_import.png?raw=1)](https://reason.com/2020/03/31/america-could-import-countless-more-face-masks-if-federal-regulators-would-get-out-of-the-way/)
+]
+]
+
+.pull-right[
+.smallest[
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A report by <a href="https://twitter.com/PIIE?ref_src=twsrc%5Etfw">@PIIE</a> found an N-95 respirator mask still faces a 7% U.S. tariff. <br><br>Remaining US duties include<br>• 5% on hand sanitizer<br>• 4.5% on protective medical clothing<br>• 2.5% on goggles<br>• 6.4-8.3% on other medical headwear<br><br>By <a href="https://twitter.com/ABehsudi?ref_src=twsrc%5Etfw">@ABehsudi</a> 1/<a href="https://t.co/LcxE0FFlXO">https://t.co/LcxE0FFlXO</a></p>&mdash; Chad P. Bown (@ChadBown) <a href="https://twitter.com/ChadBown/status/1252602275098492928?ref_src=twsrc%5Etfw">April 21, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+]
+]
+
+---
+
+# Price Elasticity of Supply: Examples
+
+.pull-left[
+.center[
+[![](../images/fdahandsanitizer.png)](https://reason.com/2020/04/02/the-fda-is-making-it-much-much-harder-for-distilleries-to-produce-hand-sanitizer/)
+]
+]
+
+.pull-right[
+.center[
+[![](../images/masksshortage.png)](https://www.flexport.com/blog/why-there-arent-enough-masks-and-how-to-get-more/)
+]
+]
+
+---
+
+# Price Elasticity of Supply: Examples
+
+.pull-left[
+.center[
+[![](../images/mrhousingelasticity.png)](https://marginalrevolution.com/marginalrevolution/2019/08/the-supply-of-housing-has-become-less-elastic.html)
+
+]
 ]
