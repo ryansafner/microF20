@@ -4,15 +4,10 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r setup, include = F}
-knitr::opts_chunk$set(message = FALSE,
-                      warning = FALSE,
-                      include = FALSE,
-                      fig.retina = 3,
-                      fig.align = "center")
+```{r message=FALSE, warning=FALSE, include=FALSE}
 library(tidyverse)
-library(mosaic)
 library(pander)
+#source(file.path(here::here(), "lib", "graphics.R"))
 ```
 
 *Due by 11:59 PM Sunday, October 11, 2020 by PDF upload in Blackboard Assignments*\
