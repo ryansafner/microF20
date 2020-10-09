@@ -77,7 +77,7 @@ lrc3<-function(x){(0.25*x-75)^(2)+300}
 line_colors<-c("small" = "#a6cee3", "medium" = "#1f78b4", "large" = "#b2df8a")
   #scale_colour_manual("Curves", values = line_colors, guide=F)+
 
-lrac<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
   stat_function(fun=lrc1, geom="line", size=2, aes(color = "small"))+
     #geom_label(aes(x=5,y=mc(5)), color = "red", label=expression(MC(q)), size = 6)+
   stat_function(fun=lrc2, geom="line", size=2, aes(color = "medium"))+
@@ -93,7 +93,6 @@ lrac<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
        y = "Costs ($)")+
   theme_light(base_family = "Fira Sans Condensed", base_size=20)+
   theme(legend.position = "bottom")
-lrac
 ```
 
 ### Part A
