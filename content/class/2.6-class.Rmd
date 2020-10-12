@@ -41,7 +41,7 @@ Today we will be working on last class’ [practice problems](/practice/2.5-prac
 
 I have also put up answers to the problems in the slides about the price elasticity of supply:
 
-- [<i class="fas fa-file-pdf"></i> 2.6 — Elasticity Problems —  Answers](/practice/2.6-practice-answers.pdf)
+- [<i class="far fa-life-ring"></i> 2.6 — Elasticity Problems —  Answers](/practice/2.6-practice-answers.html)
 
 
 # Assignments: HW 4 and Exam 2
