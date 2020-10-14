@@ -633,7 +633,7 @@ graph+
   geom_segment(x=8, xend=8, y=0, yend=8, size=1, linetype="dotted")+
   #wta
   geom_segment(x=0, xend=2, y=5, yend=5, size=1, linetype="dotted")+
-  annotate("segment", x = 2, xend = 8, y = 3, yend = 3, colour = "black", size=2, alpha=1, arrow=arrow(length=unit(0.5,"cm"), ends="both", type="closed"))+
+  annotate("segment", x = 2, xend = 8, y = 7, yend = 7, colour = "black", size=2, alpha=1, arrow=arrow(length=unit(0.5,"cm"), ends="both", type="closed"))+
   geom_label(x=5, y=7, label="Surplus")
 ```
 ]
@@ -743,16 +743,16 @@ $$q_x^D = q_x^D(m, p_x, p_y)$$
 .pull-left[
 .smallest[
 - A change in one of the .hi-purple["determinants of demand"] will **shift** demand curve!
-    - Change in **income** $m$
-    - Change in **price of other goods** $p_y$ (substitutes or complements)
-    - Change in **preferences** or **expectations** about good $x$
-    - Change in **number of buyers**
+  - Change in **income** `\\(m\\)`
+  - Change in **price of other goods** `\\(p_y\\)` (substitutes or complements)
+  - Change in **preferences** or **expectations** about good `\\(x\\)`
+  - Change in **number of buyers**
 
 - Shows up in (inverse) demand function by a **change in intercept (choke price)**! 
 
 - Again, see my [Visualizing Demand Shifters](https://ryansafner.shinyapps.io/Demand/)
 ]
-.source[See [Class 1.9](/class/09-class) for a reminder.]
+.source[See [Class 1.8](/class/1.8-class) for a reminder.]
 ]
 
 .pull-right[
