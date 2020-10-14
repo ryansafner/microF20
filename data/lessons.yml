@@ -105,9 +105,13 @@ lessons:
     header: True
 
   - title: "3.1 The Supply and Demand Model"
+    class: "3.1-class"
+    reading: "3.1-reading"
+    slides: "3.1-slides"
 
   - title: "3.2 Market Competition and Surpluses"
-
+    reading: "3.2-reading"
+    
   - title: "3.3 Entrepreneurship, Uncertainty, and Profits"
 
   - title: '<i class="fas fa-laptop-code"></i> **Problem Set 5**'

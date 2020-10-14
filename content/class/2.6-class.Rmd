@@ -43,20 +43,11 @@ I have also put up answers to the problems in the slides about the price elastic
 
 - [<i class="far fa-life-ring"></i> 2.6 — Elasticity Problems —  Answers](/practice/2.6-practice-answers.html)
 
-
 # Assignments: HW 4 and Exam 2
 
 [Homework 4](/assignment/04-problem-set) is due 11:59PM Sunday April 5 by email. **Please attach your document as a PDF!**
 
 [Exam 2](/assignment/02-exam) information is available, and the exam will be released next Monday October 12 through Sunday October 18. I will discuss it more on our review class this Wednesday, October 7.
-
-# Midterm Course Grades, and Exam 1 Corrections
-
-As per the Registrar, all faculty were required to issue midterm course grades on Monday March 30. I *estimated* your grade based on the assignments we have completed so far - Exam 1 (20%) and your current homework average (20%)^[This is the average of HW 1 and HW 2. I have not yet graded HW 3.] out of a total of 50%, not 100%. You can again estimate your final course grade (out of 100%) on the [<i class="fas fa-calculator"></i> `Grade Calculator`](https://ryansafner.shinyapps.io/306_grade_calculator/) at the top of the [Assignments page](/assignments). 
-
-Thank you to those of you who completed Exam 1 corrections so far, those were included in your midterm grade, and I will be emailing your PDFs back to you with my markup and grades.
-
-I decided to add a curve of +20 points to all Exam 1 grades. This was reflected in the midterm grades I posted. As you all continue to turn in Exam 1 corrections, I am averaging your raw scores and corrected scores as I announced I would, and then adding 20 to give you the ultimate grade for Exam 1. This will be posted in Blackboard. Please let me know if you have any concerns or do not understand my process.
 
 # Appendix
 
