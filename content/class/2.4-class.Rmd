@@ -63,8 +63,8 @@ crs_q<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
   guides(color = F)+
   labs(x = "Input, Labor (l)",
        y = "Output (q)",
-       title = "Production with Constant Returns to Scale")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+       title = "Constant Returns")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=14)
 
 crs_cost=function(x){x}
 
@@ -82,8 +82,8 @@ crs_tc<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
   guides(color = F)+
   labs(x = "Output (q)",
        y = "Total Costs C(q)",
-       title = "Total Costs with Constant RTS")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+       title = "Total Costs")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=14)
 
 crs_mc=function(x){2}
 
@@ -101,9 +101,10 @@ crs_mc<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
   guides(color = F)+
   labs(x = "Output (q)",
        y ="Costs per Unit",
-       title = "Per Unit Costs with Constant RTS")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+       title = "Per Unit Costs")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=14)
 
+library(patchwork)
 crs_q+(crs_tc/crs_mc)
 ```
 
@@ -113,7 +114,7 @@ crs_q+(crs_tc/crs_mc)
 library(mosaic)
 drs_prod=function(x){sqrt(x)}
 
-ggplot(data.frame(x=c(0,10)), aes(x=x))+
+drs_q<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
   stat_function(fun=drs_prod, geom="line", size=2, color="red")+
   geom_abline(intercept=0, slope=1, size=1, linetype="dashed")+
   geom_label(aes(x=2.5,y=drs_prod(2.5)), color = "red", label="Total Product", size = 5)+
@@ -138,14 +139,12 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   guides(color = F)+
   labs(x = "Input, Labor (l)",
        y = "Output (q)",
-       title = "Decreasing Returns to Scale")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
-```
+       title = "Decreasing Returns")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=14)
 
-```{r, fig.retina=3, fig.height=5.5}
 drs_cost=function(x){x^{1.5}}
 
-ggplot(data.frame(x=c(0,10)), aes(x=x))+
+drs_tc<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
   stat_function(fun=drs_cost, geom="line", size=2, color="red")+
   #geom_label(aes(x=2.5,y=crs_prod(2.5)), color = "red", label="Total Product", size = 5)+
     scale_x_continuous(breaks=c(0),
@@ -159,14 +158,12 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   guides(color = F)+
   labs(x = "Output (q)",
        y = "Total Costs C(q)",
-       title = "Total Costs with Decreasing RTS")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
-```
+       title = "Total Costs")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=14)
 
-```{r, fig.retina=3, fig.height=5.5}
 drs_mc=function(x){x^{1.5}}
 
-ggplot(data.frame(x=c(0,10)), aes(x=x))+
+drs_mc2<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
   stat_function(fun=drs_mc, geom="line", size=2, color="red")+
   geom_label(aes(x=2,y=drs_mc(2)), color = "red", label="MC(q)", size = 5)+
     scale_x_continuous(breaks=c(0),
@@ -180,8 +177,10 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   guides(color = F)+
   labs(x = "Output (q)",
        y ="Costs per Unit",
-       title = "Per Unit Costs with RTS")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+       title = "Per Unit Costs")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=14)
+
+drs_q+(drs_tc/drs_mc2)
 ```
 
 ### Increasing Returns to Scale
@@ -190,7 +189,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
 library(mosaic)
 irs_prod=function(x){x^{1.5}}
 
-ggplot(data.frame(x=c(0,10)), aes(x=x))+
+irs_q<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
   stat_function(fun=irs_prod, geom="line", size=2, color="red")+
   geom_abline(intercept=0, slope=1, size=1, linetype="dashed")+
   geom_label(aes(x=2.5,y=irs_prod(2.5)), color = "red", label="Total Product", size = 5)+
@@ -215,14 +214,12 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   guides(color = F)+
   labs(x = "Input, Labor (l)",
        y = "Output (q)",
-       title = "Increasing Returns to Scale")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
-```
+       title = "Increasing Returns")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=14)
 
-```{r, fig.retina=3, fig.height=5.5}
 irs_cost=function(x){x^{0.5}}
 
-ggplot(data.frame(x=c(0,10)), aes(x=x))+
+irs_tc<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
   stat_function(fun=irs_cost, geom="line", size=2, color="red")+
   #geom_label(aes(x=2.5,y=crs_prod(2.5)), color = "red", label="Total Product", size = 5)+
     scale_x_continuous(breaks=c(0),
@@ -237,13 +234,11 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   labs(x = "Output (q)",
        y = "Total Costs C(q)",
        title = "Total Costs with Increasing RTS")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
-```
+  theme_classic(base_family = "Fira Sans Condensed", base_size=14)
 
-```{r, fig.retina=3, fig.height=5.5}
 irs_mc=function(x){1/x}
 
-ggplot(data.frame(x=c(0,10)), aes(x=x))+
+irs_mc2<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
   stat_function(fun=irs_mc, geom="line", size=2, color="red")+
   geom_label(aes(x=2.5,y=irs_mc(2.5)), color = "red", label="MC(q)", size = 5)+
     scale_x_continuous(breaks=c(0),
@@ -257,8 +252,10 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   guides(color = F)+
   labs(x = "Output (q)",
        y ="Costs per Unit",
-       title = "Per Unit Costs with Increasing RTS")+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+       title = "Per Unit Costs")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=14)
+
+irs_q+(irs_tc/irs_mc2)
 ```
 
 
