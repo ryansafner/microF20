@@ -1,0 +1,44 @@
+---
+title: "3.2 — Market Competition and Surpluses — Class Notes"
+citeproc: false
+bibliography: ../../static/bib/references.bib
+csl: ../../static/bib/chicago-syllabus-no-bib.csl
+output:
+  blogdown::html_page:
+    template: ../../pandoc/toc-title_html.template
+    toc: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+*Monday, October 19, 2020*
+
+# Overview
+
+Today we discuss the competition that takes place in markets, and discuss the idea of consumer and producer surplus. We will also do some numerical and algebraic examples of solving for equilibrium and surpluses.
+
+# Slides
+
+- [<i class="fas fa-chalkboard-teacher"></i> View Lecture Slides](/slides/3.2-slides.html)
+- [<i class="fas fa-file-pdf"></i> Download as PDF](/slides/3.2-slides.pdf)
+
+# Practice Problems
+
+Today we will be working on a [practice problem](/practice/3.2-practice). Answers will be posted on that page.
+
+# Interactive Examples
+
+- [Visualizing the Elasticity and Surpluses](https://ryansafner.shinyapps.io/elasticityandsurpluses/)
+- [Visualizing the Economic Incidence of Taxation](https://ryansafner.shinyapps.io/tax-incidence/)
+
+These are examples that I wrote in R/Shiny in the past, to visualize what it is we are looking at. As I find more time, I will update these and integrate them into our slides, but until then, I will just post links. 
+
+The first is a visual example of a market supply and demand in equilibrium. You can adjust the slopes (and intercepts) of each curve, which will change the market equilibrium, each curve's elasticity at equilibrium, and the amount of surplus in equilibrium (and it will calculate each for you).
+
+The second is a visual example of how taxes alter market surpluses. Based on the elasticity of the curve in equilibrium, a tax will both shift some of that surplus to the government (as tax revenue), and some of it is thrown away as **deadweight loss**. The curve with a *lower elasticity* bears more of the tax burden and loses more surplus. Think of elasticity as the ability to evade the tax - a more elastic curve has more options and will change their buying/selling behavior *a lot* to a price change (from a tax), and thus will bear less of the tax burden!

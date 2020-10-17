@@ -25,8 +25,8 @@ Today we bring supply and demand together to talk about equilibrium, and begin t
 
 # Slides
 
-- [<i class="fas fa-chalkboard-teacher"></i> View Lecture Slides](/slides/2.6-slides.html)
-- [<i class="fas fa-file-pdf"></i> Download as PDF](/slides/2.6-slides.pdf)
+- [<i class="fas fa-chalkboard-teacher"></i> View Lecture Slides](/slides/3.1-slides.html)
+- [<i class="fas fa-file-pdf"></i> Download as PDF](/slides/3.1-slides.pdf)
 
 # Assignments: Exam 2
 

@@ -111,9 +111,13 @@ lessons:
 
   - title: "3.2 Market Competition and Surpluses"
     reading: "3.2-reading"
+    reading: "3.2-reading"
+    slides: "3.2-slides"
+    practice: "3.2-practice"
     
   - title: "3.3 Entrepreneurship, Uncertainty, and Profits"
-
+    reading: "3.3-reading"
+    
   - title: '<i class="fas fa-laptop-code"></i> **Problem Set 5**'
 
   - title: '<span class="fake-header-table">4. Imperfect Competition</span>'
