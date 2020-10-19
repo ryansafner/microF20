@@ -111,7 +111,7 @@ lessons:
 
   - title: "3.2 Market Competition and Surpluses"
     reading: "3.2-reading"
-    reading: "3.2-reading"
+    class: "3.2-class"
     slides: "3.2-slides"
     practice: "3.2-practice"
     
@@ -135,6 +135,7 @@ lessons:
 
   - title: '<i class="fas fa-laptop-code"></i> **Problem Set 6** (UNGRADED, for Practice Only)'
 
-  - title: '<i class="fas fa-laptop-code"></i> **Op-Ed Due**'
+  - title: '<i class="fas fa-laptop-code"></i> **Op-Ed Due** by Friday November 23'
+    assignment: "op-ed"
 
   - title: '<i class="fas fa-star"></i> **Final Exam**'
