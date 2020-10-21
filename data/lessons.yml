@@ -117,8 +117,10 @@ lessons:
     
   - title: "3.3 Entrepreneurship, Uncertainty, and Profits"
     reading: "3.3-reading"
-    
-  - title: '<i class="fas fa-laptop-code"></i> **Problem Set 5**'
+    class: "3.3-class"
+    slides: "3.3-slides"
+  
+  - title: "3.4 Market Failures and Government Failures"
 
   - title: '<span class="fake-header-table">4. Imperfect Competition</span>'
     header: True
@@ -128,14 +130,16 @@ lessons:
   - title: "4.2 Consequences and Sources of Market Power"
 
   - title: "4.3 Pricing with Market Power"
+  
+  - title: "4.4 Factor Markets"
 
-  - title: "4.4 Monopolistic Competition and Oligopoly"
+  - title: "4.5 Monopolistic Competition and Oligopoly"
 
-  - title: "4.5 Sequential Games & Contestable Markets"
+  - title: "4.6 Sequential Games & Contestable Markets"
 
   - title: '<i class="fas fa-laptop-code"></i> **Problem Set 6** (UNGRADED, for Practice Only)'
 
-  - title: '<i class="fas fa-laptop-code"></i> **Op-Ed Due** by Friday November 23'
+  - title: '<i class="fas fa-laptop-code"></i> **Op-Ed Due** by Friday November 20'
     assignment: "op-ed"
 
   - title: '<i class="fas fa-star"></i> **Final Exam**'

@@ -11,12 +11,14 @@ library(pander)
 
 *Due by 11:59 PM Friday November 20, by CHALK-AND-WIRE UPLOAD (include a word count)*
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/W0zli4P6IPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-- [<i class="fas fa-chalkboard-teacher"></i> How to Write a Good Paper](/slides/paper-slides.html)
-- See examples of good student Op-eds on Blackboard (Course Documents)
-
 > "How can I know what I think until I see what I say?" --- E. M. Forster on Writing
+
+## How to Write a Good Paper
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-e_FjEAUhIE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [<i class="fas fa-chalkboard-teacher"></i> How to Write a Good Paper (Slides)](/slides/paper-slides.html)
+- See examples of good Op-eds from previous students on Blackboard (Under Course Documents)
 
 # Overview 
 
