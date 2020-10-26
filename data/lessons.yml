@@ -120,7 +120,13 @@ lessons:
     class: "3.3-class"
     slides: "3.3-slides"
   
-  - title: "3.4 Market Failures and Government Failures"
+  - title: "3.4 Market Failures"
+    reading: "3.4-reading"
+    class: "3.4-class"
+    slides: "3.4-slides"
+
+  - title: "3.5 Government Failures"
+    reading: "3.5-reading"
 
   - title: '<span class="fake-header-table">4. Imperfect Competition</span>'
     header: True

@@ -1,0 +1,38 @@
+---
+title: "3.4 — Market Failures - Class Notes"
+citeproc: false
+bibliography: ../../static/bib/references.bib
+csl: ../../static/bib/chicago-syllabus-no-bib.csl
+output:
+  blogdown::html_page:
+    template: ../../pandoc/toc-title_html.template
+    toc: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+*Monday, October 26, 2020*
+
+# Overview
+
+Today we discuss how markets work in real life, and what prices actually *do*, and why we need them to coordinate economic activity.
+
+# Readings
+
+See [today’s suggested readings](/reading/3.4-reading).
+
+# Slides
+
+- [<i class="fas fa-chalkboard-teacher"></i> View Lecture Slides](/slides/3.4-slides.html)
+- [<i class="fas fa-file-pdf"></i> Download as PDF](/slides/3.4-slides.pdf)
+
+# Assignments: Exam 2 Corrections
+
+Exam 2 results are on Blackboard. Please email me corrections by Sunday November 1.
+
