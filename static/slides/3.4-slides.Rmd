@@ -858,7 +858,7 @@ coord_equal()
 # Religions, Clubs, Cults, and Social Groups
 
 .pull-left[
-.smallest[
+.quitesmall[
 - Groups provide immaterial, “social/spiritual goods”, to individuals
   - e.g. comfort, community, friendship, support system, therapy, good vibes
   - Ex: religions, clubs, cults, fraternities/sororities, social groups, etc.

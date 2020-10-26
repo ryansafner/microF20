@@ -21,7 +21,12 @@ knitr::opts_chunk$set(echo = FALSE,
 
 # Overview
 
-Today we discuss how markets work in real life, and what prices actually *do*, and why we need them to coordinate economic activity.
+Today we continue to consider how markets work and why (and when) they are so efficient at allocating resources and solving social problems. We take a crack at defining efficiency in a few ways: [allocative](https://en.wikipedia.org/wiki/Allocative_efficiency), [productive](https://en.wikipedia.org/wiki/Productive_efficiency), [Pareto](https://en.wikipedia.org/wiki/Pareto_efficiency), and [Kaldor-Hicks](https://en.wikipedia.org/wiki/Kaldor%E2%80%93Hicks_efficiency) efficiency. We then discuss [Welfare Economics](https://en.wikipedia.org/wiki/Welfare_economics) and I summarize three conditions about when markets are good & efficient:
+1. Markets are competitive
+2. Markets reach equilibrium
+3. Markets do not have externalities
+
+This leads us into a discussion of [market failure](https://en.wikipedia.org/wiki/Market_failure), when markets *aren’t* efficient because something prevents the price system from working properly. We talk about several types of market failures: collective action problems, public goods, and externalities.
 
 # Readings
 
