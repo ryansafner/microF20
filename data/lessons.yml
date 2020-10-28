@@ -125,8 +125,12 @@ lessons:
     class: "3.4-class"
     slides: "3.4-slides"
 
-  - title: "3.5 Government Failures"
+  - title: "3.5 Government Failures & Introduction to Political Economy"
     reading: "3.5-reading"
+    class: "3.5-class"
+    slides: "3.5-slides"
+
+  - title: '<i class="fas fa-laptop-code"></i> **Problem Set 5** due Sunday Nov 5'
 
   - title: '<span class="fake-header-table">4. Imperfect Competition</span>'
     header: True
@@ -143,7 +147,7 @@ lessons:
 
   - title: "4.6 Sequential Games & Contestable Markets"
 
-  - title: '<i class="fas fa-laptop-code"></i> **Problem Set 6** (UNGRADED, for Practice Only)'
+  - title: '<i class="fas fa-laptop-code"></i> **Problem Set 6**'
 
   - title: '<i class="fas fa-laptop-code"></i> **Op-Ed Due** by Friday November 20'
     assignment: "op-ed"

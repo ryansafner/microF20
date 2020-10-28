@@ -1501,3 +1501,204 @@ Economics Nobel 1991]
 .source[Glaesar, Edward L, Rafael La Porta, Florencio Lopez-de-Silanes, and Andrei Shleifer, 2004, "Do Institutions Cause Growth?" *Journal of Economic Growth* 9: 271-303]
 
 ]
+
+---
+
+# Summarizing Types of Goods
+
+.pull-left[
+.smallest[
+- Can classify into 4 types of goods based on .hi-purple[rivalry] & .hi-purple[excludability]
+]
+]
+
+.pull-right[
+.smallest[
+```{r}
+library(kableExtra)
+goods<-tribble(
+  ~"", ~"", ~"",
+  "", "Excludable", "Nonexcludable",
+  "Rival", "Private Goods", "Common Resources",
+  "Rival", "(Houses, Jeans)", "(Environment, Wikipedia)",
+  "Nonrival", "Club Goods", "Public Goods",
+  "Nonrival", "(Swim Clubs, Cable TV)", "(Asteroid Defense, Vaccines)"
+) 
+
+goods[2,2]<-cell_spec(goods[2,2], "html", underline = F, color = "blue")
+goods[2,3]<-cell_spec(goods[2,3], "html", underline = F, color = "blue")
+goods[4,2]<-cell_spec(goods[4,2], "html", underline = F, color = "blue")
+goods[4,3]<-cell_spec(goods[4,3], "html", underline = F, color = "blue")
+
+table<-goods %>%
+  knitr::kable(., format="html", escape = F) %>%
+  #add_header_above(c(" " = 1, "Column" = 2)) %>%
+  column_spec(c(1), bold=T) %>%
+  row_spec(c(1), bold = T) %>%
+  #row_spec(c(2,4), italic = T, color = "blue") %>%
+  collapse_rows(columns = 1, latex_hline = "major", valign = "middle") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), html_font = "Fira Sans")
+table
+```
+
+]
+]
+
+---
+
+# Summarizing Types of Goods
+
+.pull-left[
+.smallest[
+- Can classify into 4 types of goods based on .hi-purple[rivalry] & .hi-purple[excludability]
+
+- Economics mostly focuses on .hi[“private goods”]
+]
+]
+
+.pull-right[
+
+.smallest[
+```{r}
+table
+```
+
+]
+]
+
+---
+
+# Summarizing Types of Goods
+
+.pull-left[
+.smallest[
+- Can classify into 4 types of goods based on .hi-purple[rivalry] & .hi-purple[excludability]
+
+- Economics mostly focuses on .hi[“private goods”]
+
+- Largest issues with .hi[“public goods”]
+]
+]
+
+.pull-right[
+
+.smallest[
+```{r}
+table
+```
+
+]
+]
+
+---
+
+# Summarizing Types of Goods
+
+.pull-left[
+.smallest[
+- Can classify into 4 types of goods based on .hi-purple[rivalry] & .hi-purple[excludability]
+
+- Economics mostly focuses on .hi[“private goods”]
+
+- Largest issues with .hi[“public goods”]
+
+- Can transform public goods into .hi[“club goods”] by making them *excludable*
+  - Managed by an organization, transformed by technology
+  - Think about selective incentives
+
+]
+]
+.pull-right[
+
+.smallest[
+```{r}
+table
+```
+]
+]
+
+---
+
+# Club Goods
+
+.center[
+![](../images/clubgoods.png)
+]
+
+---
+
+# Summarizing Types of Goods
+
+.pull-left[
+.smallest[
+- Can classify into 4 types of goods based on .hi-purple[rivalry] & .hi-purple[excludability]
+
+- Economics mostly focuses on .hi[“private goods”]
+
+- Largest issues with .hi[“public goods”]
+
+- Can transform public goods into .hi[“club goods”] by making them *excludable*
+  - Managed by an organization, transformed by technology
+  - Think about selective incentives
+
+- .hi[“Common resources”] can be managed with the right set of rules or property rights (otherwise the .b[tragedy of the commons] results)
+]
+]
+.pull-right[
+.smallest[
+
+```{r}
+table
+```
+]
+]
+
+---
+
+# Common Resources
+
+.left-column[
+.center[
+![:scale 80%](../images/ostrom.jpg)
+
+.smallest[
+Elinor Ostrom
+
+1933—2012
+
+Economics Nobel 2009
+]
+]
+]
+
+.right-column[
+
+.smallest[
+- A wide variety of solutions are possible for managing common resources efficiently
+  - Government management
+  - Purely private property
+  - Civil society organizations
+
+- So long as they set up **good rules** that solve the free rider problem, remove the incentive to overuse resource, negative externality on others
+]
+
+.center[
+![:scale 25%](../images/governingthecommons.jpg)
+]
+]
+
+---
+
+# An Example: Wikipedia
+
+.pull-left[
+.center[
+![:scale 75%](../images/wikipedia.png)
+]
+]
+
+.pull-right[
+.center[
+![:scale 80%](../images/Wikipedia-paper.png)
+]
+]
