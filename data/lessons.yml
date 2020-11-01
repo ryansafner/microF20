@@ -130,12 +130,16 @@ lessons:
     class: "3.5-class"
     slides: "3.5-slides"
 
-  - title: '<i class="fas fa-laptop-code"></i> **Problem Set 5** due Sunday Nov 5'
+  - title: '<i class="fas fa-laptop-code"></i> **Problem Set 5** due Sunday Nov 8'
+    assignment: "05-problem-set"
 
   - title: '<span class="fake-header-table">4. Imperfect Competition</span>'
     header: True
 
   - title: "4.1 Monopoly"
+    reading: "4.1-reading"
+    class: "4.1-class"
+    slides: "4.1-slides"
 
   - title: "4.2 Consequences and Sources of Market Power"
 

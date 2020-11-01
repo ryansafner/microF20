@@ -15,6 +15,8 @@ library(pander)
 
 ## How to Write a Good Paper
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8CdcUyMug3c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-e_FjEAUhIE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - [<i class="fas fa-chalkboard-teacher"></i> How to Write a Good Paper (Slides)](/slides/paper-slides.html)
@@ -40,7 +42,7 @@ If you publish your op-ed in any media outlet (newspapers, news websites, major 
 
 *Meeting the market test is what matters most!*  
 
-**Your Op-Ed, with a word count, is due by 11:59 PM Friday November 20, via email, and constitutes 20\% of your final course grade.** Beginning Saturday, November 21, I will deduct 1 point for every hour it is late.
+**Your Op-Ed, with a word count, is due by 11:59 PM Friday November 20, via Chalk-and-Wire upload, and constitutes 20% of your final course grade.** Beginning Saturday, November 21, I will deduct 1 point for every hour it is late.
 
 # Length, References, & Mechanics
 
