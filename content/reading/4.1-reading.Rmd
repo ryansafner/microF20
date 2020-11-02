@@ -1,0 +1,10 @@
+---
+title: "4.1 — Monopoly - Readings"
+citeproc: false
+bibliography: ../../static/bib/references.bib
+csl: ../../static/bib/chicago-fullnote-bibliography-no-bib.csl
+---
+
+# Recommended
+
+- <i class="fas fas fa-book"></i> Ch. 9-2-9.5 in @textbook
