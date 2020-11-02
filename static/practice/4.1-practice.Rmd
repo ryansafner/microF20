@@ -1,5 +1,5 @@
 ---
-title: "4.1 — Monopoly — Practice Problems"
+title: "4.1 — Modeling Firms With Market Power — Practice Problems"
 author: "ECON 306 - Fall 2020"
 date: "Monday, November 2, 2020"
 output: pdf_document
