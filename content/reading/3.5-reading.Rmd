@@ -9,6 +9,7 @@ csl: ../../static/bib/chicago-fullnote-bibliography-no-bib.csl
 
 - [<i class="fas fa-file-pdf"></i> Buchanan, 1984, "Politics Without Romance"](/readings/Buchanan-1984.pdf)
 - [<i class="fas fa-file-pdf"></i> Baumol, 1990, "Entrepreneurship: Productive, Unproductive, and Destructive"](/readings/Baumol-1990.pdf)
+- [<i class="fas fa-file.pdf"></i> Mitchell, 2013, "The Pathology of Privilege: The Economic Consequences of Government Favoritism"](/readings/Mitchell-2013.pdf)
 
 Buchanan was the 1986 winner of the Nobel Prize in Economics for his pioneering work in public choice theory. This work by him is a good summary of the economic analysis of politics using basic principles we use to study markets: equilibrium resulting from exchanges and interactions between optimizing individuals pursuing their own interests.
 
@@ -17,6 +18,7 @@ The second paper by William Baumol (who, if he lived longer, might have won the 
 ## Helpful:
 
 - [<i class="fab fa-wikipedia-w"></i> Public Choice](https://en.wikipedia.org/wiki/Public_choice)
-- [<i class="fab fa-wikipedia-w"></i> Government_failure](https://en.wikipedia.org/wiki/Government_failure)
-- [<i class="fab fa-wikipedia-w"></i> Government_failure](https://en.wikipedia.org/wiki/Rent_seeking)
-- [<i class="fab fa-wikipedia-w"></i> Government_failure](https://en.wikipedia.org/wiki/Regulatory_capture)
+- [<i class="fab fa-wikipedia-w"></i> Government failure](https://en.wikipedia.org/wiki/Government_failure)
+- [<i class="fab fa-wikipedia-w"></i> Rational ignorance](https://en.wikipedia.org/wiki/Rational_ignorance)
+- [<i class="fab fa-wikipedia-w"></i> Rent seeking](https://en.wikipedia.org/wiki/Rent_seeking)
+- [<i class="fab fa-wikipedia-w"></i> Regulatory capture](https://en.wikipedia.org/wiki/Regulatory_capture)

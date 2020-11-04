@@ -1,5 +1,5 @@
 ---
-title: "4.2: Consequences & Sources of Market Power"
+title: "4.2: Consequences & Sources of Power"
 subtitle: "ECON 306 · Microeconomic Analysis · Spring 2020"
 author: 'Ryan Safner<br> Assistant Professor of Economics <br> <a href="mailto:safner@hood.edu"><i class="fa fa-paper-plane fa-fw"></i> safner@hood.edu</a> <br> <a href="https://github.com/ryansafner/microS20"><i class="fa fa-github fa-fw"></i> ryansafner/microS20</a><br> <a href="https://microS20.classes.ryansafner.com"> <i class="fa fa-globe fa-fw"></i> microS20.classes.ryansafner.com</a><br>'
 #date:
@@ -36,51 +36,46 @@ update_geom_defaults("label", list(family = "Fira Sans Condensed"))
 set.seed(256)
 ```
 
+class: inverse
 
-- What *is* a monopoly? 
+# Outline
 
-- Suprisingly difficult question (antitrust law)
+### [The Social Harm of Market Power](#)
 
-- Coke quote about monopoly made by king
+### [What Is a Monopoly?](#)
 
-- Isn’t it just a single seller?
+### [What If You’re Just *Better*?](#)
 
-- Monopoly has a negative connotation (perhaps deserved)
+### [The *Ugly* of Monopoly: Rent-Seeking](#)
 
-- The only seafood restaurant in town
+---
 
-- Is an inventor a monopolist?
+# Monopoly: The Good, the Bad, and the Ugly
 
-- Some monopoly is creative. Is Google a monopoly? The DOJ is trying to figure that out. Was Microsoft a monopoly in the 1990s?
+.pull-left[
+.smallest[
+- No market is perfectly competitive (it’s an extreme model); but that does not necessarily imply market failure
 
-- What if you’re just *better* than any other (potential) competitors?
+- Monopoly & market power are *interesting*
+  - Most firms clearly have *some* market power
+  - Market power $\neq$ bad, necessarily!
 
-- “Open” monopoly vs. “Closed” monopoly
+- Today, we’ll examine what I call “the good, the bad, and the ugly” of market power
+  - but not necessarily in that order!
+]
+]
 
-- A monopoly must be maintained with .hi[barriers to entry]
-  - Regulation
-  - Economies of scale
-  - Intellectual property
-  - Technological superiority
-  
+.pull-right[
+.center[
+![](../images/monopolyman2.jpg)
+]
+]
 
-• Government blocks entry: granting patents, copyrights or
-trademarks; granting a firm a public franchise (e.g., US Postal
-Service)
-• Control of a key resource (e.g., DeBeers Diamonds)
-• Network externalities (e.g., Craigslist)
-• Natural Monopoly - a situation in which economies of scale are
-so large that one firm can supply the entire market at a lower ATC than can two or more firms (e.g., cable)
-
-
-Market power may have an upside
-• New products requires firms to spend funds on R&D, and usually that requires success in the market – which is more likely in monopoly markets with profits than competitive ones with no profits
-“It is not that kind of [price] competition which counts but the competition from the new commodity, the new technology, the new source of supply, the new type of organization . . . competition which commands a decisive cost or quality advantage and which strikes not at the margins of the profits and outputs of the existing firms but at their foundations and their very lives.” - Joseph Schumpeter
-
+---
 
 class: inverse, center, middle
 
-# Social Consequences of Market Power
+# The Social Harm of Market Power
 
 ---
 
@@ -161,7 +156,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
 
 .smallest[
 - In a .hi[competitive market] in .hi[long run equilibrium]:
-  - .hi-purple[Economic profit] is driven to $0
+  - .hi-purple[Economic profit] is driven to $0; resources (factors of production) optimally allocated
   - .hi-purple[Allocatively efficient]: $p=MC(q)$, maximized .blue[CS] $+$ .red[PS]
   - .hi-purple[Productively efficient]: $p=AC(q)_{min}$ (otherwise firms would enter/exit)
 ]
@@ -193,20 +188,18 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
     geom_label(aes(x=6,y=mc(6)), color = "red", label=expression(MC(q)==AC(q)), size = 5)+
   geom_segment(x=8, xend=8, y=0, yend=2, size=1, linetype="dotted")+
   geom_label(aes(x=3, y= 5), label="CS", color="blue", size =5)+
-    geom_text(x=8.5,y=2.5,label=expression(paste("(",q^c,", ",p^c,")")), size=5)+
-    scale_x_continuous(breaks=seq(0,10,1),
+    scale_x_continuous(breaks=c(0,8),
+                       labels=c(0,expression(q[c])),
                      limits=c(0,10),
                      expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,10,1),
+  scale_y_continuous(breaks=c(0,2),
+                     labels=c(0,expression(p[c])),
                      limits=c(0,10),
-                     labels=scales::dollar,                   
                      expand=expand_scale(mult=c(0,0.1)))+
   guides(fill=F)+
   labs(x = "Quantity",
-       y = "Price",
-       caption = expression(paste("Demand: ", p(q)==10-q, ", Cost: ", C(q)==2*q)))+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
-
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=16)
 ```
 
 ]
@@ -214,11 +207,10 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
 .pull-right[
 
 - Consider a market with some simplified cost assumptions:
-  - No fixed costs
-  - Constant variable costs $2q$
-    - implies $MC(q)=AC(q)=2$
+  - No fixed costs, constant variable costs
+  - implies $\color{red}{MC(q)=AC(q)}$
 
-- If this was a *competitive* market, firms would set $p=MC(q)$ and produce 8
+- If this was a *competitive* market, firms would set $p_c=MC(q)$ and (collectively), industry would produce $q_c$
   - .blue[Consumer surplus] maximized
 ]
 
@@ -270,22 +262,20 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_segment(x=8, xend=8, y=0, yend=2, size=1, linetype="dotted")+
   geom_segment(x=4, xend=4, y=0, yend=6, size=1, linetype="dotted")+
   
-  geom_point(x=4,y=6, size=3)+
-  geom_text(x=4.5,y=6.5,label=expression(paste("(",q^m,", ",p^m,")")), size=5)+
-    geom_text(x=8.5,y=2.5,label=expression(paste("(",q^c,", ",p^c,")")), size=5)+
+  #geom_point(x=4,y=6, size=3)+
 
-    scale_x_continuous(breaks=seq(0,10,1),
+  scale_x_continuous(breaks=c(0,4,8),
+                       labels=c(0,expression(q[m]),expression(q[c])),
                      limits=c(0,10),
                      expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,10,1),
+  scale_y_continuous(breaks=c(0,2,6),
+                       labels=c(0,expression(p[c]),expression(p[m])),
                      limits=c(0,10),
-                     labels=scales::dollar,                   
                      expand=expand_scale(mult=c(0,0.1)))+
   guides(fill=F)+
   labs(x = "Quantity",
-       y = "Price",
-       caption = expression(paste("Demand: ", p(q)==10-q, ", Cost: ", C(q)==2*q)))+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=16)
 
 ```
 
@@ -293,9 +283,9 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
 
 .pull-right[
 
-- A **monopolist** faces the *entire* market demand and sets $(q^m,p^m)$:
-  - Sets .purple[`\\(MR(q)\\)`] $=$ .red[`\\(MC(q)\\)`] at **4**
-  - Raises price to .blue[maximum consumers are WTP (Demand)]: **$6**
+- A **monopolist** faces the *entire* market demand and sets $(q_m,p_m)$:
+  - Sets .purple[`\\(MR(q)\\)`] $=$ .red[`\\(MC(q)\\)`] at $q_m$
+  - Raises price to .blue[maximum consumers are WTP (Demand)]: $p_m$
 
 - .hi-purple[Restricts output and raises price], compared to competitive market
 
@@ -353,21 +343,18 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_segment(x=8, xend=8, y=0, yend=2, size=1, linetype="dotted")+
   geom_segment(x=4, xend=4, y=0, yend=6, size=1, linetype="dotted")+
   
-  geom_point(x=4,y=6, size=3)+
-  geom_text(x=4.5,y=6.5,label=expression(paste("(",q^m,", ",p^m,")")), size=5)+
-    geom_text(x=8.5,y=2.5,label=expression(paste("(",q^c,", ",p^c,")")), size=5)+
-    scale_x_continuous(breaks=seq(0,10,1),
+  scale_x_continuous(breaks=c(0,4,8),
+                       labels=c(0,expression(q[m]),expression(q[c])),
                      limits=c(0,10),
                      expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,10,1),
+  scale_y_continuous(breaks=c(0,2,6),
+                       labels=c(0,expression(p[c]),expression(p[m])),
                      limits=c(0,10),
-                     labels=scales::dollar,                   
                      expand=expand_scale(mult=c(0,0.1)))+
   guides(fill=F)+
   labs(x = "Quantity",
-       y = "Price",
-       caption = expression(paste("Demand: ", p(q)==10-q, ", Cost: ", C(q)==2*q)))+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=16)
 
 ```
 
@@ -376,45 +363,50 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
 .pull-right[
 
 - **Deadweight loss** of surplus destroyed from lost gains from trade
-  - Consumers willing to buy more than 4 units for lower prices!
-  - Monopolist willing to accept lower prices to sell more, but would earn *less* total profits this way
+  - Consumers willing to buy more than $q_m$, if the monopolist would lower prices!
+  - Monopolist *would* benefit by accepting lower prices to sell more, but this would yield *less* than maximum profits
 
 ]
 
 ---
 
-# The *Ugly* of Monopoly: Rent-Seeking I
+# The Bad of Monopoly II
+
+.pull-left[
+.center[
+![](../images/woodyharrelsoncrymoney.gif)
+]
+]
+
+.pull-right[
+
+- **Deadweight loss** of surplus destroyed from lost gains from trade
+  - Consumers willing to buy more than $q_m$, if the monopolist would lower prices!
+  - Monopolist *would* benefit by accepting lower prices to sell more, but this would yield *less* than maximum profits
+
+]
+
+---
+
+# The Bad of Monopoly: X-Inefficiency
 
 .pull-left[
 
 ```{r, fig.retina=3}
 mc<-function(x){2}
-demand<-function(x){10-x}
-mr<-function(x){10-2*x}
+mc_x<-function(x){4}
+dwl_x<-tibble(x=c(6,6,8),
+           y=c(4,2,2))
 
-CS<-tibble(x=c(0,0,8),
-           y=c(10,2,2))
-
-CS_2<-tibble(x=c(0,0,4),
-           y=c(10,6,6))
-dwl<-tibble(x=c(4,4,8),
-           y=c(6,2,2))
-mr<-function(x){10-2*x}
-
-#line_colors <- c("Supply" = "red", "Demand" = "blue")
-#surplus_colors <-c("Consumer" = "blue", "Producer" = "red")
 
 ggplot(data.frame(x=c(0,10)), aes(x=x))+
   
   # surpluses
-  geom_polygon(data=CS_2, aes(x=x,y=y), fill="blue",alpha=0.5)+
-  geom_rect(xmin=0,xmax=4,ymin=2,ymax=6,fill="green", alpha=0.25)+ #profit
-  geom_polygon(data=dwl, aes(x=x,y=y), fill="black",alpha=0.5)+ #dwl
+  #geom_rect(xmin=0,xmax=6,ymin=2,ymax=4,fill="black", alpha=0.5)+ #profit
+  #geom_polygon(data=dwl_x, aes(x=x,y=y), fill="black",alpha=0.5)+ #dwl
   
   # surplus labels
-  geom_label(aes(x=1.5, y= 4), label="Profit", color="green", size =5)+
-  geom_label(aes(x=1.5, y= 7.5), label="CS", color="blue", size =5)+
-  geom_label(aes(x=5.5, y= 3.5), label="DWL", color="black", size =5)+
+  #geom_label(aes(x=5.5, y= 3.5), label="DWL", color="black", size =5)+
   
   # lines 
   stat_function(fun=demand, geom="line", size=2, color = "blue")+
@@ -423,27 +415,28 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
     geom_label(aes(x=4.5,y=mr(4.5)), color = "purple", label=expression(MR(q)), size = 5)+
   stat_function(fun=mc, geom="line", size=2, color = "red")+
     geom_label(aes(x=6,y=mc(6)), color = "red", label=expression(MC(q)==AC(q)), size = 5)+
-  
+  stat_function(fun=mc_x, geom="line", size=2, color = "orange")+
+    geom_label(aes(x=6,y=mc_x(6)), color = "orange", label=expression(MC(q)^{x}==AC(q)^{x}), size = 5)+
   # optimal dots
   geom_segment(x=0, xend=4, y=6, yend=6, size=1, linetype="dotted")+
   geom_segment(x=8, xend=8, y=0, yend=2, size=1, linetype="dotted")+
   geom_segment(x=4, xend=4, y=0, yend=6, size=1, linetype="dotted")+
   
-  geom_point(x=4,y=6, size=3)+
-  geom_text(x=4.5,y=6.5,label=expression(paste("(",q^m,", ",p^m,")")), size=5)+
-    geom_text(x=8.5,y=2.5,label=expression(paste("(",q^c,", ",p^c,")")), size=5)+
-    scale_x_continuous(breaks=seq(0,10,1),
+  # x-eff
+  geom_segment(x=3, xend=3, y=0, yend=7, size=1, linetype="dotted")+
+  geom_segment(x=0, xend=3, y=7, yend=7, size=1, linetype="dotted")+
+    scale_x_continuous(breaks=c(3,4,8),
+                       labels=c(expression(q[m]^{x}),expression(q[m]),expression(q[c])),
                      limits=c(0,10),
                      expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,10,1),
+  scale_y_continuous(breaks=c(2,6,7),
+                       labels=c(expression(p[c]),expression(p[m]),expression(p[m]^{x})),
                      limits=c(0,10),
-                     labels=scales::dollar,                   
                      expand=expand_scale(mult=c(0,0.1)))+
   guides(fill=F)+
   labs(x = "Quantity",
-       y = "Price",
-       caption = expression(paste("Demand: ", p(q)==10-q, ", Cost: ", C(q)==2*q)))+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=16)
 
 ```
 
@@ -451,619 +444,293 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
 
 .pull-right[
 
-- The .hi-green[monopoly profits] earned with market power are an .hi[economic rent]
-  - Comes from restricting entry & competition
+> “The best of all monopoly profits is a quiet life” - Sir John Hicks
 
-- This is the "prize" of market power
+
+- Monopoly may generate .hi[“X-inefficiency”]
+
+- Lack of competition causes monopoly to be **complacent** or **lazy**
+  - May inefficiently .orange[raise costs] of production
+
+- Creates further distortions (lost surpluses)
 
 ]
 
 ---
 
-# The *Ugly* of Monopoly: Rent-Seeking II
+# In General
+
+.center[
+![:scale 45%](../images/spongebobmonopoly.jpg)
+]
+
+---
+
+class: inverse, center, middle
+
+# What Is a Monopoly?
+
+---
+
+# What Is a Monopoly?
 
 .pull-left[
-.center[
-![:scale 80%](https://www.dropbox.com/s/21v476wphty3f0i/prize.jpg?raw=1)
-]
+
+- Everyone (economists & the public alike) generally agree that monopoly is bad
+
+- But what *is* a monopoly?
+
+- A surprisingly difficult question to answer!
 ]
 
 .pull-right[
-
-- Think of an .hi[economic rent] as a "prize," the payment a person receives for a good above its opportunity cost
-
-- Creating rents creates competition for the rents, causing people to invest resources in .hi[rent-seeking]
-
-- The cost of the rent is not just the rent itself, but the resources invested in rent-seeking!
-]
-
----
-
-# Government Intervention Creates Rents I
-
-.pull-left[
 .center[
-![](https://www.dropbox.com/s/obqxaf2tz2se3jh/rents.jpg?raw=1)
+![](../images/monopolyshrug.jpg)
 ]
 ]
 
-.pull-right[
-.smaller[
-- Political authorities intervene in markets in various ways that benefit some groups at the expense of everyone else
-  - subsidies to groups (often producers)
-  - regulation of industries
-  - tariffs, quotas, and special exemptions from these
-  - tax breaks and loopholes
-  - conferring monopoly and other privileges
-
-- See Mitchell (2013) in [today's readings](/reading/4.2-reading) for examples
-]
-]
 ---
 
-# Government Intervention Creates Rents I
-
-.pull-left[
-.center[
-![](https://www.dropbox.com/s/obqxaf2tz2se3jh/rents.jpg?raw=1)
-]
-]
-
-.pull-right[
-.smallest[
-- These interventions create .hi[economic rents] for their beneficiaries by restricting competition
-
-- This is a transfer of wealth from consumers/taxpayers to politically-favored groups
-
-- The promise of earning a rent breeds **competition over the rents** (.hi[rent-seeking])
-  - investments of resources to lobby political officials
-]
-]
----
-
-# Rent-Seeking II
+# In Ye Olde Days
 
 .left-column[
 .center[
-![:scale 80%](https://www.dropbox.com/s/dxqyaa7xr9nsfj0/tullock2.jpg?raw=1)
+![:scale 75%](https://www.dropbox.com/s/eydf15cwpfn38g9/edwardcoke.jpg?raw=1)
 
-Gordon Tullock
+Lord Edward Coke
 
-1922-2014
+1552--1634
+
+Chief Justice (King's Bench)
+
 ]
 ]
 
 .right-column[
 
-> "The rectangle to the left of the [Deadweight loss] triangle is the income transfer that a successful monopolist can extort from the customers. **Surely we should expect that with a prize of this size dangling before our eyes, potential monopolists would be willing to invest large resources in the activity of monopolizing.** ... **Entrepreneurs should be willing to invest resources in attempts to form a monopoly** until the marginal cost equals the properly discounted return," (p.231). 
+> “A monopoly is an institution or allowance by the king, by his grant, commission, or otherwise...to any person or persons, bodies politic or corporate, for the sole buying, selling, making, working, or using of anything, whereby any person or persons, bodies politic or corporate, are sought to be restrained of any freedom or liberty that they had before, or hindered in their lawful trade,” (181).
 
+.source[Coke, Edward, 1648, *Institutes of the laws of England*, Part 3]
 ]
 
-.source[Tullock, Gordon, (1967), "The Welfare Cost of Tariffs, Monopolies, and Theft," *Western Economic Journal* 5(3): 224-232.]
+---
 
+# In Ye Olde Days
+
+> "[A man lives] in a house built with monopoly bricks, with windows...of monopoly glass; heated by monopoly coal (in Ireland monopoly timber), burning in a grate made of monopoly iron...He washed himself in monopoly soap, his clothes in monopoly starch. He dressed in monopoly lace, monopoly linen, monopoly leather, monopoly gold thread...His clothes were dyed with monopoly dyes. He ate monopoly butter, monopoly currants, monopoly red herrings, monopoly salmon, and monopoly lobsters. His food was seasoned with monopoly salt, monopoly pepper, monopoly vinegar...He wrote with monopoly pens, on monopoly writing paper; read (through monopoly spectacles, by the light of monopoly candles) monopoly printed books," (quoted in Acemoglu and Robinson 2011, pp.187-188).
+
+.source[Hill, Christopher, (1961), *The Century of Revolution*
+
+Acemoglu, Daron and James A Robinson, 2013, *Why Nations Fail*]
 
 ---
 
-class: inverse, center, middle
-
-# Antitrust
-
----
-
-# Antitrust and Competition Law I
+# Isn’t a Single Seller a Monopolist?
 
 .pull-left[
-
-- Aren't monopolies illegal in the U.S.?
-
-- **Yes**: engaging in anticompetitive practices in the U.S. is illegal under .hi[antitrust laws]
-  - Laws intended to promote economic competition and reduce excessive market power
-  - enforced by DOJ (criminal) and FTC (civil)
-
-]
-
-.pull-right[
-.center[
-![:scale 45%](https://www.dropbox.com/s/gg6kqeuurg4exjg/doj.png?raw=1)
-
-![:scale 45%](https://www.dropbox.com/s/zwc6kgdwe1nksct/ftc.png?raw=1)
-
-]
-]
-
----
-
-# Antitrust and Competition Law II
-
-.pull-left[
-
-- Aren't monopolies illegal in the U.S.?
-
-- **No**: most monopolies exist *because* of explicit or implicit government-backing
-  - Some markets actually work *better* as a monopoly (**"the good"**, .hi-purple[natural monopoly], patents, etc.)
-  - Some markets and regulators are .hi-purple[captured] via **rent-seeking** firms to block competition (**"the ugly"**)
-
-]
-
-.pull-right[
-.center[
-![:scale 100%](https://www.dropbox.com/s/k89v6u0o1yqbolz/polcorrupt.jpg?raw=1)
-
-]
-]
-
----
-
-# Antitrust and Competition Law III
-
-.pull-left[
-.center[
-![](https://www.dropbox.com/s/z3ptcqr8hurtjp6/ftcstatue.jpg?raw=1)
-]
-]
-
-.pull-right[
-
-**Sherman Antitrust Act (1890)**
 .smallest[
- > $\S$ 1: "Every contract, combination in the form of trust or otherwise, or conspiracy, in restraint of trade or commerce among the several States, or with foreign nations, is declared to be illegal." 
+- Isn’t the only seller of something a monopolist?
+  - A new inventor?
+  - An artist?
+  - LeBron James?
+  - First-mover?
 
-> $\S$ 2: "Every person who shall monopolize, or attempt to monopolize, or combine or conspire with any other person or persons, to monopolize any part of the trade or commerce among the several States, or with foreign nations, shall be deemed guilty of a felony [...]"
-]
+- Is the only hardware store in town a monopoly? Seafood restaurant?
 
-]
-
-.source[26 Stat. 209, 15 U.S.C. $\S$ 1–7]
-
----
-
-# Antitrust and Competition Law IV
-
-.pull-left[
-.center[
-![:scale 70%](https://www.dropbox.com/s/9d8kugen0mps3vh/aetnamerger2.png?raw=1)
-
-Source: [WSJ (Jan 23, 2017)](http://www.wsj.com/articles/federal-judge-blocks-aetna-humana-merger-on-antitrust-grounds-1485190239)
 ]
 ]
 
 .pull-right[
-
-- Mergers, acquisitions, and major corporate activities are scrutinized by DOJ and FTC on antitrust grounds
+.center[
+![](../images/pradanowhere.jpg)
+]
 ]
 
 ---
 
-# Antitrust
+# Markets as an Evolutionary Process
+
+.left-column[
+.center[
+![:scale 80%](../images/schumpeter2.jpg)
+
+Joseph Schumpeter
+
+1883-1950
+]
+]
+
+.right-column[
+.smallest[
+> "Capitalism...is by nature a form of economic change and not only never is but never can be stationary...The essential point to grasp is that in dealing with capitalism we are dealing with an .hi[evolutionary process.]," (pp.82). 
+
+> "[I]n capitalist reality as distinguished from its textbook picture, it is not that kind of competition which counts but the competition from the new commodity, the new technology, the new source of supply, the new type of organization....hi[competition] which commands a decisive cost or quality advantage .hi[which strikes not at the margins of the profits and the outputs of the existing firms but at their foundations and their very lives.]" (p.132).
+
+]
+
+.source[Schumpeter, Joseph A, (1947), *Capitalism, Socialism, and Democracy*]
+]
+---
+
+# Creative Destruction
+
+.left-column[
+.center[
+![:scale 80%](../images/schumpeter2.jpg)
+
+Joseph Schumpeter
+
+1883-1950
+]
+]
+
+.right-column[
+
+> "Industrial mutation--if I may use that biological term—that .hi[incessantly revolutionizes the economic structure from within], incessantly destroying the old one, incessantly creating a new one.  This .hi[process of Creative Destruction is the essential fact about capitalism].  It is what capitalism consists in and what every capitalist concern has got to live in" (p.83).
+
+]
+
+.source[Schumpeter, Joseph A, (1947), *Capitalism, Socialism, and Democracy*]
+
+---
+
+# Creative Destruction: Examples
 
 .pull-left[
 .center[
-![:scale 70%](https://ios20.classes.ryansafner.com/images/io_hex.png)
+![](../images/horsebuggy.png)
+]
+]
+.pull-right[
+.center[
+![](../images/car.png)
+]
+]
+
+---
+
+# Creative Destruction: Example II
+
+.center[
+![:scale 65%](../images/evolutionofdesk.gif)
+]
+
+---
+
+# Creative Destruction: Example III
+
+.center[
+![:scale 40%](../images/59yearsofprogress.jpg)
+
+59 years of progress
+]
+
+---
+
+# No Corporate Monolith Lasts Forever (On Its Own)
+
+.center[
+![](../images/monopolyoldexamples.jpg)
+]
+
+---
+
+# No Corporate Monolith Lasts Forever (On Its Own)
+
+.center[
+![](https://www.dropbox.com/s/c7jlvse9n1a4qkt/deadfirms.png?raw=1)
+]
+
+---
+
+# No Corporate Monolith Lasts Forever (On Its Own)
+
+.center[
+![](../images/pcsmonopoly.jpg)
+]
+
+---
+
+# Monopoly *Persists* Because of Entry Barriers
+
+.pull-left[
+
+- Monopoly exists, and persists, because of .hi[barriers to entry]
+  - otherwise, profits would get competed away by competitors
+
+- Some might be natural, some might be good, some might be artificial or government-created
+  - .hi-purple[“open”] vs. .hi-purple[“closed”] monopoly
+
+- .hi-turquoise[How easy is it to enter and compete with existing firm?]
+
+]
+
+.pull-right[
+.center[
+![:scale 80%](../images/entrybarriersmeme.jpg)
+]
+]
+
+---
+
+# Monopoly Exists Because of Entry Barriers
+
+.pull-left[
+.quitesmall[
+- Some possible types of entry barriers:
+  - Control over key resource
+  - Technological superiority
+      - Name/brand recognition, high fixed/sunk costs, economies of scale, network externalities
+  - Government regulation
+      - Intellectual property rights, Occupational licensing, Public franchises ,Burdensome compliance ,Rent-seeking
+]
+
+.smallest[
+- Which of these are “natural” vs. “artificial?”
+
+- Which of these may be “good” vs. “bad?”
 ]
 ]
 
 .pull-right[
-
-- More about antitrust in my Industrial Organization course: (Classes [4.2](https://ios20.classes.ryansafner.com/class/4.2-class/)) and 4.3)
+.center[
+![:scale 90%](../images/donotenter.png)
+]
 ]
 
 ---
-
-class: inverse, center, middle
-
-# Sources of Market Power
-
----
-
-class: inverse, center, middle
 
 # Control Over a Key Resource
 
----
-
-# Control Over a Key Resource I
-
 .pull-left[
 .center[
-![:scale 75%](https://www.dropbox.com/s/8mfoki2982z4x4b/alcoa.png?raw=1)
+![:scale 50%](https://www.dropbox.com/s/mw7wrxvz5pcqf5s/debeers.png?raw=1)
 
-![:scale 75%](https://www.dropbox.com/s/7ztods3nn9078wu/alcoa2.jpg?raw=1)
+![:scale 50%](https://www.dropbox.com/s/9inyyd3o1np3vly/debeersdiamonds.jpg?raw=1)
 ]
 ]
 
 .pull-right[
+.center[
+![:scale 50%](https://www.dropbox.com/s/8mfoki2982z4x4b/alcoa.png?raw=1)
 
-- Being one of the largest providers of a resource where there are few substitutes
+![:scale 50%](https://www.dropbox.com/s/7ztods3nn9078wu/alcoa2.jpg?raw=1)
+]
+]
 
+.smallest[
 - Aluminum Company of America (Alcoa) once controlled 90% of the market for bauxite (used to create aluminum), and produced 63% of world aluminum supply
-
-- United States v. Alcoa 148 F.2d 416 (2d Cir. 1945)
-
-]
-
----
-
-# Control Over a Key Resource II
-
-.pull-left[
-.center[
-![:scale 75%](https://www.dropbox.com/s/mw7wrxvz5pcqf5s/debeers.png?raw=1)
-
-![:scale 75%](https://www.dropbox.com/s/9inyyd3o1np3vly/debeersdiamonds.jpg?raw=1)
-]
-]
-
-.pull-right[
 
 - De Beers once owned 85% of the world's diamond supply
 
-]
-
----
-
-# Control Over a Key Resource: Inventors?
-
-.pull-left[
-.center[
-![:scale 100%](https://www.dropbox.com/s/7cqlednxv38usol/myspace.png?raw=1)
-]
-]
-
-.pull-right[
-
-- What about inventors and new products?
-
-- Every first producer enjoys monopoly power...for a time
-
-- Eventually, new entrepreneurs find a way to compete and **enter** the market with *substitutes*
-
-]
-
----
-
-# Control Over a Key Resource: Inventors?
-
-.pull-left[
-.center[
-![:scale 100%](https://www.dropbox.com/s/bm2uuzfhlkx6ui0/aol.jpg?raw=1)
-]
-]
-
-.pull-right[
-
-- What about inventors and new products?
-
-- Every first producer enjoys monopoly power...for a time
-
-- Eventually, new entrepreneurs find a way to compete and **enter** the market with *substitutes*
-
-]
-
----
-
-# Control Over a Key Resource: Inventors?
-
-.pull-left[
-.center[
-![:scale 100%](https://www.dropbox.com/s/n22typbts0euan8/vhs.jpg?raw=1)
-]
-]
-
-.pull-right[
-
-- What about inventors and new products?
-
-- Every first producer enjoys monopoly power...for a time
-
-- Eventually, new entrepreneurs find a way to compete and **enter** the market with *substitutes*
-
-]
-
----
-
-# Control Over a Key Resource: Inventors?
-
-.pull-left[
-.center[
-![:scale 100%](https://www.dropbox.com/s/n22typbts0euan8/vhs.jpg?raw=1)
-]
-]
-
-.pull-right[
-
-- What about inventors and new products?
-
-- Every first producer enjoys monopoly power...for a time
-
-- Eventually, new entrepreneurs find a way to compete and **enter** the market with *substitutes*
-
-- **UNLESS...**
+- Quite rare for a single firm to control key resources for long
 ]
 
 ---
 
 class: inverse, center, middle
 
-# Barriers to Entry
-
----
-
-# Barriers to Entry
-
-.pull-left[
-
-- .hi[Barrier to entry]: something that makes it costly, difficult, or even illegal for competitors to enter a market & compete with incumbent firm(s)
-  - technological advantage
-  - name recognition
-  - high fixed/sunk costs
-  - intellectual property rights
-  - occupational licensing
-  - government granted privileges
-  - regulatory compliance
-]
-
-.pull-right[
-
-.center[
-![:scale 80%](https://www.dropbox.com/s/2xhn4z2xle73n6v/donotenter.png?raw=1)
-]
-]
-
----
-
-# Barriers to Entry: Legal Prohibitions
-
-.pull-left[
-
-.center[
-![:scale 100%](https://www.dropbox.com/s/snqqiwh7krbxwq1/usps.png?raw=1)
-]
-]
-
-.pull-right[
-
-- The United States Postal Service is the only provider of first class mail allowed by order of the government
-
-- Starting another business that delivers mail is **illegal**
-
-- Note: FedEx and UPS deliver *express packages*, can *not* deliver mail or use USPS mailboxes
-]
-
----
-
-# Barriers to Entry: Taxis I
-
-.pull-left[
-.center[
-![](https://www.dropbox.com/s/q26m7vu26c538mf/taxi.png?raw=1)
-]
-]
-
-.pull-right[
-![](https://www.dropbox.com/s/3zce4dsvz4p4ni9/taximedallion2.jpg?raw=1)
-
-]
-
----
-
-# Barriers to Entry: Taxis II
-
-.center[
-![:scale 40%](https://www.dropbox.com/s/bp51o8pg4qk23om/uberlyfttaxis.png?raw=1)
-]
-
----
-
-# Barriers to Entry: Taxis III
-
-.pull-left[
-.center[
-![](https://www.dropbox.com/s/uod84u4komffxar/uberprotest1.jpg?raw=1)
-]
-]
-.pull-right[
-.center[
-![](https://www.dropbox.com/s/1wz9wy2ebhb9pan/uberprotest2.jpg?raw=1)
-]
-
-]
-
----
-
-# Barriers to Entry: Milk
-
-.center[
-![:scale 70%](https://www.dropbox.com/s/31qaz4yi2kucq25/milkrentseeking.png?raw=1)
-
-Source: [*New York Times* (Feb 13, 2017)](https://www.nytimes.com/2017/02/13/well/eat/got-almond-milk-dairy-farms-protest-milk-label-on-nondairy-drinks.html)
-]
-
----
-
-# If You Look at the World Long Enough...
-
-.center[
-![](https://www.dropbox.com/s/d3ryphbj3j7jtt8/rentseekingeverywhere.jpg?raw=1)
-]
-
----
-
-# Regulation has a Dark Side
-
-.left-column[
-.center[
-![:scale 80%](https://www.dropbox.com/s/9s3qzw1m3rrl9sy/stigler.png?raw=1)
-
-George Stigler
-
-1911-1991
-
-Economics Nobel 1982
-]
-]
-
-.right-column[
-
-> "[A]s a rule, regulation is acquired by the industry and is designed and operated primarily for its benefits," (p.3).
-
-]
-
-.source[Stigler, George J, (1971), "The Theory of Economic Regulation," *Bell Journal of Economics and Management Science* 3:3-21]
-
----
-
-# Barriers to Entry: Occupational Licensing I
-
-.center[
-![:scale 60%](https://www.dropbox.com/s/x4f6q87p3suj6yt/licensing.png?raw=1)
-
-In 1950, 1 in 20 jobs required a license. Today it's 1 in 4. Source: [Obama White House (2015): Occupational Licensing: A Framework for Policymakers](https://obamawhitehouse.archives.gov/sites/default/files/docs/licensing_report_final_nonembargo.pdf)
-]
-
----
-
-# Barriers to Entry: Occupational Licensing II
-
-.center[
-![:scale 75%](https://www.dropbox.com/s/15ql3kjvc0cbib2/occupationallicensing2.png?raw=1)
-
-Source: [Mercatus Research (March 25, 2014): Occupational Licensing: Bad for Competition, Bad for Low-Income Workers](https://www.mercatus.org/publication/occupational-licensing-bad-competition-bad-low-income-workers)
-]
-
----
-
-# Barriers to Entry: Occupational Licensing III
-
-.center[
-![:scale 75%](https://www.dropbox.com/s/q9jg2mtc3z7fve9/migrationandlicensing.png?raw=1)
-
-]
-
----
-
-# Barriers to Entry: Occupational Licensing IV
-
-.pull-left[
-.center[
-![:scale 90%](https://www.dropbox.com/s/espsohk14lgh4ef/hairbraidingnpr.png?raw=1)
-]
-]
-
-.pull-right[
-.small[
-> "'It is illegal in the state of Utah to do any form of extensions without a valid cosmetology license," the e-mail read. "Please delete your ad, or you will be reported.'
-
->To get a license, Jestina would have to spend more than a year in cosmetology school. Tuition would cost $16,000 dollars or more."
-
-Source: [NPR Planet Money](https://www.npr.org/sections/money/2012/06/22/155596305/episode-381-why-its-illegal-to-braid-hair-without-a-license)
-]
-
-]
-
----
-
-# Barriers to Entry: Intellectual Property I
-
-.pull-left[
-
-.center[
-![](https://www.dropbox.com/s/j5rxriut8sinvob/pharmaceutical.png?raw=1)
-]
-]
-
-.pull-right[
-.center[
-![](https://www.dropbox.com/s/4ibyb8oohmmge5z/genericpill.jpg?raw=1)
-]
-]
-
----
-
-# Barriers to Entry: Intellectual Property II
-
-.pull-left[
-
-.center[
-![](https://www.dropbox.com/s/5kfldu00lodqa1s/got1.png?raw=1)
-]
-]
-
---
-
-.pull-right[
-.center[
-![:scale 75%](https://www.dropbox.com/s/lt9c30lpwho7uh8/gotpirated.png?raw=1)
-
-Source: [Washington Post (Sept 8, 2017)](https://www.washingtonpost.com/news/morning-mix/wp/2017/09/08/game-of-thrones-was-pirated-more-than-a-billion-times-far-more-than-it-was-watched-legally/)
-]
-]
-
----
-
-# Barriers to Entry: Intellectual Property III
-
-.pull-left[
-
-- For these economic reasons, .hi[patent] (for ideas and inventions) and .hi[copyright] (for expressions) laws exist
-
-- Grant *temporary* monopoly to holder in order to recover their fixed costs and provide incentive to undertake (risky and expensive) research/creativity
-
-- A utilitarian *tradeoff* between incentives and access
-
-]
-
-.pull-right[
-
-.center[
-![:scale 50%](https://www.dropbox.com/s/cihnj15juyus7wj/patent.png?raw=1)
-
-![:scale 50%](https://www.dropbox.com/s/l4vep529mbzckfh/copyright.png?raw=1)
-
-]
-
-]
-
----
-
-# Barriers to Entry: Intellectual Property IV
-
-.pull-left[
-.center[
-![](https://www.dropbox.com/s/oimo4dnspn4e5sn/catpatent.png?raw=1)
-]
-]
-.pull-right[
-.center[
-![](https://www.dropbox.com/s/wm0kxavp3toq426/catpatent2.png?raw=1)
-]
-]
-
-.center[
-Source: [U.S. Patent 5,443,036 (1995)](http://www.google.com/patents/US5443036)
-
-]
-
----
-
-# Barriers to Entry: Intellectual Property V
-
-.pull-left[
-.center[
-![:scale 80%](https://www.dropbox.com/s/wp1g3ca65gohrb0/patentthicket.png?raw=1)
-]
-]
-
-.pull-right[
-- [Apple, Inc. vs. Samsung Electronics Co., Ltd.](https://www.theverge.com/apple/2011/11/2/2533472/apple-vs-samsung)
-
-- [Freakonomics: Apple vs. Samsung: Who Owns the Rectangle?](http://freakonomics.com/2012/08/03/apple-vs-samsung-who-owns-the-rectangle/)
-]
-
----
-
-class: inverse, center, middle
-
-# Economies of Scale and Natural Monopoly
+# What If You’re Just *Better*?
 
 ---
 
@@ -1085,14 +752,13 @@ demand<-function(x){20-2*x}
 mes_plot<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
   stat_function(fun=demand, geom="line", size=2, color="blue")+
   geom_label(x = 9, y=demand(9), color = "blue", size = 5, label = "Demand")+
-    scale_x_continuous(breaks=seq(0,10,1),
+    scale_x_continuous(breaks=NULL,
                      limits=c(0,10),
                      expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,20,2),
+  scale_y_continuous(breaks=NULL,
                      limits=c(0,20),
-                     labels=scales::dollar,
                      expand=expand_scale(mult=c(0,0.1)))+
-  labs(x = "Quantity (thousands)",
+  labs(x = "Quantity",
        y = "Price")+
   theme_classic(base_family = "Fira Sans Condensed", base_size=20)+
   theme(legend.position = "bottom")
@@ -1323,11 +989,558 @@ $$\mathbf{\text{Average cost}}=\frac{\$100,000}{1000}=\$100 \text{/subscriber}$$
 
 ---
 
-# Regulating Natural Monopolies II
+# Technological Superiority & Innovation
 
+.pull-left[
 .center[
-![:scale 80%](https://www.dropbox.com/s/54bt62h4y54p950/broadbandcompetition.PNG?raw=1)
+![](../images/techinnovation.jpg)
+]
+]
 
-Locations with only 1 (wireline) broadband provider Source: [FCC: Broadband Provider Map](http://broadbandmap.gov/number-of-providers)	
+.pull-left[
+.center[
+![](../images/capex.jpg)
+]
 
 ]
+
+.quitesmall[
+- Complacent monopolists would rather restrict output and raise profits to shareholders
+
+- But big tech firms invest enormous amounts in capital & innovation! Worried about competition!
+
+]
+
+---
+
+# Innovation
+
+.pull-left[
+.center[
+![](../images/peopleliketechcompanies.jpg)
+]
+]
+
+.pull-right[
+
+- Politicians may say one thing, but people like big tech companies, they provide an enormous amount of consumer surplus!
+]
+
+---
+
+# Intellectual Property I
+
+.pull-left[
+
+.center[
+![](https://www.dropbox.com/s/j5rxriut8sinvob/pharmaceutical.png?raw=1)
+]
+]
+
+.pull-right[
+.center[
+![](https://www.dropbox.com/s/4ibyb8oohmmge5z/genericpill.jpg?raw=1)
+]
+]
+
+---
+
+# Intellectual Property II
+
+.pull-left[
+
+.center[
+![](https://www.dropbox.com/s/5kfldu00lodqa1s/got1.png?raw=1)
+]
+]
+
+--
+
+.pull-right[
+.center[
+![:scale 75%](https://www.dropbox.com/s/lt9c30lpwho7uh8/gotpirated.png?raw=1)
+
+Source: [Washington Post (Sept 8, 2017)](https://www.washingtonpost.com/news/morning-mix/wp/2017/09/08/game-of-thrones-was-pirated-more-than-a-billion-times-far-more-than-it-was-watched-legally/)
+]
+]
+
+---
+
+# Intellectual Property III
+
+.pull-left[
+
+- For these economic reasons, .hi[patent] (for ideas and inventions) and .hi[copyright] (for expressions) laws exist
+
+- Grant *temporary* monopoly to holder in order to recover their fixed costs and provide incentive to undertake (risky and expensive) research/creativity
+
+- A utilitarian *tradeoff* between incentives and access
+
+]
+
+.pull-right[
+
+.center[
+![:scale 50%](https://www.dropbox.com/s/cihnj15juyus7wj/patent.png?raw=1)
+
+![:scale 50%](https://www.dropbox.com/s/l4vep529mbzckfh/copyright.png?raw=1)
+
+]
+
+]
+
+---
+
+# Intellectual Property IV
+
+.pull-left[
+.center[
+![](https://www.dropbox.com/s/oimo4dnspn4e5sn/catpatent.png?raw=1)
+]
+]
+.pull-right[
+.center[
+![](https://www.dropbox.com/s/wm0kxavp3toq426/catpatent2.png?raw=1)
+]
+]
+
+.center[
+Source: [U.S. Patent 5,443,036 (1995)](http://www.google.com/patents/US5443036)
+
+]
+
+---
+
+# Intellectual Property V
+
+.pull-left[
+.center[
+![:scale 80%](https://www.dropbox.com/s/wp1g3ca65gohrb0/patentthicket.png?raw=1)
+]
+]
+
+.pull-right[
+- [Apple, Inc. vs. Samsung Electronics Co., Ltd.](https://www.theverge.com/apple/2011/11/2/2533472/apple-vs-samsung)
+
+- [Freakonomics: Apple vs. Samsung: Who Owns the Rectangle?](http://freakonomics.com/2012/08/03/apple-vs-samsung-who-owns-the-rectangle/)
+]
+
+---
+
+class: inverse, center, middle
+
+# The *Ugly* of Monopoly: Rent-Seeking
+
+---
+
+# Legal Prohibitions
+
+.pull-left[
+
+.center[
+![:scale 100%](https://www.dropbox.com/s/snqqiwh7krbxwq1/usps.png?raw=1)
+]
+]
+
+.pull-right[
+
+- The United States Postal Service is the only provider of first class mail allowed by order of the government
+
+- Starting another business that delivers mail is **illegal**
+
+- Note: FedEx and UPS deliver *express packages*, can *not* deliver mail or use USPS mailboxes
+]
+
+---
+
+# Taxis I
+
+.pull-left[
+.center[
+![](https://www.dropbox.com/s/q26m7vu26c538mf/taxi.png?raw=1)
+]
+]
+
+.pull-right[
+![](https://www.dropbox.com/s/3zce4dsvz4p4ni9/taximedallion2.jpg?raw=1)
+
+]
+
+---
+
+# Taxis II
+
+.center[
+![:scale 40%](https://www.dropbox.com/s/bp51o8pg4qk23om/uberlyfttaxis.png?raw=1)
+]
+
+---
+
+# Taxis III
+
+.pull-left[
+.center[
+![](https://www.dropbox.com/s/uod84u4komffxar/uberprotest1.jpg?raw=1)
+]
+]
+.pull-right[
+.center[
+![](https://www.dropbox.com/s/1wz9wy2ebhb9pan/uberprotest2.jpg?raw=1)
+]
+
+]
+
+---
+
+# Occupational Licensing I
+
+.center[
+![:scale 60%](https://www.dropbox.com/s/x4f6q87p3suj6yt/licensing.png?raw=1)
+
+In 1950, 1 in 20 jobs required a license. Today it's 1 in 4. Source: [Obama White House (2015): Occupational Licensing: A Framework for Policymakers](https://obamawhitehouse.archives.gov/sites/default/files/docs/licensing_report_final_nonembargo.pdf)
+]
+
+---
+
+# Occupational Licensing II
+
+.center[
+![:scale 75%](https://www.dropbox.com/s/15ql3kjvc0cbib2/occupationallicensing2.png?raw=1)
+
+Source: [Mercatus Research (March 25, 2014): Occupational Licensing: Bad for Competition, Bad for Low-Income Workers](https://www.mercatus.org/publication/occupational-licensing-bad-competition-bad-low-income-workers)
+]
+
+---
+
+# Occupational Licensing III
+
+.center[
+![:scale 75%](https://www.dropbox.com/s/q9jg2mtc3z7fve9/migrationandlicensing.png?raw=1)
+
+]
+
+---
+
+# Occupational Licensing IV
+
+.pull-left[
+.center[
+![:scale 90%](https://www.dropbox.com/s/espsohk14lgh4ef/hairbraidingnpr.png?raw=1)
+]
+]
+
+.pull-right[
+.small[
+> "'It is illegal in the state of Utah to do any form of extensions without a valid cosmetology license," the e-mail read. "Please delete your ad, or you will be reported.'
+
+> To get a license, Jestina would have to spend more than a year in cosmetology school. Tuition would cost $16,000 dollars or more."
+
+Source: [NPR Planet Money](https://www.npr.org/sections/money/2012/06/22/155596305/episode-381-why-its-illegal-to-braid-hair-without-a-license)
+]
+
+]
+
+---
+
+# The *Ugly* of Monopoly: Rent-Seeking I
+
+.pull-left[
+
+```{r, fig.retina=3}
+mc<-function(x){2}
+demand<-function(x){10-x}
+mr<-function(x){10-2*x}
+
+CS<-tibble(x=c(0,0,8),
+           y=c(10,2,2))
+
+CS_2<-tibble(x=c(0,0,4),
+           y=c(10,6,6))
+dwl<-tibble(x=c(4,4,8),
+           y=c(6,2,2))
+mr<-function(x){10-2*x}
+
+#line_colors <- c("Supply" = "red", "Demand" = "blue")
+#surplus_colors <-c("Consumer" = "blue", "Producer" = "red")
+
+ggplot(data.frame(x=c(0,10)), aes(x=x))+
+  
+  # surpluses
+  geom_polygon(data=CS_2, aes(x=x,y=y), fill="blue",alpha=0.5)+
+  geom_rect(xmin=0,xmax=4,ymin=2,ymax=6,fill="green", alpha=0.25)+ #profit
+  geom_polygon(data=dwl, aes(x=x,y=y), fill="black",alpha=0.5)+ #dwl
+  
+  # surplus labels
+  geom_label(aes(x=1.5, y= 4), label="Profit", color="green", size =5)+
+  geom_label(aes(x=1.5, y= 7.5), label="CS", color="blue", size =5)+
+  geom_label(aes(x=5.5, y= 3.5), label="DWL", color="black", size =5)+
+  
+  # lines 
+  stat_function(fun=demand, geom="line", size=2, color = "blue")+
+    geom_label(aes(x=9,y=demand(9)), color = "blue", label="Demand", size = 5)+
+  stat_function(fun=mr, geom="line", size=2, color = "purple")+
+    geom_label(aes(x=4.5,y=mr(4.5)), color = "purple", label=expression(MR(q)), size = 5)+
+  stat_function(fun=mc, geom="line", size=2, color = "red")+
+    geom_label(aes(x=6,y=mc(6)), color = "red", label=expression(MC(q)==AC(q)), size = 5)+
+  
+  # optimal dots
+  geom_segment(x=0, xend=4, y=6, yend=6, size=1, linetype="dotted")+
+  geom_segment(x=8, xend=8, y=0, yend=2, size=1, linetype="dotted")+
+  geom_segment(x=4, xend=4, y=0, yend=6, size=1, linetype="dotted")+
+  
+  scale_x_continuous(breaks=c(0,4,8),
+                       labels=c(0,expression(q[m]),expression(q[c])),
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  scale_y_continuous(breaks=c(0,2,6),
+                       labels=c(0,expression(p[c]),expression(p[m])),
+                     limits=c(0,10),
+                     expand=expand_scale(mult=c(0,0.1)))+
+  guides(fill=F)+
+  labs(x = "Quantity",
+       y = "Price",
+       caption = expression(paste("Demand: ", p(q)==10-q, ", Cost: ", C(q)==2*q)))+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+
+```
+
+]
+
+.pull-right[
+
+- The .hi-green[monopoly profits] earned with market power are an .hi[economic rent]
+  - Comes from restricting entry & competition
+
+- This is the “prize” of market power
+
+]
+
+---
+
+# The *Ugly* of Monopoly: Rent-Seeking II
+
+.pull-left[
+.center[
+![:scale 80%](https://www.dropbox.com/s/21v476wphty3f0i/prize.jpg?raw=1)
+]
+]
+
+.pull-right[
+
+- Think of an .hi[economic rent] as a “prize,” the payment a person receives for a good above its opportunity cost
+
+- Creating rents creates competition for the rents, causing people to invest resources in .hi[rent-seeking]
+
+- The cost of the rent is not just the rent itself, but the resources invested in rent-seeking!
+]
+
+---
+
+# Government Intervention Creates Rents I
+
+.pull-left[
+.center[
+![](https://www.dropbox.com/s/obqxaf2tz2se3jh/rents.jpg?raw=1)
+]
+]
+
+.pull-right[
+.smaller[
+- Political authorities intervene in markets in various ways that benefit some groups at the expense of everyone else
+  - subsidies to groups (often producers)
+  - regulation of industries
+  - tariffs, quotas, and special exemptions from these
+  - tax breaks and loopholes
+  - conferring monopoly and other privileges
+
+- See Mitchell (2013) in [today's readings](/reading/4.2-reading) for examples
+]
+]
+---
+
+# Government Intervention Creates Rents I
+
+.pull-left[
+.center[
+![](https://www.dropbox.com/s/obqxaf2tz2se3jh/rents.jpg?raw=1)
+]
+]
+
+.pull-right[
+.smallest[
+- These interventions create .hi[economic rents] for their beneficiaries by restricting competition
+
+- This is a transfer of wealth from consumers/taxpayers to politically-favored groups
+
+- The promise of earning a rent breeds **competition over the rents** (.hi[rent-seeking])
+  - investments of resources to lobby political officials
+]
+]
+---
+
+# Rent-Seeking II
+
+.left-column[
+.center[
+![:scale 80%](https://www.dropbox.com/s/dxqyaa7xr9nsfj0/tullock2.jpg?raw=1)
+
+Gordon Tullock
+
+1922-2014
+]
+]
+
+.right-column[
+
+> “The rectangle to the left of the [Deadweight loss] triangle is the income transfer that a successful monopolist can extort from the customers. **Surely we should expect that with a prize of this size dangling before our eyes, potential monopolists would be willing to invest large resources in the activity of monopolizing.** ... **Entrepreneurs should be willing to invest resources in attempts to form a monopoly** until the marginal cost equals the properly discounted return,” (p.231). 
+
+]
+
+.source[Tullock, Gordon, (1967), "The Welfare Cost of Tariffs, Monopolies, and Theft," *Western Economic Journal* 5(3): 224-232.]
+
+
+---
+
+# Milk?
+
+.center[
+![:scale 70%](https://www.dropbox.com/s/31qaz4yi2kucq25/milkrentseeking.png?raw=1)
+
+Source: [*New York Times* (Feb 13, 2017)](https://www.nytimes.com/2017/02/13/well/eat/got-almond-milk-dairy-farms-protest-milk-label-on-nondairy-drinks.html)
+]
+
+---
+
+# If You Look at the World Long Enough...
+
+.center[
+![](https://www.dropbox.com/s/d3ryphbj3j7jtt8/rentseekingeverywhere.jpg?raw=1)
+]
+
+---
+
+# Regulation has a Dark Side
+
+.left-column[
+.center[
+![:scale 80%](https://www.dropbox.com/s/9s3qzw1m3rrl9sy/stigler.png?raw=1)
+
+George Stigler
+
+1911-1991
+
+Economics Nobel 1982
+]
+]
+
+.right-column[
+
+> "[A]s a rule, regulation is acquired by the industry and is designed and operated primarily for its benefits," (p.3).
+
+]
+
+.source[Stigler, George J, (1971), "The Theory of Economic Regulation," *Bell Journal of Economics and Management Science* 3:3-21]
+
+---
+
+class: inverse, center, middle
+
+# Antitrust
+
+---
+
+# Antitrust and Competition Law I
+
+.pull-left[
+
+- Aren't monopolies illegal in the U.S.?
+
+- **Yes**: engaging in anticompetitive practices in the U.S. is illegal under .hi[antitrust laws]
+  - Laws intended to promote economic competition and reduce excessive market power
+  - enforced by DOJ (criminal) and FTC (civil)
+
+]
+
+.pull-right[
+.center[
+![:scale 45%](https://www.dropbox.com/s/gg6kqeuurg4exjg/doj.png?raw=1)
+
+![:scale 45%](https://www.dropbox.com/s/zwc6kgdwe1nksct/ftc.png?raw=1)
+
+]
+]
+
+---
+
+# Antitrust and Competition Law II
+
+.pull-left[
+
+- Aren't monopolies illegal in the U.S.?
+
+- **No**: most monopolies exist *because* of explicit or implicit government-backing
+  - Some markets actually work *better* as a monopoly (**"the good"**, .hi-purple[natural monopoly], patents, etc.)
+  - Some markets and regulators are .hi-purple[captured] via **rent-seeking** firms to block competition (**"the ugly"**)
+
+]
+
+.pull-right[
+.center[
+![:scale 100%](https://www.dropbox.com/s/k89v6u0o1yqbolz/polcorrupt.jpg?raw=1)
+
+]
+]
+
+---
+
+# Antitrust and Competition Law III
+
+.pull-left[
+.center[
+![](https://www.dropbox.com/s/z3ptcqr8hurtjp6/ftcstatue.jpg?raw=1)
+]
+]
+
+.pull-right[
+
+**Sherman Antitrust Act (1890)**
+.smallest[
+ > $\S$ 1: "Every contract, combination in the form of trust or otherwise, or conspiracy, in restraint of trade or commerce among the several States, or with foreign nations, is declared to be illegal." 
+
+> $\S$ 2: "Every person who shall monopolize, or attempt to monopolize, or combine or conspire with any other person or persons, to monopolize any part of the trade or commerce among the several States, or with foreign nations, shall be deemed guilty of a felony [...]"
+]
+
+]
+
+.source[26 Stat. 209, 15 U.S.C. $\S$ 1–7]
+
+---
+
+# Antitrust and Competition Law IV
+
+.pull-left[
+.center[
+![:scale 70%](https://www.dropbox.com/s/9d8kugen0mps3vh/aetnamerger2.png?raw=1)
+
+Source: [WSJ (Jan 23, 2017)](http://www.wsj.com/articles/federal-judge-blocks-aetna-humana-merger-on-antitrust-grounds-1485190239)
+]
+]
+
+.pull-right[
+
+- Mergers, acquisitions, and major corporate activities are scrutinized by DOJ and FTC on antitrust grounds
+]
+
+---
+
+# Antitrust
+
+.pull-left[
+.center[
+![:scale 70%](https://ios20.classes.ryansafner.com/images/io_hex.png)
+]
+]
+
+.pull-right[
+
+- More about antitrust in my Industrial Organization course: (Classes [4.1-4.3](https://ios20.classes.ryansafner.com/))]
