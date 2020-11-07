@@ -104,7 +104,7 @@ mp<-ggplot(data=tibble(x=1:10), aes(x=x))+
        y = "Price")
 
 library(patchwork)
-pc+mp
+pc | mp
 ```
 
 ### A Change in Marginal Cost
@@ -150,7 +150,7 @@ mp_c2<-mp+
                      labels = c(0,expression(p[1]),expression(p[2])),
                      limits = c(0,14),
                      expand=c(0,0))
-pc_c2+mp_c2
+pc_c2 | mp_c2
 ```
 
 ### Change in Demand
@@ -178,7 +178,7 @@ pc_d2<-ggplot(data=tibble(x=1:10), aes(x=x))+
                      expand=c(0,0))+
   scale_y_continuous(breaks = c(0,7,10),
                      labels = c(0,expression(p[1]),expression(p[2])),
-                     limits = c(0,16),
+                     limits = c(0,14),
                      expand=c(0,0))+
   theme_classic(base_family = "Fira Sans Condensed", base_size=12)+
   labs(x = "Quantity",
@@ -222,7 +222,7 @@ mp_d2<-ggplot(data=tibble(x=1:10), aes(x=x))+
   theme_classic(base_family = "Fira Sans Condensed", base_size=12)+
   labs(x = "Quantity",
        y = "Price")
-pc_d2+mp_d2
+pc_d2 | mp_d2
 ```
 
 ## A Change in Price Elasticity of Market Demand
@@ -235,8 +235,8 @@ pc_e<-ggplot(data=tibble(x=1:10), aes(x=x))+
     geom_label(x=9,y=demand_1(9), color="blue", label="Demand")+
     stat_function(fun=mc_m, geom="line", size=2, color="red")+
     geom_label(x=9,y=mc_m(9), color="red", label="Supply")+
-    stat_function(fun=demand_cr, geom="line", size=2, color="darkblue")+
-    geom_label(x=9,y=demand_cr(9), color="darkblue", label=expression(Demand[E]))+
+    stat_function(fun=demand_cr, geom="line", size=2, color="blue")+
+    geom_label(x=9,y=demand_cr(9), color="blue", label=expression(Demand[E]))+
 
   geom_segment(x=4.5,xend=4.5, y=0, yend=5.5, size=1, linetype="dotted")+
   geom_segment(x=0,xend=4.5, y=5.5, yend=5.5, size=1, linetype="dotted")+
@@ -293,7 +293,7 @@ mp_e<-ggplot(data=tibble(x=1:10), aes(x=x))+
   labs(x = "Quantity",
        y = "Price")
 
-pc_e+mp_e
+pc_e | mp_e
 ```
 
 ## Advanced Pricing Strategies
