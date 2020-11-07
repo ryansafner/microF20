@@ -86,7 +86,7 @@ $$\begin{aligned}
 
 This is also relatively elastic, but less elastic than at the lower price.
 
-```{r, fig.height=4.5}
+```{r, fig.retina=3}
 
 supply<-function(x){20+0.1*x}
 points<-tribble(
