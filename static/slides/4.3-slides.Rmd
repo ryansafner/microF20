@@ -899,7 +899,7 @@ perfectpd
 # How to Be a Savvy Consumer
 
 .pull-left[
-.smallest[
+.quitesmall[
 - Realize that any “sales” and “discounts” are calculate to make *the store* more money
 
 - But it *can* make you better off as a consumer too if you are smart
