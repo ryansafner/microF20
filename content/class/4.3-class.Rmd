@@ -22,7 +22,8 @@ library(tidyverse)
 
 # Overview
 
-Today we continue our look at market power, by looking at the social consequences of market power: deadweight loss, allocative inefficiency, x-inefficiency, and rent-seeking; as well as the primary causes: barriers to entry of various sorts.
+Today we look at how firms price their products when they have market power (that is to say, how most firms in reality price their products). 
+
 
 # Readings
 
@@ -35,16 +36,17 @@ See [today’s suggested readings](/reading/4.3-reading).
 
 # Practice Problems
 
-Answers from last class’ [practice problems](/practice/4.1-practice).  are posted on that page.
+I have added a [practice problem](/practice/4.3-practice) to help you work through an example of 3rd degree price discrimination (as I will do in class). Answers will be posted on that page.
 
-# Assignments: Problem Set 5 (Due Sun Nov 8)
+# Assignments
 
-[Homework 5](/assignment/05-problem-set) (on 3.1-3.5) is due by PDF upload to Blackboard by 11:59 PM Sunday November 8. **This is likely your final graded homework**^[In the past, I have always released a HW 6 on Imperfect Competition just for practice for the Final Exam.]
+[Homework 5](/assignment/05-problem-set) answers are posted on that page. You are done with graded homeworks for the semester!
+
+Don’t forget your [Op-Ed](/assignment/op-ed) is due by Friday November 20.
 
 # Appendix
 
 ## “I Know It When I See It” — How to Identify Market Power?
-
 
 The only way to tell the difference between price discrimination and price differences due to costs in competitive markets (without actually being able to observe the firm’s marginal cost) is to find something that changes the price elasticity of demand without changing the cost. Price discrimination implies that a firm with market power sets its price based on the elasticity of demand and the marginal cost of produc- ing. Price in a competitive market depends only on marginal cost. (This is related to the distinction we discussed in Chapter 9 about how firms with market power react differently than competitive firms to rota- tions in demand.)
 
@@ -70,7 +72,7 @@ pc<-ggplot(data=tibble(x=1:10), aes(x=x))+
                      expand=c(0,0))+
   scale_y_continuous(breaks = c(0,7),
                      labels = c(0,expression(p)),
-                     limits = c(0,16),
+                     limits = c(0,14),
                      expand=c(0,0))+
   theme_classic(base_family = "Fira Sans Condensed", base_size=12)+
   labs(x = "Quantity",

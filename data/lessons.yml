@@ -148,7 +148,11 @@ lessons:
     slides: "4.2-slides"
     
   - title: "4.3 Pricing Strategies"
-  
+    reading: "4.3-reading"
+    class: "4.3-class"
+    slides: "4.3-slides"
+    practice: "4.3-practice"
+    
   - title: "4.4 Factor Markets"
 
   - title: "4.5 Monopolistic Competition and Oligopoly"

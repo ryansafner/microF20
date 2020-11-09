@@ -1,5 +1,5 @@
 ---
-title: "4.3: Pricing Strategies"
+title: "4.3 — Pricing Strategies"
 subtitle: "ECON 306 · Microeconomic Analysis · Spring 2020"
 author: 'Ryan Safner<br> Assistant Professor of Economics <br> <a href="mailto:safner@hood.edu"><i class="fa fa-paper-plane fa-fw"></i> safner@hood.edu</a> <br> <a href="https://github.com/ryansafner/microS20"><i class="fa fa-github fa-fw"></i> ryansafner/microS20</a><br> <a href="https://microS20.classes.ryansafner.com"> <i class="fa fa-globe fa-fw"></i> microS20.classes.ryansafner.com</a><br>'
 #date:
@@ -36,6 +36,22 @@ update_geom_defaults("label", list(family = "Fira Sans Condensed"))
 set.seed(256)
 ```
 
+
+class: inverse
+# Outline
+
+### [1<sup>st</sup>-Degree Price Discrimination](#14)
+
+### [3<sup>rd</sup>-Degree Price Discrimination](#19)
+
+### [2<sup>nd</sup>-Degree Price Discrimination](#34)
+
+### [Is Price Discrimination Good or Bad?](#36)
+
+### [Tying and Bundling](#47)
+
+---
+
 # Profit-Seeking Firms
 
 .pull-left[
@@ -62,18 +78,18 @@ comp<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
     geom_label(aes(x=6,y=mc(6)), color = "red", label=expression(MC(q)==AC(q)), size = 5)+
   geom_segment(x=8, xend=8, y=0, yend=2, size=1, linetype="dotted")+
   geom_label(aes(x=3, y= 5), label="CS", color="blue", size =5)+
-    scale_x_continuous(breaks=seq(0,10,1),
+    scale_x_continuous(breaks=c(0,8),
+                       labels=c(0,expression(q[c])),
                      limits=c(0,10),
                      expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,10,1),
+  scale_y_continuous(breaks=c(0,2),
+                     labels=c(0,expression(p[c])),
                      limits=c(0,10),
-                     labels=scales::dollar,                   
                      expand=expand_scale(mult=c(0,0.1)))+
   guides(fill=F)+
   labs(x = "Quantity",
-       y = "Price",
-       caption = expression(paste("Demand: ", p(q)==10-q, ", Cost: ", C(q)==2*q)))+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=16)
 comp
 ```
 
@@ -94,13 +110,6 @@ comp
 .pull-left[
 
 ```{r, fig.retina=3}
-mc<-function(x){2}
-demand<-function(x){10-x}
-mr<-function(x){10-2*x}
-
-CS<-tibble(x=c(0,0,8),
-           y=c(10,2,2))
-
 CS_2<-tibble(x=c(0,0,4),
            y=c(10,6,6))
 dwl<-tibble(x=c(4,4,8),
@@ -135,23 +144,20 @@ monopoly<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_segment(x=8, xend=8, y=0, yend=2, size=1, linetype="dotted")+
   geom_segment(x=4, xend=4, y=0, yend=6, size=1, linetype="dotted")+
   
-  geom_point(x=8,y=2, size=3)+
-  geom_text(x=8.5,y=2.5,label=expression(paste("(",q^c,", ",p^c,")")), size=5)+
-  
-  geom_point(x=4,y=6, size=3)+
-  geom_text(x=4.5,y=6.5,label=expression(paste("(",q^m,", ",p^m,")")), size=5)+
-    scale_x_continuous(breaks=seq(0,10,1),
+  #geom_point(x=4,y=6, size=3)+
+
+  scale_x_continuous(breaks=c(0,4,8),
+                       labels=c(0,expression(q[m]),expression(q[c])),
                      limits=c(0,10),
                      expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,10,1),
+  scale_y_continuous(breaks=c(0,2,6),
+                       labels=c(0,expression(p[c]),expression(p[m])),
                      limits=c(0,10),
-                     labels=scales::dollar,                   
                      expand=expand_scale(mult=c(0,0.1)))+
   guides(fill=F)+
   labs(x = "Quantity",
-       y = "Price",
-       caption = expression(paste("Demand: ", p(q)==10-q, ", Cost: ", C(q)==2*q)))+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=20)
+       y = "Price")+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=16)
 monopoly
 ```
 
@@ -161,8 +167,8 @@ monopoly
 
 - Any firm with market power seeks to maximize profits
 
-- Wants to (1<sup>st</sup>) **create** a surplus and then *extract* some of it as profit
-  - i.e. convert .hi-blue[CS] into .hi-green[`\\(\pi\\)`]
+- Wants to (1<sup>st</sup>) **create** a surplus .hi-purple[and then *extract* some of it as profit]
+  - i.e. convert .hi-blue[CS] $\rightarrow$ .hi-green[`\\(\pi\\)`]
 
 - Consumers are *still* better off than without the firm because it creates value (.blue[consumer surplus])
   - Just not as *best*-off as under perfect competition
@@ -177,7 +183,7 @@ monopoly
 
 .center[
 ![:scale 70%](https://www.dropbox.com/s/10htmt0dupcb3kb/nordhaus.jpg?raw=1)
-
+.smallest[
 William Nordhaus
 
 (1941-)
@@ -185,10 +191,11 @@ William Nordhaus
 Economics Nobel 2018
 ]
 ]
+]
 
 .right-column[
 
-> "We conclude that [about 2.2%] of the social returns from technological advances over the 1948-2001 period was captured by producers, indicating that most of the benefits of technological change are passed on to consumers rather than captured by producers," (p.1)
+> “We conclude that [about 2.2%] of the social returns from technological advances over the 1948-2001 period was captured by producers, indicating that most of the benefits of technological change are passed on to consumers rather than captured by producers,” (p.1)
 
 
 ]
@@ -204,9 +211,9 @@ Economics Nobel 2018
 - The most obvious way to capture more surplus is to raise prices
   - But **Law of Demand** $\implies$ this would turn many customers away!
 
-- Instead, if firm could charge **different** customers with *different WTP* **different** prices, firm could convert more consumer surplus into profit
+- Instead, if firm could charge **different** customers with *different WTP* **different** prices for **the same goods**, firm could convert more .blue[consumer surplus] into .green[profit]
 
-- ".hi[Price discrimination]" or ".hi[Variable pricing"]
+- .hi[“Price discrimination”] or .hi[“Variable pricing”]
 
 ]
 
@@ -225,7 +232,7 @@ Economics Nobel 2018
 
 - Two conditions are required for a firm to engage in variable pricing:
 
-.hi-purple[1: Firm must have market power]
+.hi-purple[1) Firm must have market power]
   - A competitive firm must charge the market price
 ]
 
@@ -237,17 +244,17 @@ Economics Nobel 2018
 
 ---
 
-# The Economics of Pricing Strategy II
+# The Economics of Pricing Strategy I
 
 .pull-left[
 
 - Two conditions are required for a firm to engage in variable pricing:
 
-.hi-purple[1: Firm must have market power]
+.hi-purple[1) Firm must have market power]
   - A competitive firm must charge the market price
 
-.hi-purple[2: Firms must be able to prevent resale or arbitrage]
-  - Smart customers buy in your lower-price market and resell it to your higher-price market
+.hi-purple[2) Firms must be able to prevent resale or arbitrage]
+  - Clever customers buy in your lower-price market to resell it in your higher-price market
 
 ]
 
@@ -280,7 +287,18 @@ Economics Nobel 2018
 
 ---
 
-# The Economics of Pricing Strategy II
+# The Economics of Pricing Strategy III
+
+.center[
+![:scale 60%](../images/pricingstrategy.png)
+
+(Goolsbee et al., 2013: 397)
+]
+
+
+---
+
+# The Economics of Pricing Strategy IV
 
 .pull-left[
 
@@ -298,7 +316,7 @@ Economics Nobel 2018
 
 ---
 
-# The Economics of Pricing Strategy II
+# The Economics of Pricing Strategy V
 
 .pull-left[
 
@@ -316,7 +334,7 @@ Economics Nobel 2018
 
 ---
 
-# The Economics of Pricing Strategy III
+# The Economics of Pricing Strategy VI
 
 .pull-left[
 
@@ -354,7 +372,7 @@ class: inverse, center, middle
 - If firm has *perfect information* about every customer's demand before purchase:
 
 - .hi[Perfect] or .hi[1<sup>st</sup>-degree price discrimination]: firm charges *each* customer their maximum willingness to pay
-  - "walks" down the market demand curve customer by customer
+  - “walks” down the market demand curve customer by customer
 
 ]
 
@@ -386,17 +404,17 @@ perfectpd<-ggplot(data.frame(x=c(0,10)), aes(x=x))+
     geom_label(aes(x=6,y=mc(6)), color = "red", label=expression(MC(q)==AC(q)), size = 5)+
   geom_segment(x=8, xend=8, y=0, yend=2, size=1, linetype="dotted")+
   geom_label(aes(x=3, y= 5), label="Profit", color="green", size =5)+
-    scale_x_continuous(breaks=seq(0,10,1),
+  scale_x_continuous(breaks=c(0,4,8),
+                       labels=c(0,expression(q[m]),expression(q[c])),
                      limits=c(0,10),
                      expand=expand_scale(mult=c(0,0.1)))+
-  scale_y_continuous(breaks=seq(0,10,1),
+  scale_y_continuous(breaks=c(0,2,6),
+                       labels=c(0,expression(p[c]),expression(p[m])),
                      limits=c(0,10),
-                     labels=scales::dollar,                   
                      expand=expand_scale(mult=c(0,0.1)))+
   guides(fill=F)+
   labs(x = "Quantity",
-       y = "Price",
-       caption = expression(paste("Demand: ", p(q)==10-q, ", Cost: ", C(q)==2*q)))+
+       y = "Price")+
   theme_classic(base_family = "Fira Sans Condensed", base_size=20)
 perfectpd
 ```
@@ -407,7 +425,7 @@ perfectpd
 
 - Firm converts *all* consumer surplus into profit!
 
-- Produces the competitive amount (8)
+- Produces the competitive amount $(q_c)$!
 
 ]
 
@@ -427,6 +445,13 @@ perfectpd
 ]
 ]
 
+---
+
+# Big Data and Perfect Price Discrimination
+
+.center[
+![:scale 90%](../images/bigdatapricediscrimination.jpg)
+]
 
 ---
 
@@ -442,7 +467,7 @@ class: inverse, center, middle
 
 - Firms almost never have perfect information about their customers
 
-- But they can often separate customers by **observable characteristics** into different **groups** that have similar demands before purchasing
+- But they can often separate customers by .hi-purple[observable characteristics] into .hi-purple[different groups] with similar demands *before purchasing*
 
 ]
 
@@ -572,7 +597,7 @@ elastic+
 ```
 ]
 .smallest[
-The firm could charge a single price to all travelers and earn some .hi-green[profit]
+The firm could charge a **single price** to all travelers and earn some .hi-green[profit]
 ]
 ---
 
@@ -672,54 +697,45 @@ With **different prices**: raise price on inelastic travelers, lower price on el
 
 ---
 
+# Pricing and Markup
+
+.pull-left[
+.smallest[
+- How much should each segment be charged?
+
+- Firm treats each segment as a *different* market
+  1. Find q*: $MR(q)=MC(q)$ 
+  2. Raise p* to maximum WTP (Demand)
+
+- Lerner index implies optimal markup for each segment, again:
+$$\underbrace{\frac{p-MC(q)}{p}}_{\text{Markup % of Price}}=-\frac{1}{\epsilon}$$
+]
+]
+
+.pull-right[
+.center[
+![](https://www.dropbox.com/s/rh4v98afnjit8zc/markup.jpg?raw=1)
+]
+]
+---
+
 # 3<sup>rd</sup>-Degree Price Discrimination: Numerical Example
 
 .content-box-green[
-.green[**Example**]: Suppose you run a bar in downtown Frederick, and estimate the demands for beer from undergraduates $(U)$ and graduates $(G)$ to be:
+.green[**Example**]: Suppose you run a bar in downtown Frederick, and estimate the nightly demands for beer from undergraduates $(U)$ and graduates $(G)$ to be:
 
 $$\begin{align*}
 q_U&=18-4p_U\\
 q_G&=12-p_G\\
 \end{align*}$$
 
-Assume the only cost of producing drinks is a constant marginal (and average) cost of $2.
+Assume the only cost of producing a beer is a constant marginal (and average) cost of $2.
 
 ]
 
 1. If your bar could not price discriminate, how much profit would the bar earn?
 
 2. If you could price discriminate, how much profit would the bar earn?
-
----
-
-# 3<sup>rd</sup>-Degree Price Discrimination: You Try
-
-.content-box-green[
-.green[**Example**]: Promoters of a major college basketball tournament estimate that the demand for tickets for *adults* $(A)$ and *students* $(S)$ are given by:
-
-$$\begin{align*}
-q_A&=5,000-10p_A\\
-q_S&=10,000-100p_S\\
-\end{align*}$$
-
-Assume a constant marginal (and average) cost of $10/seat.
-
-]
-
-1. If the organizers charged a single price, how much profit would the tournament earn?
-
-2. If the organizers segment the market and charge adults and students different prices, how much profit would the tournament earn?
-
----
-
-# Pricing
-
-- How much should each segment be charged?
-
-- Firm treats each segment as a different market (set $MR(q)=MC(q)$ and then raise price to max WTP)
-
-- Lerner index implies optimal markup for each segment, again:
-$$\underbrace{\frac{p-MC(q)}{p}}_{Markup}=-\frac{1}{\epsilon}$$
 
 ---
 
@@ -880,6 +896,106 @@ perfectpd
 
 ---
 
+# How to Be a Savvy Consumer
+
+.pull-left[
+.smallest[
+- Realize that any “sales” and “discounts” are calculate to make *the store* more money
+
+- But it *can* make you better off as a consumer too if you are smart
+
+- Think about your .blue[consumer surplus]!
+
+- If you were *already* planning to buy the product, a fall in price is a good deal for you
+  - Your demand is less elastic
+
+- If you *weren’t* going to buy the product before, and now you do, the sale was effective for the store, and you likely don’t get much surplus
+  - Your demand is more elastic
+
+]
+]
+
+.pull-right[
+![](3.2-slides_files/figure-html/unnamed-chunk-8-1.png)
+]
+
+---
+
+# Behavioral Economics
+
+.center[
+![:scale 50%](../images/behavioraleconomicspricing.PNG)
+]
+
+---
+
+# Price Discrimination vs. Price Differences
+
+.pull-left[
+
+- .hi[Price discrimination] is selling *identical* goods to people at different prices
+
+- But not everytime people pay different prices means it is price discrimination
+
+- Sometimes it is truly different goods that people are paying different prices for
+  - If *costs* to firm are *different* for different versions (color, size, etc.), it is a *different* good, *not* price discrimination
+
+]
+
+.pull-right[
+.center[
+![](https://www.dropbox.com/s/5l6vjvkao8q4amp/variablepricing.png?raw=1)
+]
+
+]
+
+---
+
+# Price Discrimination vs. Price Differences
+
+.pull-left[
+
+- .hi-green[Example]: bottled sparkling water often more expensive than Coca Cola
+  - Could be because sparkling water drinkers have more elastic demand than Coke drinkers
+  - Or could be that it is more expensive to package sparkling water (economies of scale with greater number of Coke drinkers)
+
+]
+
+.pull-right[
+.center[
+![](../images/cokewater.jpg)
+]
+
+]
+
+---
+
+# Price Discrimination vs. Price Differences
+
+.pull-left[
+
+- The only way to tell the difference is to see what happens if demand changes price elasticity (and costs do not change)
+  - Price discrimination requires market power, firm with market power marks up price based on $\frac{1}{\epsilon}$
+  - Competitive firm only sets $p=MC$, so change in elasticity has no effect on price
+
+- See [today’s class notes](/class/4.3-class) for a graphical demonstration
+]
+
+.pull-right[
+.center[
+![:scale 100%](../images/elastic.jpg)
+]
+
+]
+
+---
+
+class: inverse, center, middle
+
+# Tying and Bundling
+
+---
+
 # Tying I
 
 .pull-left[
@@ -950,7 +1066,7 @@ perfectpd
 
 .pull-left[
 
-- Again, a tradeoff between benefits and costs:
+- Again, a tradeoff:
 
 - Increased profits and reduced consumer surplus, reduced deadweight loss
 
@@ -1156,7 +1272,7 @@ perfectpd
 
 .pull-left[
 
-- Again, a tradeoff between benefits and costs:
+- Again, a tradeoff:
 
 - Increased profits and reduced consumer surplus, reduced deadweight loss
 
