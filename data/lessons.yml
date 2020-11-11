@@ -154,7 +154,11 @@ lessons:
     practice: "4.3-practice"
     
   - title: "4.4 Factor Markets"
-
+    reading: "4.4-reading"
+    class: "4.4-class"
+    slides: "4.4-slides"
+    practice: "4.4-practice"
+    
   - title: "4.5 Monopolistic Competition and Oligopoly"
 
   - title: "4.6 Sequential Games & Contestable Markets"

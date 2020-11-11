@@ -938,7 +938,7 @@ future4<-future3+
 
 ---
 
-# Want to Learn More?
+# So How Did The Soviet Union “Work” For So Long?
 
 .pull-left[
 .center[
@@ -948,5 +948,5 @@ future4<-future3+
 
 .pull-right[
 
-See lesson 3 in my Economics of Development Course: [Can We Plan an Economy?](https://devf19.classes.ryansafner.com/class/03-class/)
+See lesson 11 in my Economics of Development Course: [Russia and the Post-Communist Transition](https://devf19.classes.ryansafner.com/class/11-class/)
 ]

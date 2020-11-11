@@ -1,0 +1,12 @@
+---
+title: "4.4 — Factor Markets — Readings"
+citeproc: false
+bibliography: ../../static/bib/references.bib
+csl: ../../static/bib/chicago-fullnote-bibliography-no-bib.csl
+---
+
+# Recommended
+
+- <i class="fas fas fa-book"></i> Ch. 13 in @textbook
+
+Older versions of the textbook do not have a chapter on factor markets. 🤷
