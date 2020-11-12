@@ -610,7 +610,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
 # Labor Supply and Firm's Demand for Labor
 
 .pull-left[
-- At low amounts of labor, marginal benefit $(MRP_L) < w$ marginal cost
+- At low amounts of labor, .blue[marginal benefit] $\color{#0047AB}{MRP_L} > \color{#D7250E}{w}$ .red[marginal cost]
 
 - Firm will hire more labor
 
@@ -647,7 +647,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
 
 .pull-left[
 
-- At high amounts of labor, marginal benefit $(MRP_L) < w$ marginal cost
+- At high amounts of labor, .blue[marginal benefit] $\color{#0047AB}{MRP_L} < \color{#D7250E}{w}$ .red[marginal cost]
 
 - Firm will hire less labor
 
@@ -1285,7 +1285,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   scale_y_continuous(breaks=c(4.625,6),
                      limits=c(0,10),
                      expand=c(0,0),
-                     labels=c(expression(w[c]),expression(w[m])))+
+                     labels=c(expression(w[m]),expression(w[c])))+
   labs(x = "Labor (L)",
        y = "Wage (w)")+
   theme_classic(base_family = "Fira Sans Condensed", base_size=20)
@@ -1323,7 +1323,7 @@ ggplot(data.frame(x=c(0,10)), aes(x=x))+
   scale_y_continuous(breaks=c(4.625,6),
                      limits=c(0,10),
                      expand=c(0,0),
-                     labels=c(expression(w[c]),expression(w[m])))+
+                     labels=c(expression(w[m]),expression(w[c])))+
   labs(x = "Labor (L)",
        y = "Wage (w)")+
   theme_classic(base_family = "Fira Sans Condensed", base_size=20)
@@ -1529,11 +1529,11 @@ dwl_u<-tribble(
 
 ggplot(data.frame(x=c(0,10)), aes(x=x))+
   geom_polygon(data=dwl_u, aes(x=x,y=y), fill="black",alpha=0.5)+ #dwl
-  stat_function(fun=supply, geom="line", color="red", size=1)+
+  stat_function(fun=supply, geom="line", color="red", size=2)+
   geom_label(x=3.5,y=supply(3.5), color = "red", label="MC(L)")+
-  stat_function(fun=Demand, geom="line", color="blue", size=1)+
+  stat_function(fun=Demand, geom="line", color="blue", size=2)+
   geom_label(x=4,y=Demand(4), color = "blue", label="Market Demand")+
-  stat_function(fun=MR_l, geom="line", color="purple", size=1)+
+  stat_function(fun=MR_l, geom="line", color="purple", size=2)+
   geom_label(x=1.75,y=MR_l(1.75), color = "purple", label="MR(L)")+
   
   geom_segment(x=1.325,y=0,xend=1.325,yend=7.325,linetype=3, size=1)+
