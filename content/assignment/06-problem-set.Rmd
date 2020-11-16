@@ -189,10 +189,21 @@ Calculate the elasticity of demand at the profit-maximizing price.
 
 ## Question 11
 
-Boeing (a U.S. company), and Airbus (a European company) are fierce competitors that together, about evenly dominate the market for aircraft. Airbus decides whether it is going to launch a *new plane*, or keep its *old planes*. Boeing must then respond and determine if it is also going to launch a *new plane* or keep its *old planes*. 
+Carl’s Coal Mining operates in a remote area. Because of its location, it has monopsony power in the local labor market for miners. Its marginal revenue product of labor is
+$$MRP_L=800-10L$$
+where $L$ is the total number of miners. The labor supply curve of local miners is
+$$w=10L-100$$
 
-Developing a new plane is very expensive. If both companies produce *new planes*, they will have spent a lot on producing the new plane, but neither will gain any market share. If only one company releases a new plane, they will capture more of the market, making the extra cost of development worthwhile. This game is depicted in extensive form below:
+where $w$ is the wage (in $1000’s per miner).
 
-![](https://micros20.classes.ryansafner.com/homeworks/iohwgame.png)
+### Part A
 
-Solve for the "rollback equilibrium" using backwards induction.
+Write a function for the marginal cost of labor.
+
+### Part B
+
+What quantity of workers will the mine hire, and what wage will it pay its workers?
+
+### Part C
+
+What would the quantity of workers be, and what would the wage be, if there was competition among other local mines for labor?

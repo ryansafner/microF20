@@ -620,8 +620,8 @@ class: inverse, center, middle
 - .hi[Oligopoly]: industry with a few large sellers with market power
 
 - Other features can vary
-    - May sell similar or different goods
-    - May have barriers to entry
+  - May sell similar or different goods
+  - May have barriers to entry
 
 - Key: Firms make .hi-purple[strategic choices], interdependent on one another
 
@@ -642,11 +642,11 @@ class: inverse, center, middle
 
 .pull-right[
 
-- Unlike PC or monopoly, no single "theory of oligopoly"
+- Unlike PC or monopoly, no single “theory of oligopoly”
 
 - Depends heavily on assumptions made about interactions and choice variables
 
-- One certainty: oligopoly is a strategic interaction between few firms (i.e. ideal for game theory)
+- One certainty: oligopoly is a .hi-purple[strategic interaction] between few firms
 
 ]
 
@@ -663,10 +663,10 @@ class: inverse, center, middle
 
 .pull-right[
 
-- .hi[Game theory]: a set of tools that model strategic interactions ("games") between rational players, 3 elements:
+- .hi[Game theory]: a set of tools that model .hi-purple[trategic interactions] (.hi-purple[“games”]) between rational agents, 3 elements:
     1. **Players**
-    2. **Strategies** that players can choose from
-    3. **Payoffs** to each player that are *jointly-determined* from combination of all players' strategies 
+    2. **Strategies** that each player can choose from
+    3. **Payoffs** to each player that are *jointly-determined* from combination of all players’ strategies 
 
 ]
 
@@ -683,7 +683,7 @@ class: inverse, center, middle
 
 .pull-right[
 
-- Traditional economic models are often called .hi[Decision theory]:
+- Traditional economic models are often called .hi[“Decision theory”]:
 
 - .hi-purple[Optimization models] **ignore all other agents** and just focus on how can **you** maximize **your** objective within **your** constraints
   - Consumers max utility; firms max profit, etc.
@@ -706,11 +706,11 @@ class: inverse, center, middle
 
 .pull-right[
 
-- Traditional economic models are often called .hi[Decision theory]:
+- Traditional economic models are often called .hi[“Decision theory”]:
 
-- .hi-purple[Equilibrium models] assume that there are **so many agents** that **no agent's decision can affect the outcome**
+- .hi-purple[Equilibrium models] assume that there are **so many agents** that **no agent’s decision can affect the outcome**
   - Firms are price-takers or the *only* buyer or seller
-  - **Ignores all other agents' decisions**!
+  - **Ignores all other agents’ decisions**!
 
 - **Outcome**: .hi-purple[equilibrium]: where *nobody* has no better alternatives
 
@@ -729,9 +729,9 @@ class: inverse, center, middle
 
 .pull-right[
 
-- .hi[Game theory models] directly confront **strategic interactions** between players
-  - How each player would respond to a strategy chosen by other player(s)
-  - Lead to a stable outcome where everyone has considered and chosen their best responses
+- .hi[Game theory models] directly confront .hi-purple[strategic interactions] between players
+  - How each player would optimally respond to a strategy chosen by other player(s)
+  - Lead to a stable outcome where everyone has considered and chosen mutual best responses
 
 - **Outcome**: .hi-purple[Nash equilibrium]: where *nobody* has a better strategy *given the strategies everyone else is playing*
 
@@ -751,9 +751,9 @@ class: inverse, center, middle
 
 .pull-right[
 
-- What does .hi-purple["equilibrium"] mean in an *oligopoly*?
+- What does .hi-purple[“equilibrium”] mean in an *oligopoly*?
 
-- In competition or monopoly, a unique $(q^*,p^*)$ for whole market such that **no firms/consumers have incentives to change price**
+- In competition or monopoly, a unique $(q^*,p^*)$ for industry such that **nobody has incentives to change price**
 
 ]
 
@@ -770,8 +770,8 @@ class: inverse, center, middle
 .pull-right[
 
 - Oligopoly: use game-theoretic .hi-purple[Nash Equilibrium]: 
-  - no player wants to change their strategy **given all other player' strategies**
-  - each player is playing a **best response** against other players' strategies
+  - no player wants to change their strategy **given all other players’ strategies**
+  - each player is playing a **best response** against other players’ strategies
 
 ]
 
@@ -788,7 +788,7 @@ class: inverse, center, middle
 
 .pull-right[
 
-- Suppose we have a **duopoly** between Apple and Google
+- Suppose we have a simple **duopoly** between .hi-red[Apple] and .hi-blue[Google]
 
 - Each is planning to launch a new tablet, and choose to sell it at a **High Price** or a **Low Price**
 
@@ -1132,7 +1132,7 @@ An internal FBI informant brought the cartel down.
 
 .right-column[
 
- "[B]ecause of their inability to maintain their cartels [prior to the ICC], railroads were big supporters of the [Interstate Commerce Act] because the newly-formed ICC could coordinate cartel prices...Using the new law as authority, the railroads revamped their freight classification, raised rates, eliminated passes and fare reductions, and revised less than carload rates on all types of goods, including groceries." 
+> “[B]ecause of their inability to maintain their cartels [prior to the ICC], railroads were big supporters of the [Interstate Commerce Act] because the newly-formed ICC could coordinate cartel prices...Using the new law as authority, the railroads revamped their freight classification, raised rates, eliminated passes and fare reductions, and revised less than carload rates on all types of goods, including groceries.”
 
 .source[Kolko, Gabriel, 1963, *The Triumph of Conservatism: A Reinterpretation of American History, 1900-1916*]
 ]
@@ -1151,8 +1151,8 @@ Source: [NPR Planet Money](https://www.npr.org/sections/money/2015/06/24/4171879
 
 .pull-right[
 
-> "Marvin Horne was known as the raisin outlaw. His crime: Selling 100% of his raisin crop, against the wishes of the Raisin Administrative Committee, a group of farmers that regulates the national raisin supply.
-> He took the case all the way to the Supreme Court, which issued its final ruling this week."
+> “Marvin Horne was known as the raisin outlaw. His crime: Selling 100% of his raisin crop, against the wishes of the Raisin Administrative Committee, a group of farmers that regulates the national raisin supply.
+> He took the case all the way to the Supreme Court, which issued its final ruling this week.”
 
 ]
 
@@ -1177,7 +1177,7 @@ Source: [NPR Planet Money](https://www.npr.org/sections/money/2015/06/24/4171879
 # Cartels: In Fiction I
 
 .center[
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hGo5bxWy21g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="980" height="550" src="https://www.youtube.com/embed/hGo5bxWy21g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ]
 
 ---
@@ -1185,7 +1185,7 @@ Source: [NPR Planet Money](https://www.npr.org/sections/money/2015/06/24/4171879
 # Cartels: In Fiction II
 
 .center[
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aT7TxMaZ4eM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="980" height="550" src="https://www.youtube.com/embed/aT7TxMaZ4eM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ]
 
