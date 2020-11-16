@@ -160,8 +160,9 @@ lessons:
     practice: "4.4-practice"
     
   - title: "4.5 Monopolistic Competition and Oligopoly"
-
-  - title: "4.6 Sequential Games & Contestable Markets"
+    reading: "4.5-reading"
+    class: "4.5-class"
+    slides: "4.5-slides"
 
   - title: '<i class="fas fa-laptop-code"></i> **Problem Set 6** (ungraded/practice)'
     assignment: "06-problem-set"
