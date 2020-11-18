@@ -164,11 +164,16 @@ lessons:
     class: "4.5-class"
     slides: "4.5-slides"
 
+  - title: "4.6 Contestable Markets and Wrap Up"
+    reading: "4.6-reading"
+    class: "4.6-class"
+    slides: "4.6-slides"
+
   - title: '<i class="fas fa-laptop-code"></i> **Problem Set 6** (ungraded/practice)'
     assignment: "06-problem-set"
 
   - title: '<i class="fas fa-laptop-code"></i> **Op-Ed Due** by Friday November 20'
     assignment: "op-ed"
 
-  - title: '<i class="fas fa-star"></i> **Final Exam** Wed Nov 18 — Mon Nov 23'
+  - title: '<i class="fas fa-star"></i> **Final Exam** Thurs Nov 19 — Mon Nov 23'
     assignment: "03-exam"

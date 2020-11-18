@@ -1,0 +1,46 @@
+---
+title: "4.5 — Factor Markets — Class Notes"
+citeproc: false
+bibliography: ../../static/bib/references.bib
+csl: ../../static/bib/chicago-syllabus-no-bib.csl
+output:
+  blogdown::html_page:
+    template: ../../pandoc/toc-title_html.template
+    toc: true
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE)
+library(tidyverse)
+```
+
+*Wednedsay, November 11, 2020*
+
+# Overview
+
+Today we cover a topic that often does not get covered in microeconomics courses, but is important nonetheless for our purposes: markets for factors of production (e.g. land, labor, capital, supplies, etc). We discuss what determines prices in these markets, and how they vary with *monopoly* power and *monopsony* power (a buyer with market power). 
+
+We primarily focus on labor markets as the main factor market for time, and since all of us are participants in labor markets. However, the analysis today can be applied to *any* market for an input to production. 
+
+# Readings
+
+See [today’s suggested readings](/reading/4.4-reading).
+
+# Slides
+
+- [<i class="fas fa-chalkboard-teacher"></i> View Lecture Slides](/slides/4.4-slides.html)
+- [<i class="fas fa-file-pdf"></i> Download as PDF](/slides/4.4-slides.pdf)
+
+# Practice Problems
+
+I have put up a [practice problem](/practice/4.4-practice) to give you a numerical example of monoposony. Answers will be posted there later.
+
+# Assignments
+
+You are done with graded homeworks for the semester!
+
+Don’t forget your [Op-Ed](/assignment/op-ed) is due by Friday November 20.
