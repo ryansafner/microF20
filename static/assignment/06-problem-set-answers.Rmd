@@ -310,7 +310,7 @@ $$DWL (black) = \frac{1}{2}(6-3)(\$7-\$4) = \$4.50$$
 
 #### Now suppose that the firm had earned this market power via rent-seeking. From its lobbying efforts, it had convinced the local government to require all new restaurants to get a special license, making it harder for new entrants to compete in the market. What was the most that this firm was willing to spend on lobbying in order to get the license requirement?
 
-The "prize" of the firm's market power is the new profit generated (moving from part (b) to part (d)), which was $9.00. So, the firm would be willing to spend up to $.009 in order to secure its market power.
+The "prize" of the firm's market power is the new profit generated (moving from part (b) to part (d)), which was $9.00. So, the firm would be willing to spend up to $9.00 in order to secure its market power.
 
 ### Part F
 
@@ -446,11 +446,11 @@ The profit maximizing quantity was $q^*=10$, and price $p^*=\$450$, with a margi
 
 $$\begin{aligned}
 	L\frac{p-MC}{p}&=L=-\frac{1}{\epsilon}\\
-	\frac{450-400}{400}&=L\\
-	0.125&=L	\\
+	\frac{450-400}{450}&=L\\
+	0.11&\approx L	\\
 	\end{aligned}$$
 
-The markup is 12.5% of the price. This should be logical, as 12.5% is of $400 is $50, and the firm is charging $50 above marginal cost. 
+The markup is 11% of the price.
 
 ### Part G
 
@@ -459,12 +459,12 @@ The markup is 12.5% of the price. This should be logical, as 12.5% is of $400 is
 Using our answer from part f, we can solve the Lerner index equation for $\epsilon$ to get the elasticity of demand at our price of \$450: 
 
 $$\begin{aligned}
-	0.125&=-\frac{1}{\epsilon}	\\
-	\epsilon &=-\frac{1}{0.125}\\
-	\epsilon &=-8\\
+	0.11&=-\frac{1}{\epsilon}	\\
+	\epsilon &=-\frac{1}{0.11}\\
+	\epsilon &=-9\\
 	\end{aligned}$$
 
-Demand is elastic. Raising (lowering) the price by 1% would result in consumers buying 8% less (more).
+Demand is elastic. Raising (lowering) the price by 1% would result in consumers buying 9% less (more).
 
 
 ```{r}
