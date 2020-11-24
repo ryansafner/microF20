@@ -16,6 +16,7 @@ knitr::opts_chunk$set(echo = FALSE,
                       message = FALSE,
                       warning = FALSE)
 library(tidyverse)
+library(patchwork)
 ```
 
 *Monday, November 9, 2020*
@@ -48,7 +49,9 @@ Don’t forget your [Op-Ed](/assignment/op-ed) is due by Friday November 20.
 
 ## “I Know It When I See It” — How to Identify Market Power?
 
-The only way to tell the difference between price discrimination and price differences due to costs in competitive markets (without actually being able to observe the firm’s marginal cost) is to find something that changes the price elasticity of demand without changing the cost. Price discrimination implies that a firm with market power sets its price based on the elasticity of demand and the marginal cost of produc- ing. Price in a competitive market depends only on marginal cost. (This is related to the distinction we discussed in Chapter 9 about how firms with market power react differently than competitive firms to rota- tions in demand.)
+It is tempting to explain many differences in prices for apparently the same product as a matter of price discrimination — firms are charging different customers different prices for the same good. However, it might be upon closer inspection that the prices are different because *they are not the same good*, or more importantly, that different varieties of the good *cost different amounts* to produce. Perhaps one color is more expensive to produce?
+
+Consider two products below. Product 1 has lower marginal costs to produce $(MC_1)$ than Product 2 $(MC_2)$. Naturally, with market power, the firm will charge different prices for them $p_1$ and $p_2$, after always setting $MR=MC$ and raising the price up to the (identical) demand for each product. 
 
 ```{r}
 demand_1=function(x){10-x}
@@ -60,176 +63,76 @@ mr_2=function(x){16-2*x}
 mc_m=function(x){x+1}
 mc_c=function(x){2*x+1}
 
-pc<-ggplot(data=tibble(x=1:10), aes(x=x))+
-  stat_function(fun=mc_m, geom="line", size=2, color="red")+
-  geom_label(x=8,y=mc_m(8), color="red", label=expression(MC))+
-  geom_hline(yintercept=7, size = 2, color = "blue")+
-  geom_label(x=8,y=7, color="blue", label="Demand")+
-  geom_segment(x=6,xend=6, y=0, yend=7, size=1, linetype="dotted")+
-  scale_x_continuous(breaks = c(0,6),
-                     labels = c(0,expression(q)),
-                     limits = c(0,10),
-                     expand=c(0,0))+
-  scale_y_continuous(breaks = c(0,7),
-                     labels = c(0,expression(p)),
-                     limits = c(0,14),
-                     expand=c(0,0))+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=12)+
-  labs(x = "Quantity",
-       y = "Price")
+demand_cr=function(x){7.75-0.5*x}
 
-mp<-ggplot(data=tibble(x=1:10), aes(x=x))+
+mc_m2=function(x){x+1+2}
+mc_c=function(x){2*x+1}
+
+product1<-ggplot(data=tibble(x=1:10), aes(x=x))+
   stat_function(fun=demand_1, geom="line", size=2, color="blue")+
   stat_function(fun=mr_1, geom="line", size=2, color="purple")+
   stat_function(fun=mc_m, geom="line", size=2, color="red")+
+
+  geom_label(x=8,y=demand_1(8), color="blue", label="Demand")+
+  geom_label(x=4,y=mr_1(4), color="purple", label=expression(MR))+
+  geom_label(x=8,y=mc_m(8), color="red", label=expression(MC[1]))+
+  geom_segment(x=3,xend=3, y=0, yend=7, size=1, linetype="dotted")+
+  geom_segment(x=0,xend=3, y=7, yend=7, size=1, linetype="dotted")+
+
+  theme_classic(base_family = "Fira Sans Condensed", base_size=14)+
+  labs(x = "Quantity",
+       y = "Price",
+       title = "Variant 1")+
+  scale_x_continuous(breaks = c(0,3),
+                     labels = c(0,expression(q[1])),
+                     limits = c(0,10),
+                     expand=c(0,0))+
+  scale_y_continuous(breaks = c(0,7),
+                     labels = c(0,expression(p[1])),
+                     limits = c(0,14),
+                     expand=c(0,0))
+
+product2<-ggplot(data=tibble(x=1:10), aes(x=x))+
+  stat_function(fun=demand_1, geom="line", size=2, color="blue")+
+  stat_function(fun=mr_1, geom="line", size=2, color="purple")+
   #stat_function(fun=mc_c, geom="line", size=2, color="red")+
 
   
   geom_label(x=8,y=demand_1(8), color="blue", label="Demand")+
   geom_label(x=4,y=mr_1(4), color="purple", label=expression(MR))+
-  geom_label(x=8,y=mc_m(8), color="red", label=expression(MC))+
-  #geom_label(x=4,y=mc_c(4), color="red", label=expression(MC[c]))+
-  
-  geom_segment(x=3,xend=3, y=0, yend=7, size=1, linetype="dotted")+
-  geom_segment(x=0,xend=3, y=7, yend=7, size=1, linetype="dotted")+
 
-  scale_x_continuous(breaks = c(0,3),
-                     labels = c(0,expression(q)),
-                     limits = c(0,10),
-                     expand=c(0,0))+
-  scale_y_continuous(breaks = c(0,7),
-                     labels = c(0,expression(p)),
-                     limits = c(0,14),
-                     expand=c(0,0))+
   theme_classic(base_family = "Fira Sans Condensed", base_size=14)+
   labs(x = "Quantity",
-       y = "Price")
-
-library(patchwork)
-pc | mp
-```
-
-### A Change in Marginal Cost
-
-Perhaps as the result of a per-unit tax 
-
-```{r}
-mc_m2=function(x){x+1+2}
-mc_c=function(x){2*x+1}
-
-pc_c2<-pc+
-  stat_function(fun=mc_m2, geom="line", size=2, color="darkred")+
-  geom_label(x=8,y=mc_m2(8), color="darkred", label=expression(MC[2]))+
-  geom_hline(yintercept=7, size = 2, color = "blue")+
-  geom_label(x=8,y=7, color="blue", label="Demand")+
-  geom_segment(x=4,xend=4, y=0, yend=7, size=1, linetype="dotted")+
-  
-  annotate("segment", x = 6, xend = 4, y = 2, yend = 2, colour = "black", size=2, alpha=1, arrow=arrow(length=unit(0.5,"cm"), ends="last", type="closed"))+
-
-  scale_x_continuous(breaks = c(0,4,6),
-                     labels = c(0,expression(q[2]),expression(q[1])),
-                     limits = c(0,10),
-                     expand=c(0,0))+
-  scale_y_continuous(breaks = c(0,7),
-                     labels = c(0,expression(p)),
-                     limits = c(0,14),
-                     expand=c(0,0))
-
-mp_c2<-mp+
+       y = "Price",
+       title = "Variant 2")+
   stat_function(fun=mc_m2, geom="line", size=2, color="darkred")+
   geom_label(x=8,y=mc_m2(8), color="darkred", label=expression(MC[2]))+
   geom_segment(x=2.325, xend=2.325, y=0, yend=7.625, size=1, linetype="dotted")+
   geom_segment(x=0, xend=2.325, y=7.625, yend=7.625, size=1, linetype="dotted")+
-  
-  annotate("segment", x = 3, xend = 2.325, y = 2, yend = 2, colour = "black", size=2, alpha=1, arrow=arrow(length=unit(0.15,"cm"), ends="last", type="closed"))+
-  annotate("segment", x = 0.5, xend = 0.5, y = 7, yend = 7.625, colour = "black", size=2, alpha=1, arrow=arrow(length=unit(0.25,"cm"), ends="last", type="closed"))+
-  
-  scale_x_continuous(breaks = c(0,2.325,3),
-                     labels = c(0,expression(q[2]),expression(q[1])),
+    scale_x_continuous(breaks = c(0,2.325),
+                     labels = c(0,expression(q[2])),
                      limits = c(0,10),
                      expand=c(0,0))+
-  scale_y_continuous(breaks = c(0,7,7.625),
-                     labels = c(0,expression(p[1]),expression(p[2])),
+  scale_y_continuous(breaks = c(0,7.625),
+                     labels = c(0,expression(p[2])),
                      limits = c(0,14),
                      expand=c(0,0))
-pc_c2 | mp_c2
+product1 | product2
 ```
 
-### Change in Demand
+The only way to tell the difference between price discrimination and price differences due to costs in competitive markets (without actually being able to observe the firm’s marginal cost) is to find something that changes the price elasticity of demand without changing the cost. Price discrimination implies that a firm with market power sets its price based on the elasticity of demand and the marginal cost of producing. Price in a competitive market depends only on marginal cost. (This is related to the distinction we discussed in Chapter 9 about how firms with market power react differently than competitive firms to rota- tions in demand.)
+
 
 ```{r}
-demand_3=function(x){14-x}
-mr_3=function(x){14-2*x}
+demand_1=function(x){10-x}
+mr_1=function(x){10-2*x}
 
-pc_d2<-ggplot(data=tibble(x=1:10), aes(x=x))+
-  stat_function(fun=mc_m, geom="line", size=2, color="red")+
-  geom_label(x=8,y=mc_m(8), color="red", label=expression(MC))+
-  geom_hline(yintercept=7, size = 2, color = "blue")+
-  geom_label(x=3,y=7, color="blue", label="Demand")+
-  geom_segment(x=6,xend=6, y=0, yend=7, size=1, linetype="dotted")+
-  geom_hline(yintercept = 10, size = 2, color = "darkblue")+
-  geom_label(x=3,y=10, color="darkblue", label=expression(Demand[2]))+
-  geom_segment(x=9,xend=9, y=0, yend=10, size=1, linetype="dotted")+
-  
-  annotate("segment", x = 6, xend = 9, y = 2, yend = 2, colour = "black", size=2, alpha=1, arrow=arrow(length=unit(0.5,"cm"), ends="last", type="closed"))+
-  annotate("segment", x = 1, xend = 1, y = 7, yend = 10, colour = "black", size=2, alpha=1, arrow=arrow(length=unit(0.5,"cm"), ends="last", type="closed"))+
+demand_2=function(x){16-x}
+mr_2=function(x){16-2*x}
 
-    scale_x_continuous(breaks = c(0,6,9),
-                     labels = c(0,expression(q[1]),expression(q[2])),
-                     limits = c(0,10),
-                     expand=c(0,0))+
-  scale_y_continuous(breaks = c(0,7,10),
-                     labels = c(0,expression(p[1]),expression(p[2])),
-                     limits = c(0,14),
-                     expand=c(0,0))+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=12)+
-  labs(x = "Quantity",
-       y = "Price")
+mc_m=function(x){x+1}
+mc_c=function(x){2*x+1}
 
-
-mp_d2<-ggplot(data=tibble(x=1:10), aes(x=x))+
-  stat_function(fun=demand_1, geom="line", size=2, color="blue", alpha = 0.35)+
-  stat_function(fun=mr_1, geom="line", size=2, color="purple", alpha = 0.35)+
-  stat_function(fun=mc_m, geom="line", size=2, color="red")+
-  #stat_function(fun=mc_c, geom="line", size=2, color="red")+
-
-  
-  geom_label(x=8,y=demand_1(8), color="blue", label="Demand")+
-  geom_label(x=4,y=mr_1(4), color="purple", label=expression(MR))+
-  geom_label(x=8,y=mc_m(8), color="red", label=expression(MC))+
-  #geom_label(x=4,y=mc_c(4), color="red", label=expression(MC[c]))+
-  
-  geom_segment(x=3,xend=3, y=0, yend=7, size=1, linetype="dotted")+
-  geom_segment(x=0,xend=3, y=7, yend=7, size=1, linetype="dotted")+
-
-  geom_segment(x=4.333,xend=4.333, y=0, yend=demand_3(4.333), size=1, linetype="dotted")+
-  geom_segment(x=0,xend=4.333, y=demand_3(4.333), yend=demand_3(4.333), size=1, linetype="dotted")+
-
-  stat_function(fun=demand_3, geom="line", size=2, color="darkblue")+
-  geom_label(x=5,y=demand_3(5), color="darkblue", label=expression(Demand[2]))+
-  stat_function(fun=mr_3, geom="line", size=2, color="purple")+
-  geom_label(x=2.5,y=mr_3(2.5), color="purple", label=expression(MR[2]))+
-
-  annotate("segment", x = 3, xend = 4.333, y = 3, yend = 3, colour = "black", size=2, alpha=1, arrow=arrow(length=unit(0.5,"cm"), ends="last", type="closed"))+
-  annotate("segment", x = 0.5, xend = 0.5, y = 7, yend = demand_3(4.333), colour = "black", size=2, alpha=1, arrow=arrow(length=unit(0.5,"cm"), ends="last", type="closed"))+
-
-  scale_x_continuous(breaks = c(0,3,4.333),
-                     labels = c(0,expression(q[1]),expression(q[2])),
-                     limits = c(0,10),
-                     expand=c(0,0))+
-  scale_y_continuous(breaks = c(0,7,demand_3(4.333)),
-                     labels = c(0,expression(p[1]),expression(p[2])),
-                     limits = c(0,14),
-                     expand=c(0,0))+
-  theme_classic(base_family = "Fira Sans Condensed", base_size=12)+
-  labs(x = "Quantity",
-       y = "Price")
-pc_d2 | mp_d2
-```
-
-## A Change in Price Elasticity of Market Demand
-
-```{r}
 demand_cr=function(x){7.75-0.5*x}
 
 pc_e<-ggplot(data=tibble(x=1:10), aes(x=x))+
@@ -252,7 +155,8 @@ pc_e<-ggplot(data=tibble(x=1:10), aes(x=x))+
                      expand=c(0,0))+
   theme_classic(base_family = "Fira Sans Condensed", base_size=12)+
   labs(x = "Quantity",
-       y = "Price")
+       y = "Price",
+       title = "Competitive Market")
 
 demand_r=function(x){8.5-0.5*x}
 mr_r=function(x){8.5-1*x}
@@ -281,14 +185,14 @@ mp_e<-ggplot(data=tibble(x=1:10), aes(x=x))+
   geom_segment(x=0,xend=3.75, y=6.5, yend=6.5, size=1, linetype="dotted")+
 
   annotate("segment", x = 3, xend = 3.75, y = 3, yend = 3, colour = "black", size=2, alpha=1, arrow=arrow(length=unit(0.2,"cm"), ends="last", type="closed"))+
-  annotate("segment", x = 0.5, xend = 0.5, y = 6.5, yend = 7, colour = "black", size=2, alpha=1, arrow=arrow(length=unit(0.2,"cm"), ends="last", type="closed"))+
+  annotate("segment", x = 0.5, xend = 0.5, y = 7, yend = 6.5, colour = "black", size=2, alpha=1, arrow=arrow(length=unit(0.2,"cm"), ends="last", type="closed"))+
 
   scale_x_continuous(breaks = c(0,3,3.75),
-                     labels = c(0,expression(q[c]), expression(q[m])),
+                     labels = c(0,expression(q[1]), expression(q[2])),
                      limits = c(0,10),
                      expand=c(0,0))+
   scale_y_continuous(breaks = c(0,6.5,7),
-                     labels = c(0,expression(p[m]), expression(p[c])),
+                     labels = c(0,expression(p[2]), expression(p[1])),
                      limits = c(0,14),
                      expand=c(0,0))+
   theme_classic(base_family = "Fira Sans Condensed", base_size=12)+
@@ -298,5 +202,8 @@ mp_e<-ggplot(data=tibble(x=1:10), aes(x=x))+
 pc_e | mp_e
 ```
 
+The only true test between price discrimination (the *same* good being sold at different prices) and mere price differences (due to *cost* differences) in competitive markets, without being able to directly observe a firm's marginal costs (something that is hard to do) is to consider changes in price elasticity of demand that does not change costs. This is similar to the third case described in the [appendix in class 4.1](/class/4.1-class/#Differences-Between-Firms-With-Market-Power-and-Competitive Firms), where a competitive market and a firm with market power see a change in price elasticity of demand: the competitive market sees no change in price or quantity, but the firm with market power that is price discriminating will lower its price as demand becomes more elastic. 
+
 ## Advanced Pricing Strategies
 
+See chapter 10.6 on advanced pricing strategies such as block-pricing and two-part tariffs.
