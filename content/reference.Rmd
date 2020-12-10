@@ -25,6 +25,50 @@ Look here over the course of the semester for resources, links, and tips on how 
 - [Math Review Guide](https://microf20.classes.ryansafner.com/files/math_review_guide.pdf)
 - [Preliminary Math Survey Answers](https://microf20.classes.ryansafner.com/assignment/preliminary-survey-answers.html)
 
+# List of Interactive Visualizations
+
+| Visualization         | Content | Class (See Description for Refernece) |
+|------------------|------|------:|
+| [Visualizing the Consumer's Problem](https://ryansafner.shinyapps.io/Consumer/) | Consumer Theory | [1.7 class](/class/1.7-class/#interactive-examples) |
+| [Visualizing Changes in the Consumer's Problem](https://ryansafner.shinyapps.io/Consumer_changes/) | Consumer Theory | [1.7 class](/class/1.7-class/#interactive-examples) |
+| [Visualizing Demand Shifters](https://ryansafner.shinyapps.io/Demand/) | Consumer Theory | [1.7 class](/class/1.7-class/#interactive-examples) |
+| [Visualizing Elasticity and Surpluses](https://ryansafner.shinyapps.io/elasticityandsurpluses/) | Market Equilibrium | [3.2 class](/class/3.2-class/#interactive-examples) |
+| [Visualizing the Economic Incidence of Taxation](https://ryansafner.shinyapps.io/tax-incidence/) | Market Equilibrium | [3.2 class](/class/3.2-class/#interactive-examples) |
+
+# List of Online Class Appendices
+
+| Appendix         | Type | Class |
+|------------------|------|------:|
+| Material on Preferences | Math/Economics | [1.4 class](/class/1.4-class/#material-on-preferences) |
+| Steepness & Indifference Curves For Neutrals | Math/Economics | [1.4 class](/class/1.4-class/#steepness-indifference-curves-for-neutrals) |
+| Derivation of MRS Equation (as ratio of marginal utilities) | Proof | [1.4 class](/class/1.4-class/#derivation-of-mrs-equation-as-ratio-of-marginal-utilities) |
+| Utility Functions and PMTs | Math | [1.4 class](/class/1.4-class/#utility-functions-and-pmts) | 
+| Graphing Indifference Curves | Math | [1.4 class](/class/1.4-class/#graphing-indifference-curves) | 
+| Utility Functions for Perfect Substitutes | Math | [1.4 class](/class/1.4-class/#utility-functions-for-perfect-substitutes) | 
+| Utility Functions for Perfect Complements | Math | [1.4 class](/class/1.4-class/#utility-functions-for-perfect-complements) | 
+| Cobb-Douglas Functions | Math | [1.4 class](/class/1.4-class/#cobb-douglas-functions) | 
+| Solving the Constrained Optimization Problem with Calculus | Math | [1.5 class](/class/1.5-class/#solving-the-constrained-optimization-problem-with-calculus) | 
+| Example Demand Functions | Math | [1.7 class](/class/1.7-class/#math-appendix) | 
+| Example Applications of Consumer Theory Models | Applications | [1.8 class](/class/1.8-class/#example-applications-of-consumer-theory-models) | 
+| Derivation of MRTS Equation (as ratio of marginal products) | Proof | [2.2 class](/class/2.2-class/#derivation-of-mrts-equation-as-ratio-of-marginal-products) | 
+| Solving the Firm’s Problem in One Step | Math | [2.2 class](/class/2.2-class/#solving-the-firms-problem-in-one-step) | 
+| The Geometry of Short-Run Production | Math/Economics | [2.2 class](/class/2.2-class/#the-geometry-of-short-run-production) | 
+| The Relationship Between Marginal and Average | Math/Economics | [2.2 class](/class/2.2-class/#the-relationship-between-marginal-and-average) | 
+| A Change in Relative Factor Prices | Applications | [2.3 class](/class/2.3-class/#a-change-in-relative-factor-prices) | 
+| Improvements in Technology | Applications | [2.3 class](/class/2.3-class/#improvements-in-technology) | 
+| The Relationship Between Returns to Scale and Costs | Math/Economics | [2.4 class](/class/2.4-class/#the-relationship-between-returns-to-scale-and-costs) | 
+| Cobb-Douglas Cost Functions | Math | [2.4 class](/class/2.4-class/#cobb-douglas-cost-functions) | 
+| Common Cost Assumptions | Economics | [2.5 class](/class/2.5-class/#common-cost-assumptions) | 
+| Producer Surplus | Economics | [2.6 class](/class/2.6-class/#producer-surplus) | 
+| External Economies | Economics | [2.6 class](/class/2.6-class/#cut-for-time-external-economies) | 
+| External Economies | Economics | [2.6 class](/class/2.6-class/#cut-for-time-external-economies) | 
+| Monopolists Only Produce Where Demand is Elastic: Proof | Proof | [4.1 class](/class/4.1-class/#monopolists-only-produce-where-demand-is-elastic-proof) | 
+| Derivation of the Lerner Index | Proof | [4.1 class](/class/4.1-class/#derivation-of-the-lerner-index) | 
+| Differences Between Firms With Market Power and Competitive Firms | Applications | [4.1 class](/class/4.1-class/#differences-between-firms-with-market-power-and-competitive-firms) | 
+| A Change in Price Elasticity of Market Demand | Applications | [4.1 class](/class/4.1-class/#a-change-in-price-elasticity-of-market-demand) | 
+| “I Know It When I See It” — How to Identify Market Power? | Applications | [4.3 class](/class/4.3-class/#i-know-it-when-i-see-it-how-to-identify-market-power) | 
+| Advanced Pricing Strategies | Applications | [4.3 class](/class/4.3-class/#advanced-pricing-strategies) | 
+
 # How to Make a PDF (For Submitting Assignments)
 
 ## Using an App on Your Phone
